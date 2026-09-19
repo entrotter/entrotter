@@ -58,12 +58,11 @@
         "64 MiB per-EVM memory cap and persistent fork cache disabled",
         "public CI including real Anvil passed",
         "private vulnerability reporting verified on six repos",
-        "five component main branches require CI and one approval, including admins"
+        "all six main branches require CI and one approval, including admins"
       ],
       "todo": [
         "SIGTERM and hard whole-process CPU/memory/time/disk quotas",
         "complete lint/type/dependency/security/docs-link CI",
-        "coordination repo main protection pending checkpoint merge",
         "remaining cross-repo dependency pins"
       ]
     },

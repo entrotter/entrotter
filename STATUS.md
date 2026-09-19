@@ -60,9 +60,11 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 
 ## Open gates and next actions
 
-1. All current engine/scenario/viewer changes are merged and live. Five component
-   repos now require passing CI and one PR approval, including admins. Apply the
-   same protection to coordination after its evidence checkpoint merges.
+1. All current engine/scenario/viewer/evidence changes are merged and live. All
+   six repositories now require passing CI and one PR approval, including admins.
+   Protection read-back is in evidence/branch-protection.json. Future PRs need a
+   reviewer distinct from the author; do not bypass these protections. The final
+   protection checkpoint is committed locally pending the next reviewed docs PR.
 2. Complete security/delivery: whole-process CPU/RSS/time/disk/concurrency bounds,
    SIGTERM handling, deeper RPC/API fault tests, lint/types/security/dependency and
    docs-link CI, remaining immutable dependencies, and branch protections.
