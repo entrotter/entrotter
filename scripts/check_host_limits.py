@@ -246,7 +246,7 @@ def main():
         'archive_or_model_calls': False,
         'limitations': ['Lowered file-count quota for integration; production thresholds tested separately',
                         'Uses the tested API constructor default; worker manifest enables additional default-path proof. Kernel enforcement is a separate CI job',
-                        'Independent export retention, host processes, explicit native execution and image/VM storage remain operator-controlled']}
+                        'Shared export retention is verified separately by check_export_budget.py on compatible revisions; host processes, explicit native execution and image/VM storage remain operator-controlled']}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps(result, indent=2))

@@ -103,7 +103,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 6410c37663d37685a30effccd87844e1740b8637
+          ref: 0d3857839b2187541e573bec2e58042ad5bf0b45
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -113,23 +113,26 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: 952bfb5aba14b674dd959035a5625fadbd2b07d1
+          ref: a63a39000e03d151e80b5a9c47dd4df449281b93
           path: cli
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
       - name: Build source-bound local image
         run: |
-          mkdir -p entrotter/evidence/native-release-audit/integration-ci
-          python engine/scripts/build_worker.py --output entrotter/evidence/native-release-audit/integration-ci/image.json
+          mkdir -p entrotter/evidence/export-budget/ci
+          python engine/scripts/build_worker.py --output entrotter/evidence/export-budget/ci/image.json
           python - <<'PY'
           import json, os
-          image = json.load(open('entrotter/evidence/native-release-audit/integration-ci/image.json'))['image_id']
+          image = json.load(open('entrotter/evidence/export-budget/ci/image.json'))['image_id']
           with open(os.environ['GITHUB_ENV'], 'a') as output:
               output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
+              output.write('ENTROTTER_EXPORT_STATE_DIR=' + os.path.join(os.environ['RUNNER_TEMP'], 'entrotter-export-state') + '\n')
           PY
       - name: Verify shared daemon admission, default CLI-SDK-API, preservation and quotas
-        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/native-release-audit/integration-ci/image.json --output entrotter/evidence/native-release-audit/integration-ci/integration.json
+        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/export-budget/ci/image.json --output entrotter/evidence/export-budget/ci/integration.json
+      - name: Verify shared export accounting across real CLI processes
+        run: python entrotter/scripts/check_export_budget.py --output entrotter/evidence/export-budget/ci/export-contract.json
       - name: Measure a clean public checkout with the bounded default
         run: python entrotter/scripts/reproduce_clean.py --bounded
       - name: Verify no owned worker remains
@@ -140,8 +143,8 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: native-release-integration-evidence
+          name: export-budget-evidence
           path: |
-            entrotter/evidence/native-release-audit/integration-ci/
+            entrotter/evidence/export-budget/ci/
             entrotter/evidence/clean-bounded-reproduction.json
           if-no-files-found: error
