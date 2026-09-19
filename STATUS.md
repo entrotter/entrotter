@@ -318,6 +318,32 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   engine/scenario checkouts are unchanged, and the separate agent branch is not
   incorporated. Aggregate CLI admission/retention and image/VM disk remain open.
 
+## Proposed admission shared by independent CLI/API processes
+
+- Engine PR #17 (`0718b20e47a2b69dcd6ac2ac7112f189131f9ec6`) reserves one
+  worker container name per configured Docker daemon. Preflight rejection is API
+  429; a simultaneous creation conflict can return 422 because Docker reserves
+  names before they appear in queries. No automatic retry or native fallback is
+  introduced. Cleanup filters a unique owner label and removes only the full ID.
+- Both real CLI/API checks failed at parent dddba4a. The final source passes 135
+  unit/native-Anvil tests and 15 actual Docker tests, including a synchronized
+  two-process creation race, timeout/recovery and an unstarted occupied slot.
+  The real idle worker expired after 181.203 seconds and subsequent runs worked.
+  These suites overlap prior engine evidence; do not add them to frozen totals.
+- Ruff/mypy, full Bandit review and docs links pass. Downloaded Linux quality
+  reports retain all 15 findings, match the local full scan, and audit all 42
+  Python packages without reported known vulnerabilities. All 14 Python files
+  in the MIT wheel match source. Actual standalone CLI-SDK-API worker occupancy,
+  one-POST 429 rejection, preserved exports/incumbent, 507/503 and recovery pass.
+  All five engine Linux workflows, including 15 real Docker tests, passed at
+  the exact source commit. Coordination CI is tracked in the evidence summary.
+- See docs/DAEMON_WORKER_ADMISSION.md. Frozen benchmark checkouts remain unchanged.
+  This limits cooperating default worker containers on one daemon, not caller
+  processes, old/native clients, multiple daemons or image/export/VM storage.
+  Containers abandoned before entrypoint start may require operator recovery;
+  no daemon-failure guarantee or public multi-tenant safety is asserted.
+  Independent review/merge remains required; the overall goal stays active.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -332,8 +358,8 @@ required historical state. Archive failure is explicit, never a synthetic fallba
    tuning needs new unused cases; these two holdouts are now evaluated. The original
    archived Uniswap report remains a manually prescribed intervention example.
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
-   security/delivery gates next: aggregate CLI budgets, review/integration of the
-   proposed bounded default,
+   security/delivery gates next: host caller/storage budgets, review/integration of the
+   proposed bounded default and shared daemon admission,
    and remaining repo quality/native dependency checks. Preserve the frozen engine checkout; use an isolated worktree.
    A dedicated local Colima profile now provides a verified Linux cgroup v2
    Docker daemon. The opt-in worker is tested in engine PR #11; native execution
