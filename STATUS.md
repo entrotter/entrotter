@@ -135,6 +135,10 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
    security/delivery gates next, beginning with SIGTERM cleanup and bounded worker
    execution. Preserve the frozen engine checkout; use an isolated worktree.
+   Docker CLI 27.5.1 and Colima are installed. The current Docker context uses a
+   local Unix socket, but server version/OS fields are empty and reported CPU/RAM
+   are zero, so daemon readiness is not verified. Do not treat the formatted
+   command's zero exit status as proof of a working resource sandbox.
    Historical trace replay remains unsupported; do not imply a reconstructed market.
 5. Complete accessibility/link review and submission materials. Actual pitch/demo
    videos, three genuine target-user evaluations, joined-event verification and
