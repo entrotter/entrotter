@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T19:00:59.631589+00:00",
+  "updated_at": "2026-09-19T19:04:31.231751+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -80,7 +80,8 @@
         "Engine quality/native/Docker/matrix CI passed at ba0adfb; downloaded complete quality reports and verified every CI wheel source file",
         "Six-repository local and GitHub documentation-link checks passed 102 occurrences with explicit exclusions; complete reports retained, PRs pending review",
         "Reproduced and fixed overload TCP early-close race: failing real-socket regression, 124 native tests, bounded idle/trickle checks, 16-attempt CLI-SDK-API integration and all Linux/Docker/quality CI pass; engine #15/coordination #17 pending independent review",
-        "SDK/CLI proposed quality gates: 18/13 local tests, Ruff/mypy, complete zero-finding Bandit scans, 42-package locked audits and installed-wheel checks; both repo CI passed, independent review pending"
+        "SDK/CLI proposed quality gates: 18/13 local tests, Ruff/mypy, complete zero-finding Bandit scans, 42-package locked audits and installed-wheel checks; both repo CI passed, independent review pending",
+        "Updated SDK/CLI exact source pins passed real Linux CLI-SDK-API fixture/Anvil/quota/16-overload integration; downloaded reports and installed CI wheels verified; coordination #19 pending review"
       ],
       "todo": [
         "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",

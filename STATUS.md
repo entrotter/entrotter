@@ -258,9 +258,12 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   MIT metadata/source equality, and exercise SDK import and CLI doctor/verify/
   inspect without an engine package. Real CLI→SDK→API fixture/Anvil, quota and
   16-attempt overload/recovery checks pass locally. SDK and CLI quality/matrix/
-  link CI passed; exact pins and full artifacts are being recorded in
-  evidence/sdk-cli-quality/summary.json. The updated cross-repository CI remains
-  pending. See docs/SDK_CLI_QUALITY.md. PRs require independent review.
+  link CI passed. The newly pinned Linux cross-repository job also passed; exact
+  source pins, checker hash and complete report IDs match local results. Downloaded
+  SDK/CLI quality reports match every scanned source hash; both CI wheel contents
+  and MIT/dependency metadata were checked. See docs/SDK_CLI_QUALITY.md and
+  evidence/sdk-cli-quality/summary.json. Coordination PR #19 records the evidence;
+  all three PRs remain unmerged and require independent review.
 
 ## Open gates and next actions
 
