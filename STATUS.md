@@ -265,6 +265,29 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   evidence/sdk-cli-quality/summary.json. Coordination PR #19 records the evidence;
   all three PRs remain unmerged and require independent review.
 
+## Report viewer accessibility and browser CI
+
+- Website PR #10 (`d7785e201a4de50b72623a1e7522762738abab54`) fixes skip-link
+  focus, 339px page overflow at a 320px viewport, keyboard scrolling in report
+  tables/JSON, accessible chart observation data and empty tables after errors.
+  The earlier skip-link smoke check established scrolling, not focus transfer;
+  this deeper regression records that distinction.
+- The identical runner/Chromium 153 rejects the previous website (16 failed
+  groups, two passed) and passes all 18 groups after changes on macOS and Linux.
+  Fourteen axe scans per final run have zero violations. Incomplete contrast
+  results remain explicit, with separate solid-CSS calculations; manual screen-
+  reader certification and complete WCAG conformance are not claimed.
+- Ten website Python and 13 JavaScript tests pass. Exact/integrity-locked browser
+  development dependencies have no reported known npm advisories. They are excluded
+  from deployment. Pages build depends on unit and browser jobs, and its actions
+  are immutable. Linux run 35464241907 and links 35464241911 succeeded; downloaded
+  source/runner hashes match local evidence. See docs/WEBSITE_ACCESSIBILITY.md and
+  evidence/website-accessibility/summary.json for failures, screenshots and scope.
+- Existing live HTML still matches main ab121348b0ffbec5650f9eadf0a0b11f639d9780
+  with HTTP 200. Accessibility changes are unmerged and not deployed; independent
+  review remains required. Owned browser/server and clean baseline worktree were
+  removed. Frozen engine/scenario inputs are unchanged.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -285,7 +308,9 @@ required historical state. Archive failure is explicit, never a synthetic fallba
    Docker daemon. The opt-in worker is tested in engine PR #11; native execution
    remains the default. See docs/WORKER_SECURITY.md and its measured evidence.
    Historical trace replay remains unsupported; do not imply a reconstructed market.
-5. Complete accessibility/link review and submission materials. Actual pitch/demo
+5. Obtain independent review of the accessibility PR, deploy through protected main,
+   and verify the live site; manual assistive-technology evaluation remains open.
+   Continue submission materials. Actual pitch/demo
    videos, three genuine target-user evaluations, joined-event verification and
    owner eligibility remain pending. Outreach and submission require owner approval.
 
