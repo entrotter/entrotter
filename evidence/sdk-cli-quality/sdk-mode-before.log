@@ -1,7 +1,7 @@
 test_body_limit (test_sdk.SDKTests.test_body_limit) ... ok
 test_embedded_credentials (test_sdk.SDKTests.test_embedded_credentials) ... ok
 test_get_must_match_id (test_sdk.SDKTests.test_get_must_match_id) ... ok
-test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) ... 
+test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) ...
   test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) (mode=[]) ... ERROR
   test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) (mode={}) ... ERROR
 test_https_url (test_sdk.SDKTests.test_https_url) ... ok

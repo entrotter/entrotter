@@ -62,5 +62,6 @@
     "Other repositories and agent branch still need quality gates.",
     "Native binaries, Python runtime and OS packages are outside pip-audit.",
     "Whole-process default resource budgets and real user/video/submission gates remain open."
-  ]
+  ],
+  "evidence_normalization": "Local checkout prefix replaced with /workspace; trailing log whitespace removed. JSON scanner/audit results otherwise retained."
 }
