@@ -125,8 +125,10 @@ def main():
             else:
                 raise RuntimeError('Connection bound did not reject SDK request')
             before = len(calls)
-            busy = cli_run(inputs['fixture'])
-            assert busy.returncode == 1 and 'HTTP 503' in busy.stderr
+            for _ in range(16):
+                busy = cli_run(inputs['fixture'])
+                assert busy.returncode == 1 and 'HTTP 503' in busy.stderr, (
+                    f'Busy CLI response: exit={busy.returncode}, stderr={busy.stderr!r}')
             assert len(calls) == before
             assert output.read_bytes() == previous
             for connection in sockets:
@@ -151,7 +153,8 @@ def main():
                      'CLI reports 507 without retrying POST or replacing export',
                      'eight idle sockets cause SDK/CLI 503 without executing work',
                      'health recovers after idle sockets close'],
-        'fault_parameters': {'store_file_limit': 2, 'connection_limit': 8},
+        'fault_parameters': {'store_file_limit': 2, 'connection_limit': 8,
+                             'busy_cli_attempts': 16},
         'archive_or_model_calls': False,
         'limitations': ['Lowered file-count quota for integration; production thresholds tested separately',
                         'Native local EVM execution; Docker enforcement is a separate CI job',

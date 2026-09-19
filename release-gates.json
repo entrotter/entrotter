@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T18:36:45.091707+00:00",
+  "updated_at": "2026-09-19T18:42:26.348223+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -84,7 +84,7 @@
         "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",
         "Extend lint/types/security/dependency gates to other repos and separate agent branch; add native/container-OS advisory coverage",
         "remaining cross-repo dependency pins",
-        "Fix reproduced saturated API early-close transport race: generic CLI error instead of HTTP 503; failed CI and local probe retained"
+        "Verify Linux CI and independently review saturated API early-close fix in engine #15; local regression, 124 native tests and 16-attempt CLI-SDK-API integration pass"
       ]
     },
     {
@@ -200,6 +200,7 @@
     "evidence/engine-bandit-ci.json",
     "evidence/engine-python-audit-ci.json",
     "evidence/engine-quality-coordination-tests.log",
-    "evidence/docs-links/summary.json"
+    "evidence/docs-links/summary.json",
+    "evidence/overload-response/summary.json"
   ]
 }

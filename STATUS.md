@@ -211,9 +211,28 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 - An existing host-bounds job failed at its CLI 503 assertion (run 35461539934).
   A local saturated-API probe reproduced five generic transport errors in 59 CLI
   attempts while all eight slots stayed occupied. It is not a link-check failure.
-  The failure log/probe are retained; investigate response/close timing next and
-  add a regression before claiming the host integration stable. Frozen engine
+  The failure log/probe are retained; the subsequent fix and regression are
+  recorded below. Frozen engine
   and historical scenario inputs remain unchanged.
+
+## Saturated API response race: fix under review
+
+- The earlier 503 failure is reproduced by a real socket that sends a POST body
+  after the server has already emitted its response. Immediate close caused
+  BrokenPipe; the new regression fails before the fix and passes afterward.
+- Engine PR #15 adds bounded draining after half-closing the 503 output: at most
+  320 KiB and 100 ms including send, without a new handler or admitted experiment.
+  Idle/trickling rejected clients cannot extend the absolute grace. Slow or
+  oversized senders can still see transport failure when the grace expires.
+- All 124 native/unit tests passed locally. Ruff lint/format, mypy and full Bandit
+  checks pass; all 15 finding fingerprints are unchanged. Only the reviewed API
+  source hash changes. An existing deadline-abort test now correctly accepts FIN
+  or reset while preserving timeout/recovery assertions; its failure is retained.
+- The actual CLI→SDK→API check now requires 16 consecutive busy CLI responses and
+  verifies no work, no replacement export, 507 handling, real Anvil reports and
+  recovery. Local verification passed. Its CI engine pin is the exact fix commit.
+  See evidence/overload-response/summary.json. Linux CI is still pending; this does
+  not erase the earlier failed run or establish completion of the broader gates.
 
 ## Open gates and next actions
 
