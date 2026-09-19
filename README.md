@@ -163,3 +163,8 @@ The [frozen historical comparison](docs/HISTORICAL_AGENT_EVALUATION.md) now incl
 three sourced cases and two previously unused implementation holdouts. All ten
 risk/model recordings replayed exactly on fresh forks. The model matched the
 preflight rule and took longer in every case; evidence retains that adverse result.
+
+The [direct Anvil comparison](docs/DIRECT_ANVIL_COMPARISON.md) independently
+reproduced the same receipts and state in six runs. Median runtimes were similar;
+Entrotter's additional value is its reusable scenario, recording and artifact
+workflow, which still needs genuine user validation.

@@ -10,7 +10,7 @@ remote history. Use the existing six sibling Git checkouts and focused PRs.
 - Foundry v1.8.3 release archive downloaded and SHA-256 checked against GitHub
   release metadata. Local executable: `../.tools/foundry-v1.8.3/anvil` from this
   coordination repo. `evidence/foundry-install.json` records exact version/digest.
-- Full workspace check: **145 Python tests and 13 JavaScript tests passed**,
+- Full workspace check: **150 Python tests and 13 JavaScript tests passed**,
   including actual Anvil transfer/revert/rejection, state isolation, startup
   timeout/cancellation, missing receipt cleanup, token storage and decimal pins.
   Fault-injection tests are labelled; no real EVM test was silently replaced.
@@ -100,6 +100,25 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   Coordination #8 integration CI passed. The holdouts are now evaluated; do not
   reuse them as untouched cases for a tuned policy. All source/prompt pins remain.
 
+## Direct Anvil comparison and diagnostic hardening
+
+- The independent stdlib/JSON-RPC script and Entrotter executed the same frozen
+  19M paired task three times each, in alternating order. All six outcomes match
+  the source pin, every complete receipt, per-step native/token balances and gas.
+  Observed median wall times: direct 8.653 seconds, Entrotter 8.689 seconds. This
+  small network-dependent sample does not show a speed advantage. See
+  `docs/DIRECT_ANVIL_COMPARISON.md` and `evidence/direct-anvil-comparison.json`.
+- Entrotter additionally supplies reusable scenario validation, typed decision
+  records/replay and a shareable report workflow. Contributor productivity and
+  demand are not established by these measurements; genuine evaluations remain.
+- Engine PR #9 (`ca9d5a7`) removes all provider error fields from user-facing RPC
+  rejection diagnostics. Its regression tests failed before the patch and the
+  isolated main-based checkout passed 83 tests with real Anvil afterward. See
+  `evidence/engine-rpc-diagnostics-tests.log`. The primary engine checkout remains
+  at the frozen benchmark commit; the fix awaits independent review and merge.
+- Workspace tests pass 150 Python and 13 JavaScript tests without skips. The
+  separate 83-test hardening run overlaps the suite and is not added to that total.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -113,10 +132,14 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 3. Obtain independent review of the agent and benchmark PRs. Further policy
    tuning needs new unused cases; these two holdouts are now evaluated. The original
    archived Uniswap report remains a manually prescribed intervention example.
-4. Next implementation slice: compare the frozen 19M task with a standalone
-   direct Anvil script, preserving identical proposals, source pins and outcome
-   checks. Record runtime without claiming a statistical speed advantage. Historical trace replay remains unsupported; never
-   describe archived-state actions as a reconstructed counterfactual market.
+4. The same-task direct Anvil comparison is now measured. Continue the remaining
+   security/delivery gates next, beginning with SIGTERM cleanup and bounded worker
+   execution. Preserve the frozen engine checkout; use an isolated worktree.
+   Docker CLI 27.5.1 and Colima are installed. The current Docker context uses a
+   local Unix socket, but server version/OS fields are empty and reported CPU/RAM
+   are zero, so daemon readiness is not verified. Do not treat the formatted
+   command's zero exit status as proof of a working resource sandbox.
+   Historical trace replay remains unsupported; do not imply a reconstructed market.
 5. Complete accessibility/link review and submission materials. Actual pitch/demo
    videos, three genuine target-user evaluations, joined-event verification and
    owner eligibility remain pending. Outreach and submission require owner approval.
