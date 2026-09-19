@@ -379,6 +379,26 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   close native dependency, host caller/disk, independent review or submission
   gates. Frozen engine/scenario checkouts remain unchanged.
 
+## Native release provenance and signed Cargo inventory: local proof
+
+- Engine PR #19 (`6410c37663d37685a30effccd87844e1740b8637`) adds a separate
+  native release gate. Both Foundry 1.8.3 Linux archives have verified exact
+  upstream workflow/issuer/source-commit attestations; their signed Anvil hashes
+  match the real builder manifests. The complete downloaded SPDX inventory must
+  equal its signed predicate. An intentional wrong certificate source pin fails.
+- Actual arm64/amd64 scans cover every one of 1,126 signed Cargo identities and
+  versions with no reported findings. All severities/unfixed issues remain
+  enabled. The other 172 entries are listed explicitly outside Cargo coverage.
+  This is an upstream whole-checkout SBOM, not an exact linked Anvil inventory;
+  compiler/C-library/build-system completeness is not established.
+- All 149 local unit/native tests pass, including seven negative policy tests.
+  Ruff/mypy covers 19 source/scripts and full Bandit keeps 24 reviewed findings
+  (20 low, four medium). Runtime Python source, Dockerfile and frozen historical
+  inputs are unchanged. Linux actual-worker/audit CI is pending.
+- See docs/NATIVE_RELEASE_AUDIT.md and evidence/native-release-audit/. Compressed
+  raw evidence retains full signatures and inventories with original-byte hashes.
+  Independent review/merge and the overall goal remain pending.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
