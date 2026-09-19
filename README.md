@@ -182,3 +182,6 @@ recovery evidence. These PRs remain subject to independent review.
 
 [Documentation link checks](docs/LINK_CHECKS.md) describe the shared CI policy,
 local reproduction, full result artifacts and the limits of static link scanning.
+
+[SDK and CLI quality evidence](docs/SDK_CLI_QUALITY.md) records independent source,
+dependency, packaging and real API checks, including the local SDK provenance.
