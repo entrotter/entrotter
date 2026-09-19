@@ -1,7 +1,7 @@
 # Verified implementation status
 
-Updated 2026-09-20 JST. **Goal active; not submission-ready.** This turn made
-implementation and deployment progress. All six repositories now exist publicly
+Updated 2026-09-20 JST. **Goal active; not submission-ready.** Implementation
+and deployment checkpoints are recorded below. All six repositories exist publicly
 under https://github.com/entrotter. Do not repeat archive bootstrap or overwrite
 remote history. Use the existing six sibling Git checkouts and focused PRs.
 
@@ -447,6 +447,44 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   moves/renames, older clients, distinct roots, filesystem metadata, host caller
   processes, images or VM storage. Never reset the ledger to free quota.
   Both PRs remain unmerged and require independent review; the goal stays active.
+
+## Coordination quality and optimized verification: verified, review pending
+
+- Issue #32 adds lint/type/security/dependency gates over all 19 executable
+  coordination Python sources and hidden production action helpers. Ruff lint
+  covers all 19; formatting covers 18. The historical Codex provider remains
+  byte-identical to its pre-execution freeze, enforced by an exact source hash.
+- Mypy checks every tool against its actual pinned agent or worker engine variant.
+  Three existing optional-pipe/selector diagnostics in the frozen provider are
+  retained with exact messages, source/version pins and individual rationales.
+  Other groups have no errors. No engine stubs or missing-import suppression is
+  introduced; this is normal typing, not strict or runtime JSON validation.
+- An actual optimized-Python regression shows mismatched wheel source could reach
+  installation because asserts were disabled. The fix uses explicit exceptions
+  for 83 predicates; AST comparison confirms predicates/lazy messages are retained.
+  The installed-module path guard is explicit too. The regression and real
+  optimized cross-CLI shared-export capacity/recovery checks now pass.
+- All 26 local coordination tests and six actual Lychee regressions pass. Recorded
+  model decisions replay exactly on real Anvil with the unchanged full artifact
+  1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b.
+  No new archive/model call or model-performance claim is made. Full Bandit retains
+  75 author-reviewed findings; 50 hash-locked Python packages have no reported
+  known vulnerabilities. The schema-only lock is covered by that same audit.
+- All coordination Actions are now pinned by commit. Existing three integration
+  jobs remain, with an added optimized export check and a separate quality job.
+  PR #33 passes all three integration jobs (35473712013), quality (35473711997)
+  and links (35473711998) at proof f05eae7. Its frozen-dependency workspace job
+  passes 156 Python and 13 JavaScript tests without skips, including six new
+  coordination tests; do not add overlapping hardened-engine suites. Full scan/type/dependency
+  reports match local source, locks and retained findings. Normal/optimized CLI
+  checks agree, fixture/Anvil artifact IDs and image sources match prior evidence.
+  Public clone/venv/build reproduction takes 6.748 seconds with running Docker and
+  warm caches; no cold-installation claim. Initial YAML and Python-conditional
+  dependency failures are retained and fixed without relaxing validation.
+- See docs/COORDINATION_QUALITY.md and evidence/coordination-quality/. No local VM
+  was started; both profiles remain stopped and no matching Anvil process remains.
+  Frozen historical inputs remain unchanged. Independent review and overall goal
+  completion remain pending.
 
 ## Open gates and next actions
 

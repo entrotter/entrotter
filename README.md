@@ -201,3 +201,6 @@ cleanup, real contention tests and explicit recovery limits.
 
 [Shared CLI export retention](docs/SHARED_EXPORT_BUDGET.md) records proposed
 cross-process saved/pending report limits, crash recovery and operator inspection.
+
+[Coordination quality](docs/COORDINATION_QUALITY.md) records complete tooling scans,
+optimized-Python verification, locked dependencies and frozen-source exceptions.

@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T22:04:05.785992+00:00",
+  "updated_at": "2026-09-19T22:37:50.775690+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -90,11 +90,12 @@
         "Engine #17 and coordination #25: all Linux engine and three cross-repository jobs passed, including shared daemon occupancy/recovery and fresh public reproduction; downloaded source, runner and artifact pins agree; reviews pending",
         "Worker image signature and full detected OS/language package advisory gate passes on actual macOS arm64/Linux amd64 images: 26 inventoried packages, no known reported findings or suppressions; 142 native/unit and 16 actual Docker tests pass. Engine #18 and coordination #27 await independent review; native Anvil/host remain outside scan.",
         "Foundry native gate verifies exact source/workflow/issuer/archive/Anvil attestations and scans every one of 1,126 signed Cargo identities for arm64/amd64 without reported findings. Linux actual-worker/native/image and all three pinned integration jobs pass at engine #19. All 172 non-Cargo entries and compiler/C-library/build-system gaps remain explicit; independent review/merge pending.",
-        "Proposed engine #20/CLI #9 share 128 MiB/128-file saved+pending export retention across folders/processes. Production ceiling, real SIGKILL/race, actual CLI contract and default Docker/API checks pass; local 164 engine, 30 CLI and 16 Docker tests plus all engine/CLI Linux CI pass. Coordination #31 passes all three integration jobs and links at 77a754e; downloaded source/checker/helper/image and complete report IDs match. Public reproduction takes 6.278 seconds with running Docker/warm caches; independent review/merge pending."
+        "Proposed engine #20/CLI #9 share 128 MiB/128-file saved+pending export retention across folders/processes. Production ceiling, real SIGKILL/race, actual CLI contract and default Docker/API checks pass; local 164 engine, 30 CLI and 16 Docker tests plus all engine/CLI Linux CI pass. Coordination #31 passes all three integration jobs and links at 77a754e; downloaded source/checker/helper/image and complete report IDs match. Public reproduction takes 6.278 seconds with running Docker/warm caches; independent review/merge pending.",
+        "Coordination proposed quality gate covers 19 production sources, including hidden action helper; 26 local tests and six real Lychee regressions pass. Optimized wheel validation failed before and now rejects before installation; 83 explicit guards preserve predicates. Three frozen-provider type diagnostics and 75 full security findings remain author-reviewed and visible; 50 locked Python packages have no reported findings. PR #33 passes all three Linux integration jobs, full quality and links at f05eae7. Downloaded source/type/finding/lock reports and full fixture/Anvil IDs match; normal and optimized export results agree. Public clone/venv/build reproduction: 6.748 seconds with running Docker and warm caches. Independent review/merge pending."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
-        "Extend lint/types/security/dependency gates to coordination, scenarios, website and separate agent branch; native/compiler/build-system coverage limits remain explicit",
+        "Extend lint/types/security/dependency gates to scenarios, website and separate agent branch; independently review/integrate coordination quality including the frozen provider diagnostic reasons; native/compiler/build-system coverage limits remain explicit",
         "remaining cross-repo dependency pins",
         "Independent review and merge of security, resource and CI PRs, including overload-response fix"
       ]
@@ -170,7 +171,11 @@
     "bounded_default_real_docker_suite": 10,
     "bounded_default_cli_suite": 15,
     "daemon_admission_native_suite": 135,
-    "daemon_admission_real_docker_suite": 15
+    "daemon_admission_real_docker_suite": 15,
+    "coordination_quality_tests": 26,
+    "coordination_real_lychee_regressions": 6,
+    "coordination_quality_workspace_python": 156,
+    "coordination_quality_workspace_javascript": 13
   },
   "evidence": [
     "evidence/verification.json",
@@ -232,6 +237,7 @@
     "evidence/bounded-default/summary.json",
     "evidence/clean-bounded-reproduction.json",
     "evidence/daemon-admission/summary.json",
-    "evidence/export-budget/summary.json"
+    "evidence/export-budget/summary.json",
+    "evidence/coordination-quality/summary.json"
   ]
 }
