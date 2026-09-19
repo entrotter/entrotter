@@ -192,6 +192,19 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   files match the tested source. Other repos, native/container-OS audits and
   docs-link gates remain open.
 
+## Documentation link checks in progress
+
+- A shared checksum-pinned Lychee 0.24.2 action checks each caller's actual tracked
+  Markdown/HTML/CSS and publishes detailed file/fragment/HTTP results. Six real
+  checker regression tests pass, including missing files, hidden templates,
+  fragments, CSS, HTTP 404 and empty-scan rejection. No network errors are accepted.
+- The initial six-repo scan had zero detected links in engine/SDK and only an
+  excluded loopback example in CLI. README navigation now links workspace setup,
+  contributing, security and licensing, so a green job cannot hide an empty scan.
+  The updated coordination scan checks 46 occurrences successfully. Consumer CI
+  wiring and actual GitHub job evidence are still pending. See docs/LINK_CHECKS.md
+  and tracking issue #15. Frozen benchmark inputs remain unchanged.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
