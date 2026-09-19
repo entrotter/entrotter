@@ -173,3 +173,7 @@ The [local worker security evidence](docs/WORKER_SECURITY.md) records real kerne
 resource-limit and process-lifecycle checks for the proposed opt-in Docker path.
 This remains under review; native defaults and aggregate storage/concurrency
 limits are open gates.
+
+The [host resource bounds](docs/HOST_RESOURCE_LIMITS.md) add proposed API report
+quotas, connection limits and safe CLI exports, with real CLI/SDK/API fault and
+recovery evidence. These PRs remain subject to independent review.

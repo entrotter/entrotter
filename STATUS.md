@@ -141,11 +141,32 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   artifact exactly in 10.055 seconds. No archive URL or credentials are included
   in reports. Image inputs/source hashes are in `evidence/isolated-worker-image.json`.
 - Native mode remains the default. Fork workers use bridge networking, not an
-  archive-host egress firewall. Arbitrary agent code remains disabled. Host saved
-  report/image/VM storage, aggregate CLI concurrency and API connection threads
-  still need bounds. PRs #9/#10/#11 await independent review and are not merged.
+  archive-host egress firewall. Arbitrary agent code remains disabled. At that checkpoint, host report/image/VM storage,
+  aggregate CLI concurrency and API connection threads still needed bounds.
+  The newer host-budget slice below addresses API storage and connections. PRs #9/#10/#11 await independent review and are not merged.
   These test counts overlap previous engine suites; do not add them to the
   frozen workspace's 150 Python/13 JavaScript count.
+
+## Host report storage and API connection bounds
+
+- Engine PR #12 (`5e2663661cb26b17247ed34b2f31297095ba65e6`) bounds the
+  dedicated API report directory to 128 MiB/128 files, individual reports to 8 MiB,
+  and connections to eight handlers with a 240-second absolute socket deadline.
+  Real file/process/socket tests cover capacity exhaustion, simultaneous writers,
+  trickled headers, timeout recovery, wrong stored IDs and atomic write failure.
+- Standalone CLI PR #5 (`d842c56bd9cf2c0845f5666b4ea0b02d2be34489`) enforces
+  the same 8 MiB export limit and preserves prior destinations on failure without
+  adding an engine dependency. Oversize/content-ID regressions failed before fixes.
+- Engine 114 native/unit tests and CLI nine tests passed locally. Engine Python
+  matrix, real-Anvil and actual-Docker CI, plus CLI Python matrix, all passed.
+  A real CLI→SDK→API check verified fixture/Anvil reports, 507/503, no POST retry,
+  saved/exported equality and recovery. `scripts/check_host_limits.py` makes it
+  reproducible; a dedicated CI job pins the proposed commits independently of
+  frozen benchmark inputs. See `evidence/host-resource-bounds.json`.
+- These are application file-content limits, not whole-filesystem/VM quotas.
+  Independent CLI export retention/concurrency, image/VM storage, native-default
+  execution and complete CI hygiene remain open. Socket timeout does not forcibly
+  cancel admitted native Python work. PRs remain unmerged pending independent review.
 
 ## Open gates and next actions
 
@@ -161,8 +182,8 @@ required historical state. Archive failure is explicit, never a synthetic fallba
    tuning needs new unused cases; these two holdouts are now evaluated. The original
    archived Uniswap report remains a manually prescribed intervention example.
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
-   security/delivery gates next, beginning with SIGTERM cleanup and bounded worker
-   execution. Preserve the frozen engine checkout; use an isolated worktree.
+   security/delivery gates next: default bounded execution, aggregate CLI budgets
+   and CI lint/types/dependency/security/docs-link checks. Preserve the frozen engine checkout; use an isolated worktree.
    A dedicated local Colima profile now provides a verified Linux cgroup v2
    Docker daemon. The opt-in worker is tested in engine PR #11; native execution
    remains the default. See docs/WORKER_SECURITY.md and its measured evidence.
