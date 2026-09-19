@@ -119,6 +119,34 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 - Workspace tests pass 150 Python and 13 JavaScript tests without skips. The
   separate 83-test hardening run overlaps the suite and is not added to that total.
 
+## Native lifecycle and optional bounded workers
+
+- Engine PR #10 (`7f08a2b`) adds a lifetime-pipe guardian for owned Anvil nodes.
+  Real owner SIGTERM/SIGKILL, guardian loss and watchdog checks passed in the
+  88-test main-based suite; Python-matrix and real-EVM CI passed. Node lifetime
+  is 150 seconds plus termination grace, not a native CPU/RSS sandbox.
+- Engine PR #11 (`05448c3335440f19e619d1b71b449f4f0fb470d6`) adds explicit
+  `run --isolated` / `serve --isolated` with a locally built immutable Docker
+  image and verified Linux cgroup v2 controllers. Per-run limits: one CPU quota,
+  512 MiB/no swap, 128 PIDs, read-only non-root rootfs, 64 MiB tmpfs and 16 MiB
+  shared memory, 256 KiB input, 8 MiB output, and a 180-second worker timer.
+- The main-based worker checkout passed 96 unit/native-Anvil tests. Actual Docker
+  checks exercise kernel CPU throttling, OOM kills, fork exhaustion, full tmpfs,
+  noexec, CLI/API report equality and signal/owner-loss cleanup. Dedicated local
+  and Linux CI both passed all 10 tests, including an unattended 180.916-second
+  local expiry. Linux run: 35458208203. See `evidence/worker-security.json`.
+  No owned containers remained afterward; the dedicated VM is stopped and the
+  existing Docker context/default profile is unchanged.
+- The isolated historical 19M Uniswap run matched the complete existing public
+  artifact exactly in 10.055 seconds. No archive URL or credentials are included
+  in reports. Image inputs/source hashes are in `evidence/isolated-worker-image.json`.
+- Native mode remains the default. Fork workers use bridge networking, not an
+  archive-host egress firewall. Arbitrary agent code remains disabled. Host saved
+  report/image/VM storage, aggregate CLI concurrency and API connection threads
+  still need bounds. PRs #9/#10/#11 await independent review and are not merged.
+  These test counts overlap previous engine suites; do not add them to the
+  frozen workspace's 150 Python/13 JavaScript count.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -135,10 +163,9 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
    security/delivery gates next, beginning with SIGTERM cleanup and bounded worker
    execution. Preserve the frozen engine checkout; use an isolated worktree.
-   Docker CLI 27.5.1 and Colima are installed. The current Docker context uses a
-   local Unix socket, but server version/OS fields are empty and reported CPU/RAM
-   are zero, so daemon readiness is not verified. Do not treat the formatted
-   command's zero exit status as proof of a working resource sandbox.
+   A dedicated local Colima profile now provides a verified Linux cgroup v2
+   Docker daemon. The opt-in worker is tested in engine PR #11; native execution
+   remains the default. See docs/WORKER_SECURITY.md and its measured evidence.
    Historical trace replay remains unsupported; do not imply a reconstructed market.
 5. Complete accessibility/link review and submission materials. Actual pitch/demo
    videos, three genuine target-user evaluations, joined-event verification and

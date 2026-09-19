@@ -168,3 +168,8 @@ The [direct Anvil comparison](docs/DIRECT_ANVIL_COMPARISON.md) independently
 reproduced the same receipts and state in six runs. Median runtimes were similar;
 Entrotter's additional value is its reusable scenario, recording and artifact
 workflow, which still needs genuine user validation.
+
+The [local worker security evidence](docs/WORKER_SECURITY.md) records real kernel
+resource-limit and process-lifecycle checks for the proposed opt-in Docker path.
+This remains under review; native defaults and aggregate storage/concurrency
+limits are open gates.
