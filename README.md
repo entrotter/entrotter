@@ -198,3 +198,6 @@ native examples above remain tied to their existing revisions until review/merge
 [Shared daemon worker admission](docs/DAEMON_WORKER_ADMISSION.md) records the
 proposed one-worker default across independent CLI/API processes, ownership-safe
 cleanup, real contention tests and explicit recovery limits.
+
+[Shared CLI export retention](docs/SHARED_EXPORT_BUDGET.md) records proposed
+cross-process saved/pending report limits, crash recovery and operator inspection.

@@ -408,6 +408,40 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   raw evidence retains full signatures and inventories with original-byte hashes.
   Independent review/merge and the overall goal remain pending.
 
+## Shared CLI export retention: implemented, review pending
+
+- Engine PR #20 (`0d3857839b2187541e573bec2e58042ad5bf0b45`) and CLI PR #9
+  (`a63a39000e03d151e80b5a9c47dd4df449281b93`) share an identical private
+  export ledger. Matching clients sharing one state directory retain at most
+  128 MiB/128 files including pending writes, across output folders and processes.
+  The 8 MiB per-report cap and separate API artifact-store quota remain.
+- Reservations are fsynced before output creation. Real competing processes and
+  SIGKILL before/after atomic publication prove that pending bytes stay charged
+  and completed output remains tracked. Inspection commands list charged paths;
+  the operator decides which reports or abandoned temporary files to remove.
+  Identical tracked output is idempotent at capacity; replacement needs peak room.
+- Both previous writers admitted 129 files. Retained failing checks also exposed
+  boolean ledger-version acceptance and an outdated rename fault-injection hook;
+  both are fixed. Final local engine 164, CLI 30 and actual Docker 16 tests pass.
+  Fifteen export tests per package exercise the real production ceilings and
+  smaller fault budgets. Counts overlap earlier suites; do not sum them.
+- All five engine and all three CLI Linux workflows pass. Downloaded complete
+  scans match source and local findings: engine 24, CLI zero; both 42-package
+  Python audits have no reported vulnerabilities. MIT wheel sources, shared
+  helper and dependency metadata match. Actual arm64/amd64 images match the
+  current source manifest; 26 OS packages and 1,126 signed Cargo identities
+  have no reported findings at the recorded database time.
+- Both actual CLIs agree on 128 shared slots, reject the next output, preserve
+  old destinations and recover after manual deletion. Separate actual default
+  Docker CLI-SDK-API fixture/Anvil/admission/507/503/no-retry checks pass. No new
+  historical or model-performance claim is made. Pinned coordination CI is
+  being verified; frozen historical inputs remain unchanged.
+- See docs/SHARED_EXPORT_BUDGET.md and evidence/export-budget/. This bounds
+  cooperating file-content writers, not pre-existing untracked files, operator
+  moves/renames, older clients, distinct roots, filesystem metadata, host caller
+  processes, images or VM storage. Never reset the ledger to free quota.
+  Both PRs remain unmerged and require independent review; the goal stays active.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
