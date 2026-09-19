@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T20:28:19.526567+00:00",
+  "updated_at": "2026-09-19T20:34:03.263591+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -86,7 +86,8 @@
         "Proposed engine #16/CLI #8 default to bounded worker with explicit native opt-out; failing-before default/FIFO regressions and 129 native/unit, ten real Docker, 15 CLI tests pass",
         "Actual bounded-default local CLI and CLI-SDK-API fixture/Anvil/quota/overload integration, exact archived 19M artifact and fresh installed CI-wheel default checks pass; independent review pending",
         "Coordination #23: pinned Linux bounded-default CLI-SDK-API and public clean-reproduction job passed alongside existing frozen/native jobs; downloaded source/checker/artifact/image-source evidence agrees across arm64/amd64",
-        "Proposed engine #17: one default worker per daemon with owner-label/full-ID cleanup; two failing-before checks, 135 native/unit and 15 real Docker tests including simultaneous creation, host timeout, unstarted slot and independent 181.203-second expiry pass; independent review pending"
+        "Proposed engine #17: one default worker per daemon with owner-label/full-ID cleanup; two failing-before checks, 135 native/unit and 15 real Docker tests including simultaneous creation, host timeout, unstarted slot and independent 181.203-second expiry pass; independent review pending",
+        "Engine #17 and coordination #25: all Linux engine and three cross-repository jobs passed, including shared daemon occupancy/recovery and fresh public reproduction; downloaded source, runner and artifact pins agree; reviews pending"
       ],
       "todo": [
         "Bound host caller overhead, independent export retention and image/VM storage; independently review/integrate default worker admission and the separate agent branch; preserve native, older-client, separate-daemon and pre-entrypoint/daemon-failure limits",

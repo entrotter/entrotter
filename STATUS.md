@@ -336,7 +336,11 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   in the MIT wheel match source. Actual standalone CLI-SDK-API worker occupancy,
   one-POST 429 rejection, preserved exports/incumbent, 507/503 and recovery pass.
   All five engine Linux workflows, including 15 real Docker tests, passed at
-  the exact source commit. Coordination CI is tracked in the evidence summary.
+  the exact source commit. Coordination PR #25 passed all three integration jobs
+  (35467629251) and links (35467629252); downloaded pins, checker, image source
+  and complete report IDs agree. Fresh public clone/venv/build reproduction took
+  7.638 seconds on Linux with running Docker and warm build caches, not a cold
+  machine install. No owned workers remain; the dedicated VM is stopped.
 - See docs/DAEMON_WORKER_ADMISSION.md. Frozen benchmark checkouts remain unchanged.
   This limits cooperating default worker containers on one daemon, not caller
   processes, old/native clients, multiple daemons or image/export/VM storage.

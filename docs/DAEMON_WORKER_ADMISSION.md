@@ -53,3 +53,26 @@ saturation, real Anvil receipts and recovery checks remain enabled.
 - Source/image pins and full local/Linux results belong in
   `evidence/daemon-admission/summary.json`. No mixed-revision test is evidence for
   a final source pin. Tests do not establish a production multi-tenant service.
+
+## Recorded results
+
+Engine commit `0718b20e47a2b69dcd6ac2ac7112f189131f9ec6` passes 135 unit/native
+checks and 15 actual Docker checks locally and in Linux CI. The local independent
+idle expiry was 181.203 seconds. Coordination proof commit
+`eef8a0a9f30bbef4e31ea5e6dc38e5d399ddc084` passes all three integration jobs and
+links. Downloaded results agree on exact dependency/checker/image-source pins
+and complete fixture/Anvil report IDs. Clean public dependency clone, fresh venv,
+worker build and fixture reproduction took 7.638 seconds on Linux, including
+Foundry download with already-running Docker and warm build caches. Installation
+and VM startup are excluded; this is not a cold-machine performance claim.
+
+All 15 Bandit findings remain visible and author-reviewed, and the complete
+42-package Python advisory scan reports no known vulnerabilities. The CI wheel
+contains 14 source-identical Python files and MIT metadata. This does not audit
+native/container-OS dependencies or replace independent security review.
+
+[Engine implementation](https://github.com/entrotter/engine/pull/17) and
+[coordination evidence](https://github.com/entrotter/entrotter/pull/25) remain
+unmerged. The dedicated VM is stopped with no owned workers remaining and the
+original Docker context preserved. Earlier failed assumptions/configurations are
+retained under `evidence/daemon-admission/failures/` with their limited scope.
