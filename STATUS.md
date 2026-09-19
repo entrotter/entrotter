@@ -161,8 +161,9 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   matrix, real-Anvil and actual-Docker CI, plus CLI Python matrix, all passed.
   A real CLI→SDK→API check verified fixture/Anvil reports, 507/503, no POST retry,
   saved/exported equality and recovery. `scripts/check_host_limits.py` makes it
-  reproducible; a dedicated CI job pins the proposed commits independently of
-  frozen benchmark inputs. See `evidence/host-resource-bounds.json`.
+  reproducible; its dedicated pinned CI job and existing workspace job both
+  passed (run 35459506934). Linux and macOS artifact IDs agree. Frozen benchmark
+  inputs are unchanged. See `evidence/host-resource-bounds.json`.
 - These are application file-content limits, not whole-filesystem/VM quotas.
   Independent CLI export retention/concurrency, image/VM storage, native-default
   execution and complete CI hygiene remain open. Socket timeout does not forcibly

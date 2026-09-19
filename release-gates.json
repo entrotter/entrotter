@@ -72,7 +72,8 @@
         "Dedicated real-Docker Linux CI passed 10 enforcement/lifetime tests at engine 05448c3; run 35458208203",
         "API 128 MiB/128-file store and eight-handler absolute socket bounds verified with real files, processes and sockets; engine PR #12 pending review",
         "Eight MiB report exports with atomic failure preservation in engine and standalone CLI; CLI PR #5 pending review",
-        "Actual CLI-SDK-API fixture and native Anvil roundtrips, 507/503 rejection, no automatic POST retry and recovery verified"
+        "Actual CLI-SDK-API fixture and native Anvil roundtrips, 507/503 rejection, no automatic POST retry and recovery verified",
+        "Pinned Linux CLI-SDK-API host-bounds CI passed; artifact IDs agree with macOS integration, run 35459506934"
       ],
       "todo": [
         "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",
@@ -175,6 +176,8 @@
     "evidence/engine-host-bounds-tests.log",
     "evidence/engine-host-bounds-before.log",
     "evidence/cli-export-tests.log",
-    "evidence/cli-export-before.log"
+    "evidence/cli-export-before.log",
+    "evidence/host-limits-ci.json",
+    "evidence/host-bounds-coordination-tests.log"
   ]
 }

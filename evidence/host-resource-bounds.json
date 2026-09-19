@@ -18,6 +18,12 @@
       "skipped": 0,
       "seconds": 0.153,
       "log": "cli-export-tests.log"
+    },
+    "coordination": {
+      "passed": 20,
+      "skipped": 0,
+      "seconds": 1.206,
+      "log": "host-bounds-coordination-tests.log"
     }
   },
   "before_fix_regressions": {
@@ -31,7 +37,11 @@
     "engine_docker": "https://github.com/entrotter/engine/actions/runs/35459064683",
     "engine_python_matrix": "https://github.com/entrotter/engine/actions/runs/35459064751",
     "cli_python_matrix": "https://github.com/entrotter/cli/actions/runs/35459212920",
-    "status": "all engine and CLI jobs passed; coordination host-bounds job pending"
+    "status": "all engine, CLI and coordination jobs passed",
+    "coordination_run": "https://github.com/entrotter/entrotter/actions/runs/35459506934",
+    "coordination_source_commit": "09eaa5c",
+    "client_path_report": "host-limits-ci.json",
+    "macos_linux_artifact_ids_equal": true
   },
   "limits": {
     "api_store_content_bytes": 134217728,
