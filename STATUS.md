@@ -511,6 +511,35 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   stacked prerequisites require independent review/merge. Website and separate
   agent-branch quality, broader resource/delivery and submission gates remain open.
 
+## Website quality and decimal inputs: verified, review/deployment pending
+
+- Website PR #11 (`61740312f281f7e911e0eb6e9482a3c372cb1fae`) fixes a
+  reproduced display bug: correctly hashed blank/whitespace or non-decimal metrics
+  could appear as ordinary numbers. Inputs now pass explicit scalar/object checks;
+  invalid imports clear prior data and recover without uploads. The zero-build
+  static runtime, public report/schema/mascot bytes and CSS are preserved.
+- All eight JS files pass ESLint/Prettier and normal TypeScript checkJs with strict
+  null checks (implicit-any remains allowed for tooling). All 14 JS security rules
+  retain 32 source-bound author-reviewed findings. Negative policy tests and a real
+  source-drift failure prove silent acceptance is rejected. Python tests also pass
+  Ruff/mypy/full Bandit with no findings. No rule/advisory ID is suppressed.
+- Local and Linux verification pass 21 JavaScript and ten Python tests, 19 real
+  browser groups and 14 zero-violation axe scans. The identical runner fails the
+  new malformed-metric browser case against the prior source while passing its
+  other 18 groups. Incomplete contrast/manual-assistive-technology limits remain.
+  An introduced source:null compatibility regression was caught and fixed; all
+  19 archived EVM reports retain exact hash acceptance and old/new view models.
+- Integrity locks cover 109 Node package entries including platform-optional tools;
+  42 hash-locked Python packages are audited strictly without known findings/skips.
+  No deployed package runtime is added. The first Linux lint scanned vendored JS
+  in .venv; the failed log is retained and generated-environment scope is fixed.
+  Final Pages checks (35476090427) and docs links (35476090431) pass. Downloaded
+  source/config/lock hashes, all retained findings and Python identities match local.
+- Quality now gates Pages builds alongside units/browser checks. PR build/deploy
+  jobs intentionally skip; this is not a new deployment. See docs/WEBSITE_QUALITY.md
+  and evidence/website-quality/. Independent approval/merge, live verification,
+  separate agent-branch quality and remaining release/submission gates stay open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
