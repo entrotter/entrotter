@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1.0",
+  "updated_at": "2026-09-19T14:54:53.999816+00:00",
+  "overall": "in_progress",
+  "repository_publication": "blocked_missing_write_access",
+  "pages_publication": "not_performed",
+  "codex_goal_registration": "not_performed",
+  "gates": [
+    {
+      "id": "G1",
+      "name": "Reliable real-chain core",
+      "status": "incomplete",
+      "passed": [
+        "offline fixture model",
+        "input validation",
+        "paired EVM adapter implemented"
+      ],
+      "blocked": [
+        "actual Anvil executable",
+        "archive RPC access"
+      ],
+      "todo": [
+        "ERC-20/DeFi adapter",
+        "pinned historical execution evidence"
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "Agent value and reproducibility",
+      "status": "incomplete",
+      "passed": [
+        "causal deterministic policies",
+        "reproducible synthetic reports",
+        "adverse recovery example"
+      ],
+      "todo": [
+        "actual agent integration",
+        "recorded actions",
+        "sourced scenarios and holdouts",
+        "competitor/task comparison"
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Security and delivery",
+      "status": "partial",
+      "passed": [
+        "local API bounds",
+        "read-only upstream transport",
+        "artifact verification",
+        "contribution scaffolding",
+        "installed package smoke"
+      ],
+      "todo": [
+        "real EVM cancellation tests",
+        "sandbox quotas",
+        "full security review",
+        "lint/types/dependency checks",
+        "remote CI and branch protection"
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "OSS Pages site",
+      "status": "incomplete",
+      "passed": [
+        "static site source",
+        "local report import code",
+        "JavaScript hash tests",
+        "Pages workflow prepared"
+      ],
+      "blocked": [
+        "browser administrator policy",
+        "GitHub write/Pages administration access"
+      ],
+      "todo": [
+        "verified public HTTP deployment",
+        "browser and accessibility review",
+        "EVM result viewer"
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "Competition and demand evidence",
+      "status": "incomplete",
+      "passed": [
+        "honest goal and backlog",
+        "competition requirements note"
+      ],
+      "todo": [
+        "recorded pitch and demo",
+        "real user feedback",
+        "market hypothesis validation",
+        "submission review"
+      ],
+      "requires_approval": [
+        "outreach",
+        "paid services",
+        "actual competition submission"
+      ]
+    }
+  ],
+  "test_summary": {
+    "python_passed": 105,
+    "javascript_passed": 8,
+    "skipped": 1,
+    "real_anvil_runs": 0,
+    "historical_runs": 0,
+    "browser_checks_completed": 0
+  },
+  "evidence": [
+    "evidence/verification.json",
+    "evidence/package-smoke.json",
+    "evidence/browser-verification.json"
+  ]
+}

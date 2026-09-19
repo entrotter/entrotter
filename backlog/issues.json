@@ -1,0 +1,50 @@
+[
+  {
+    "repository": "engine",
+    "title": "Validate real Anvil execution and cleanup",
+    "file": "backlog/01-validate-real-anvil.md",
+    "label": "priority:p0"
+  },
+  {
+    "repository": "engine",
+    "title": "Add one pinned-state ERC-20 / DeFi action adapter",
+    "file": "backlog/02-defi-adapter.md",
+    "label": "priority:p1"
+  },
+  {
+    "repository": "engine",
+    "title": "Add constrained causal agent action interface",
+    "file": "backlog/03-agent-interface.md",
+    "label": "priority:p1"
+  },
+  {
+    "repository": "scenarios",
+    "title": "Add a sourced historical scenario and negative control",
+    "file": "backlog/04-historical-evidence.md",
+    "label": "priority:p1"
+  },
+  {
+    "repository": "sdk-python",
+    "title": "Add a small end-to-end SDK example",
+    "file": "backlog/05-sdk-examples.md",
+    "label": "good first issue"
+  },
+  {
+    "repository": "cli",
+    "title": "Improve CLI errors and command examples",
+    "file": "backlog/06-help-diagnostics.md",
+    "label": "good first issue"
+  },
+  {
+    "repository": "entrotter.github.io",
+    "title": "Render EVM reports safely in the static explorer",
+    "file": "backlog/07-evm-report-viewer.md",
+    "label": "priority:p1"
+  },
+  {
+    "repository": "entrotter",
+    "title": "Prepare a genuine developer demo and validation record",
+    "file": "backlog/08-submission-evidence.md",
+    "label": "priority:p1"
+  }
+]

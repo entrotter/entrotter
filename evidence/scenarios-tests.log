@@ -1,0 +1,9 @@
+test_all_runtime_validate (test_scenarios.ScenarioTests.test_all_runtime_validate) ... ok
+test_json_schema (test_scenarios.ScenarioTests.test_json_schema) ... ok
+test_manifest_paths (test_scenarios.ScenarioTests.test_manifest_paths) ... ok
+test_no_real_claims_in_synthetic (test_scenarios.ScenarioTests.test_no_real_claims_in_synthetic) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.035s
+
+OK

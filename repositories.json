@@ -1,0 +1,31 @@
+{
+  "organization": "entrotter",
+  "visibility": "public",
+  "license": "MIT",
+  "repositories": [
+    {
+      "name": "entrotter",
+      "description": "Project coordination, reproducible workspace tooling, roadmap and Codex goal"
+    },
+    {
+      "name": "engine",
+      "description": "Local-first simulation engine, bounded development API and isolated Anvil adapter"
+    },
+    {
+      "name": "sdk-python",
+      "description": "Typed Python client and artifact integrity verification"
+    },
+    {
+      "name": "cli",
+      "description": "Command-line entry point for researchers and agent developers"
+    },
+    {
+      "name": "scenarios",
+      "description": "Versioned scenario schemas, synthetic stress tests and EVM examples"
+    },
+    {
+      "name": "entrotter.github.io",
+      "description": "Static OSS documentation and read-only report explorer for GitHub Pages"
+    }
+  ]
+}

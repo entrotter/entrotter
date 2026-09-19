@@ -1,0 +1,15 @@
+{
+  "executed_at": "2026-09-19T14:54:53.999816+00:00",
+  "status": "passed",
+  "python": "3.13.5",
+  "installation": "Editable sibling source packages installed with --no-index --no-build-isolation --no-deps. The installed setuptools from the preparation environment was supplied during the build only.",
+  "commands": [
+    "entrotter doctor",
+    "entrotter run scenarios/fixtures/liquidity-shock.json --local -o report.json",
+    "entrotter verify report.json",
+    "entrotter inspect report.json"
+  ],
+  "evidence": "package-smoke.log",
+  "anvil_validation": "not_performed",
+  "package_publication": "not_performed"
+}

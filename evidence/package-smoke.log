@@ -1,0 +1,52 @@
+$ /mnt/data/entrotter-tools/smoke-env/bin/entrotter doctor
+exit_code: 0
+{
+  "python": "3.13.5",
+  "anvil_installed": false,
+  "archive_rpc_configured": false,
+  "api_token_configured": false
+}
+
+
+$ /mnt/data/entrotter-tools/smoke-env/bin/entrotter run /mnt/data/entrotter-workspace/scenarios/fixtures/liquidity-shock.json --local -o /mnt/data/entrotter-tools/installed-smoke.json
+exit_code: 0
+fixture | e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6 | /mnt/data/entrotter-tools/installed-smoke.json
+
+
+$ /mnt/data/entrotter-tools/smoke-env/bin/entrotter verify /mnt/data/entrotter-tools/installed-smoke.json
+exit_code: 0
+SHA-256 verified: e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6. Integrity is not proof of model correctness.
+
+
+$ /mnt/data/entrotter-tools/smoke-env/bin/entrotter inspect /mnt/data/entrotter-tools/installed-smoke.json
+exit_code: 0
+{
+  "mode": "fixture",
+  "scenario": "liquidity-shock",
+  "baseline": {
+    "initial_equity": "10000",
+    "final_equity": "5800",
+    "return_pct": "-42.00",
+    "max_drawdown_pct": "52.4271844660194174757281553398058252427184466019417475728155",
+    "fees": "0",
+    "trades": 0
+  },
+  "candidate": {
+    "initial_equity": "10000",
+    "final_equity": "8557.051600",
+    "return_pct": "-14.42948400",
+    "max_drawdown_pct": "16.9218291262135922330097087378640776699029126213592233009709",
+    "fees": "25.748400",
+    "trades": 1
+  },
+  "comparison": {
+    "final_equity_delta": "2757.051600"
+  },
+  "assumptions": [
+    "Synthetic exogenous price path; not a historical replay.",
+    "Both policies observe identical prices with no future lookahead.",
+    "Immediate fills with fixed fees/slippage; no gas, MEV, market impact or liquidity model.",
+    "No real money, chain transaction or LLM is used."
+  ]
+}
+

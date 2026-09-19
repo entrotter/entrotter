@@ -1,0 +1,11 @@
+test_all_exported_reports_reproduce_exactly (test_workspace.WorkspaceTests.test_all_exported_reports_reproduce_exactly) ... ok
+test_cli_local_verify_inspect (test_workspace.WorkspaceTests.test_cli_local_verify_inspect) ... ok
+test_copied_fixture_contract (test_workspace.WorkspaceTests.test_copied_fixture_contract) ... ok
+test_no_cname (test_workspace.WorkspaceTests.test_no_cname) ... ok
+test_public_manifest_boundaries (test_workspace.WorkspaceTests.test_public_manifest_boundaries) ... ok
+test_sdk_api_roundtrip (test_workspace.WorkspaceTests.test_sdk_api_roundtrip) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.533s
+
+OK

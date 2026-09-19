@@ -1,0 +1,6 @@
+{
+  "status": "blocked",
+  "checks_completed": [],
+  "reason": "Chromium navigation to the local test server returned net::ERR_BLOCKED_BY_ADMINISTRATOR. No visual or full browser verification is claimed.",
+  "fallback": "Production JavaScript hashing/metric functions are tested separately in Node without browser navigation."
+}

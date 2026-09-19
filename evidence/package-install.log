@@ -1,0 +1,33 @@
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Obtaining file:///mnt/data/entrotter-workspace/engine
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Obtaining file:///mnt/data/entrotter-workspace/sdk-python
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Obtaining file:///mnt/data/entrotter-workspace/cli
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: entrotter-engine, entrotter-sdk, entrotter-cli
+  Building editable for entrotter-engine (pyproject.toml): started
+  Building editable for entrotter-engine (pyproject.toml): finished with status 'done'
+  Created wheel for entrotter-engine: filename=entrotter_engine-0.1.0-0.editable-py3-none-any.whl size=4671 sha256=a9f9b7f4848d68d961358674527d9054ad7a2a7c46a31d09689e8294265c55bb
+  Stored in directory: /tmp/pip-ephem-wheel-cache-klujs6_r/wheels/eb/61/7e/36d228f4c63fce0f47f5be977b1bda7861e4d940823654fe31
+  Building editable for entrotter-sdk (pyproject.toml): started
+  Building editable for entrotter-sdk (pyproject.toml): finished with status 'done'
+  Created wheel for entrotter-sdk: filename=entrotter_sdk-0.1.0-0.editable-py3-none-any.whl size=3518 sha256=95ed2e9d157de5cf62b93f3f3e08126771a90d912d0c6bd2eaabfce69eb718a0
+  Stored in directory: /tmp/pip-ephem-wheel-cache-klujs6_r/wheels/5a/ac/9e/de802bf8c46dba71674a35bc63f5e8b9d8f736e44b772c3d56
+  Building editable for entrotter-cli (pyproject.toml): started
+  Building editable for entrotter-cli (pyproject.toml): finished with status 'done'
+  Created wheel for entrotter-cli: filename=entrotter_cli-0.1.0-0.editable-py3-none-any.whl size=3722 sha256=97f665b7fd80bf33d1b73d698187b172ccefb5a968bed279c2069d93a892dab9
+  Stored in directory: /tmp/pip-ephem-wheel-cache-klujs6_r/wheels/dd/7e/6f/d23483a04bba7e92d2d7f492d2b5c96be1c9cfb2f55a2bbe3e
+Successfully built entrotter-engine entrotter-sdk entrotter-cli
+Installing collected packages: entrotter-sdk, entrotter-engine, entrotter-cli
+
+Successfully installed entrotter-cli-0.1.0 entrotter-engine-0.1.0 entrotter-sdk-0.1.0
