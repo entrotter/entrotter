@@ -1,7 +1,8 @@
 {
-  "executed_at": "2026-09-19T15:26:19.197354+00:00",
+  "executed_at": "2026-09-19T15:52:08.676695+00:00",
   "python": "3.13.0",
   "anvil_installed": true,
+  "anvil_version": "anvil Version: 1.8.3\nCommit SHA: cae51ad458f6abb64852b7709eb784352429825d\nBuild Timestamp: 2026-09-15T10:34:23.361078000Z (1789468463)\nBuild Profile: dist",
   "archive_rpc_configured": false,
   "historical_execution": "not_performed_by_this_script",
   "checks": [

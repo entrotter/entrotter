@@ -16,9 +16,9 @@ an Anvil adapter for paired local or archived-state EVM execution. Genuine Anvil
 and archive-RPC validation is a separate gate: do not infer it from offline tests.
 See `STATUS.md` and `evidence/` for exactly what has and has not run.
 
-No npm/PyPI packages, cloud service, GitHub repositories, or Pages deployment
-have been published by the preparation environment. Package names and URLs
-below describe the intended destination, not a completed deployment.
+All six repositories are public at the links below. The documentation site is
+live at https://entrotter.github.io/. Packages remain unpublished and the engine
+runs locally. See STATUS.md for current verification and open acceptance gates.
 
 ## Repositories
 
@@ -37,7 +37,16 @@ contribution boundary that justifies another repository.
 
 ## Quick start without dependencies or an API key
 
-From the workspace folder containing the six repositories:
+Clone the public repositories as siblings first:
+
+```bash
+mkdir entrotter-workspace && cd entrotter-workspace
+for repo in entrotter engine sdk-python cli scenarios entrotter.github.io; do
+  git clone https://github.com/entrotter/$repo.git "$repo"
+done
+```
+
+From that workspace folder:
 
 ```bash
 export PYTHONPATH="$PWD/engine/src:$PWD/sdk-python/src:$PWD/cli/src"
@@ -89,8 +98,8 @@ python3 -m entrotter_cli run scenarios/evm/local-branch-revert.json --local -o l
 python3 -m entrotter_cli run scenarios/evm/ethereum-state-fork.json --local -o historical-fork.json
 ```
 
-EVM native balance changes are not PnL. Balances of ERC-20 tokens are not yet
-tracked. Every report contains its scenario, overrides, trace, assumptions and
+EVM native/token balance changes are not PnL. Explicitly listed ERC-20 tokens
+are tracked with verified decimals and exact raw-unit deltas. Every report contains its scenario, overrides, trace, assumptions and
 SHA-256 digest. The digest detects content changes; it does not prove a simulator
 or its economic assumptions are correct.
 
@@ -121,3 +130,21 @@ Read `CODEX_GOAL.md`, `ROADMAP.md`, `STATUS.md` and `backlog/`. The goal is an
 excellent, independently reproducible submission, not a claim that winning
 can be guaranteed. Store measured evidence, real feedback and remaining risks.
 Do not stop after building a landing page. Do not mark blockers as completed.
+
+## Actual archived-state evidence
+
+The [Uniswap scenario](https://github.com/entrotter/scenarios/blob/main/evm/ethereum-uniswap-slippage.json)
+compares a successful 1 WETH swap with a reverted minimum-output intervention on
+identical Ethereum block 19,000,000 state. Two runs yielded identical artifacts;
+see `evidence/historical-verification.json` for timings and resource scope.
+
+```bash
+# Public endpoint used during verification; archive availability can change.
+export ENTROTTER_RPC_URL=https://eth.drpc.org
+PYTHONPATH=engine/src python3 entrotter/scripts/check_historical.py
+```
+
+Foundry v1.8.3 is required. On macOS, if Python lacks a certificate bundle, set
+`SSL_CERT_FILE=/etc/ssl/cert.pem` to use the trusted OS bundle. Never disable TLS.
+This is supplied-action execution on archived state, not historical trace replay,
+a reconstructed alternative market, or an integrated-agent benchmark.

@@ -1,0 +1,44 @@
+[
+  {
+    "repository": "engine",
+    "enable_exit_code": 0,
+    "verified": {
+      "enabled": true
+    }
+  },
+  {
+    "repository": "sdk-python",
+    "enable_exit_code": 0,
+    "verified": {
+      "enabled": true
+    }
+  },
+  {
+    "repository": "cli",
+    "enable_exit_code": 0,
+    "verified": {
+      "enabled": true
+    }
+  },
+  {
+    "repository": "scenarios",
+    "enable_exit_code": 0,
+    "verified": {
+      "enabled": true
+    }
+  },
+  {
+    "repository": "entrotter.github.io",
+    "enable_exit_code": 0,
+    "verified": {
+      "enabled": true
+    }
+  },
+  {
+    "repository": "entrotter",
+    "enable_exit_code": 0,
+    "verified": {
+      "enabled": true
+    }
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "repo": "engine",
+    "status": "enabled",
+    "required_approvals": 1,
+    "enforce_admins": true,
+    "checks": [
+      "unit (3.11)",
+      "unit (3.12)",
+      "unit (3.13)",
+      "evm"
+    ],
+    "allow_force_pushes": false
+  },
+  {
+    "repo": "sdk-python",
+    "status": "enabled",
+    "required_approvals": 1,
+    "enforce_admins": true,
+    "checks": [
+      "unit (3.11)",
+      "unit (3.12)",
+      "unit (3.13)"
+    ],
+    "allow_force_pushes": false
+  },
+  {
+    "repo": "cli",
+    "status": "enabled",
+    "required_approvals": 1,
+    "enforce_admins": true,
+    "checks": [
+      "unit (3.11)",
+      "unit (3.12)",
+      "unit (3.13)"
+    ],
+    "allow_force_pushes": false
+  },
+  {
+    "repo": "scenarios",
+    "status": "enabled",
+    "required_approvals": 1,
+    "enforce_admins": true,
+    "checks": [
+      "validate"
+    ],
+    "allow_force_pushes": false
+  },
+  {
+    "repo": "entrotter.github.io",
+    "status": "enabled",
+    "required_approvals": 1,
+    "enforce_admins": true,
+    "checks": [
+      "check"
+    ],
+    "allow_force_pushes": false
+  }
+]

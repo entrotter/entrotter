@@ -1,43 +1,47 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T14:54:53.999816+00:00",
+  "updated_at": "2026-09-19T15:51:43.293224+00:00",
   "overall": "in_progress",
-  "repository_publication": "blocked_missing_write_access",
-  "pages_publication": "not_performed",
-  "codex_goal_registration": "not_performed",
+  "repository_publication": "six_public_repositories_verified",
+  "pages_publication": "live_latest_evm_viewer_verified",
+  "codex_goal_registration": "active",
   "gates": [
     {
       "id": "G1",
       "name": "Reliable real-chain core",
-      "status": "incomplete",
+      "status": "partial",
       "passed": [
         "offline fixture model",
-        "input validation",
-        "paired EVM adapter implemented"
+        "real Anvil transfer/revert/rejection",
+        "paired process isolation and fault-injection cleanup",
+        "ERC-20 decimal and balance observations",
+        "Uniswap exact-input action adapter",
+        "two identical archived Ethereum state executions with source hash and receipts"
       ],
-      "blocked": [
-        "actual Anvil executable",
-        "archive RPC access"
-      ],
+      "blocked": [],
       "todo": [
-        "ERC-20/DeFi adapter",
-        "pinned historical execution evidence"
+        "stronger execution budgets and signal/process fault coverage",
+        "historical trace replay is unsupported; preserve explicit separation",
+        "more assumptions and adverse scenarios in benchmark"
       ]
     },
     {
       "id": "G2",
       "name": "Agent value and reproducibility",
-      "status": "incomplete",
+      "status": "partial",
       "passed": [
         "causal deterministic policies",
         "reproducible synthetic reports",
-        "adverse recovery example"
+        "adverse recovery example",
+        "clean public checkout reproduction in fresh stdlib-only venv: 5.335 seconds",
+        "single historical source case repeated identically",
+        "clean public checkout historical run in 13.877 seconds, exact artifact match"
       ],
       "todo": [
-        "actual agent integration",
-        "recorded actions",
-        "sourced scenarios and holdouts",
-        "competitor/task comparison"
+        "constrained typed causal agent interface",
+        "actual agent integration and recorded model/tool actions",
+        "three sourced scenarios plus untouched holdouts",
+        "same-task direct Anvil comparison"
       ]
     },
     {
@@ -49,49 +53,53 @@
         "read-only upstream transport",
         "artifact verification",
         "contribution scaffolding",
-        "installed package smoke"
+        "installed package smoke",
+        "real cancellation/startup timeout/missing-receipt cleanup checks",
+        "64 MiB per-EVM memory cap and persistent fork cache disabled",
+        "public CI including real Anvil passed",
+        "private vulnerability reporting verified on six repos",
+        "five component main branches require CI and one approval, including admins"
       ],
       "todo": [
-        "real EVM cancellation tests",
-        "sandbox quotas",
-        "full security review",
-        "lint/types/dependency checks",
-        "remote CI and branch protection"
+        "SIGTERM and hard whole-process CPU/memory/time/disk quotas",
+        "complete lint/type/dependency/security/docs-link CI",
+        "coordination repo main protection pending checkpoint merge",
+        "remaining cross-repo dependency pins"
       ]
     },
     {
       "id": "G4",
       "name": "OSS Pages site",
-      "status": "incomplete",
+      "status": "partial",
       "passed": [
-        "static site source",
-        "local report import code",
-        "JavaScript hash tests",
-        "Pages workflow prepared"
+        "Pages deployment and live HTTP 200 verified",
+        "live desktop/mobile rendering",
+        "tamper rejection, inert hostile text and local-only import",
+        "keyboard skip link",
+        "no third-party browser requests",
+        "EVM report viewer local browser checks passed",
+        "latest EVM viewer deployed and verified on desktop/mobile"
       ],
-      "blocked": [
-        "browser administrator policy",
-        "GitHub write/Pages administration access"
-      ],
+      "blocked": [],
       "todo": [
-        "verified public HTTP deployment",
-        "browser and accessibility review",
-        "EVM result viewer"
+        "broader accessibility and link audit"
       ]
     },
     {
       "id": "G5",
       "name": "Competition and demand evidence",
-      "status": "incomplete",
+      "status": "partial",
       "passed": [
         "honest goal and backlog",
-        "competition requirements note"
+        "competition requirements note",
+        "current official event and rules checked; exact PT/UTC/JST deadline recorded"
       ],
       "todo": [
+        "verify joined registration and owner eligibility",
         "recorded pitch and demo",
-        "real user feedback",
-        "market hypothesis validation",
-        "submission review"
+        "three genuine user evaluations",
+        "market hypothesis and interview material",
+        "submission index and owner review"
       ],
       "requires_approval": [
         "outreach",
@@ -101,16 +109,23 @@
     }
   ],
   "test_summary": {
-    "python_passed": 105,
-    "javascript_passed": 8,
-    "skipped": 1,
-    "real_anvil_runs": 0,
-    "historical_runs": 0,
-    "browser_checks_completed": 0
+    "python_passed": 121,
+    "javascript_passed": 13,
+    "skipped": 0,
+    "historical_repeat_runs": 2,
+    "note": "Historical runs are separate from offline/local tests. Details in evidence files; no full-gate completion claim."
   },
   "evidence": [
     "evidence/verification.json",
     "evidence/package-smoke.json",
-    "evidence/browser-verification.json"
+    "evidence/browser-verification.json",
+    "evidence/foundry-install.json",
+    "evidence/historical-verification.json",
+    "evidence/historical-uniswap.json",
+    "evidence/clean-reproduction.json",
+    "evidence/publication.json",
+    "evidence/repository-security.json",
+    "evidence/clean-historical-reproduction.json",
+    "evidence/branch-protection.json"
   ]
 }

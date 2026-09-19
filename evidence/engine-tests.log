@@ -1,3 +1,10 @@
+test_keyboard_cancellation_reaps_process_and_closes_port (test_anvil_lifecycle.AnvilLifecycleTests.test_keyboard_cancellation_reaps_process_and_closes_port) ... ok
+test_missing_receipt_fails_whole_run_and_cleans_up (test_anvil_lifecycle.AnvilLifecycleTests.test_missing_receipt_fails_whole_run_and_cleans_up) ... ok
+test_rejected_transaction_is_not_a_revert_or_success (test_anvil_lifecycle.AnvilLifecycleTests.test_rejected_transaction_is_not_a_revert_or_success) ... ok
+test_rpc_fault_reaps_process_and_closes_port (test_anvil_lifecycle.AnvilLifecycleTests.test_rpc_fault_reaps_process_and_closes_port) ... ok
+test_simultaneous_nodes_have_isolated_mutable_state (test_anvil_lifecycle.AnvilLifecycleTests.test_simultaneous_nodes_have_isolated_mutable_state) ... ok
+test_startup_cancellation_reaps_real_subprocess (test_anvil_lifecycle.AnvilLifecycleTests.test_startup_cancellation_reaps_real_subprocess) ... ok
+test_startup_timeout_reaps_real_subprocess (test_anvil_lifecycle.AnvilLifecycleTests.test_startup_timeout_reaps_real_subprocess) ... ok
 test_auth (test_api.APITests.test_auth) ... ok
 test_browser_request_rejected (test_api.APITests.test_browser_request_rejected) ... ok
 test_concurrency_limit (test_api.APITests.test_concurrency_limit) ... ok
@@ -9,6 +16,14 @@ test_missing_report (test_api.APITests.test_missing_report) ... ok
 test_path_traversal (test_api.APITests.test_path_traversal) ... ok
 test_payload_limit (test_api.APITests.test_payload_limit) ... ok
 test_roundtrip (test_api.APITests.test_roundtrip) ... ok
+test_abi_unsigned_bounds (test_defi.DefiBoundaryTests.test_abi_unsigned_bounds) ... ok
+test_approve_is_exact_amount_and_spender (test_defi.DefiBoundaryTests.test_approve_is_exact_amount_and_spender) ... ok
+test_fixture_cannot_request_token_rpc_reads (test_defi.DefiBoundaryTests.test_fixture_cannot_request_token_rpc_reads) ... ok
+test_nonstandard_token_does_not_silently_report_zero (test_defi.DefiBoundaryTests.test_nonstandard_token_does_not_silently_report_zero) ... ok
+test_swap_encoding_matches_solidity_abi_tool (test_defi.DefiBoundaryTests.test_swap_encoding_matches_solidity_abi_tool) ... ok
+test_token_metadata_bounds_and_uniqueness (test_defi.DefiBoundaryTests.test_token_metadata_bounds_and_uniqueness) ... ok
+test_real_storage_and_token_deltas_are_branch_isolated (test_defi.RealTokenTests.test_real_storage_and_token_deltas_are_branch_isolated) ... ok
+test_wrong_decimal_pin_fails_execution (test_defi.RealTokenTests.test_wrong_decimal_pin_fails_execution) ... ok
 test_native_transfer_and_revert (test_engine.ActualAnvilTests.test_native_transfer_and_revert) ... ok
 test_assumptions_visible (test_engine.FixtureTests.test_assumptions_visible) ... ok
 test_breaker_sells_once (test_engine.FixtureTests.test_breaker_sells_once) ... ok
@@ -65,6 +80,6 @@ test_unknown_policy (test_engine.ValidationTests.test_unknown_policy) ... ok
 test_zero_price (test_engine.ValidationTests.test_zero_price) ... ok
 
 ----------------------------------------------------------------------
-Ran 65 tests in 0.904s
+Ran 80 tests in 2.315s
 
 OK

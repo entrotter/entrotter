@@ -1,86 +1,81 @@
 # Verified implementation status
 
-Recorded 2026-09-19. **Experimental local implementation, not a competition-ready
-release, not a deployed service.** All repository names below are intended destinations.
+Updated 2026-09-20 JST. **Goal active; not submission-ready.** This turn made
+implementation and deployment progress. All six repositories now exist publicly
+under https://github.com/entrotter. Do not repeat archive bootstrap or overwrite
+remote history. Use the existing six sibling Git checkouts and focused PRs.
 
-## Implemented and exercised
+## Verified progress
 
-- Six separate MIT-licensed repository directories with contribution/security guides,
-  PR/issue templates and GitHub Actions configuration.
-- Deterministic synthetic stress tests with causal hold/circuit-breaker policies,
-  explicit fees and slippage, traces, drawdown and sealed JSON result artifacts.
-- Three synthetic scenarios including an unfavorable recovery case; the generated
-  public reports reproduce exactly. None is claimed to be historical evidence.
-- Loopback-only development HTTP API; SDK and CLI round trips; artifact tampering
-  rejection and input/transport boundaries.
-- Genuine editable package installation and installed `entrotter` console-command
-  smoke test passed. Runtime packages use only the Python standard library.
-- Static, dependency-free documentation/report site with local JSON import,
-  SHA-256 checking and no upload/account/wallet/payment functionality.
-- Repo/Pages publication script, default dry-run, and a detailed Codex goal.
+- Foundry v1.8.3 release archive downloaded and SHA-256 checked against GitHub
+  release metadata. Local executable: `../.tools/foundry-v1.8.3/anvil` from this
+  coordination repo. `evidence/foundry-install.json` records exact version/digest.
+- Full workspace check: **121 Python tests and 13 JavaScript tests passed**,
+  including actual Anvil transfer/revert/rejection, state isolation, startup
+  timeout/cancellation, missing receipt cleanup, token storage and decimal pins.
+  Fault-injection tests are labelled; no real EVM test was silently replaced.
+- Engine PRs #6 and #7 merged after passing Python matrix and dedicated real EVM
+  CI. Current engine: `6a3e03341eccd44fcd04a990db21cc5509e0c84d`.
+- Exact ERC-20 token deltas and legacy Uniswap v3 ABI builder implemented.
+  Scenario PR #4 merged. Website PR #7 merged; follow-up improves summary units.
+- Actual Ethereum block 19,000,000, hash
+  `0xcf384012b91b081230cdf17a3f7dd370d8e67056058af6b272b3d54aa2714fac`:
+  baseline swaps 1 WETH into 2,556.134769 USDC. Candidate's excessive minimum
+  output reverts, retains 1 WETH and consumes gas. Initial tracked balances and
+  native funding are identical. No portfolio valuation or profit is asserted.
+- Two historical runs produced identical complete artifacts, measured at 9.365
+  and 8.621 seconds. `evidence/historical-verification.json` records CPU and peak
+  child RSS with measurement scope. `historical-uniswap.json` contains receipts.
+- Offline example reproduced from fresh public dependency checkouts and a new
+  venv without pip/system packages in 5.335 seconds. Exact pins and scope are in
+  `evidence/clean-reproduction.json`; the coordination checkout was already present.
+- The historical example also reproduced from clean public checkouts in a fresh
+  venv in 13.877 seconds, matching the public artifact exactly. See
+  `evidence/clean-historical-reproduction.json`.
+- Initial Pages deployment succeeded and live HTML matched the repository.
+  Browser checks covered desktop/mobile, negative fixture, hash rejection,
+  hostile Unicode/HTML-like input, no upload/third-party requests and skip link.
+  Latest EVM viewer is also verified live: deployment run 35453228118, commit
+  `ab121348b0ffbec5650f9eadf0a0b11f639d9780`. See `evidence/browser-verification.json`.
+- Private vulnerability reporting enabled and independently read back on all six
+  repositories. `evidence/repository-security.json` records results.
+- Official Colosseum event/rules checked: deadline October 12, 2026 at 23:59 PT
+  = October 13 at 06:59 UTC / 15:59 JST. `docs/COMPETITION.md` links sources.
 
-## Verification evidence
+## Reproduction commands
 
-| Check | Observed outcome | Evidence |
-| --- | --- | --- |
-| Python unit and workspace integration tests | 105 passed, 1 skipped | `evidence/*-tests.log`, `evidence/verification.json` |
-| Production website JavaScript functions tested in Node | 8 passed | `evidence/website-javascript-tests.log` |
-| Editable installation and CLI run/verify/inspect | Passed | `evidence/package-install.log`, `evidence/package-smoke.log` |
-| CLI -> SDK -> local HTTP API -> engine | Passed | `tests/test_workspace.py`, test logs |
-| Three public example artifacts | Reproduced exactly, digest verified | Workspace tests and website report files |
-| Actual Anvil execution | NOT RUN: executable unavailable | Explicit skipped integration test |
-| Historical archive-state execution | NOT RUN: no archive RPC credential | No historical success claim |
-| Full browser/visual/accessibility verification | BLOCKED before navigation | `evidence/browser-verification.json` |
-| GitHub repository creation/push | NOT PERFORMED | GitHub tools read-only; no authenticated gh CLI |
-| GitHub Pages deployment | NOT PERFORMED | Workflow prepared only, no public URL verified |
-| Codex persistent goal | NOT REGISTERED | Goal files prepared; no active Codex session |
-
-Do not equate 113 passing offline/HTTP/JavaScript tests with a verified historical
-simulation. Mocks and synthetic examples are not live-chain or product-demand evidence.
-The browser was blocked by an administrator navigation policy; no bypass was attempted.
-The Python HTTP tests are not browser rendering tests.
-
-## Implemented but not yet validated end to end
-
-`engine/evm.py` owns two localhost Anvil instances and supports supplied local
-transactions or an archive-state fork with pinned source metadata. Tests exercise
-validation, transport restrictions and mocked lifecycle paths, but **the real Anvil
-integration has not run in this environment**. It can contain bugs until that gate passes.
-It re-executes supplied actions, not a changed market history or a complete alternative
-future. Actor funding overrides and absent token valuation are disclosed in reports.
-
-## Still to implement
-
-- A useful ERC-20/DeFi action adapter and meaningful token/portfolio state deltas.
-- A genuine historical scenario with verified source chain/block/hash and evidence.
-- External agent integration, recorded tool actions, held-out benchmark scenarios.
-- EVM report presentation in the website (currently only fixture results render).
-- Production sandbox/resource quotas and hosted service hardening. The current API
-  must remain localhost-only; no untrusted code execution is supported.
-- Full browser/mobile/accessibility review; stronger release security and lint/type gates.
-- Real user evaluations, recorded demo/pitch and owner-reviewed competition submission.
-
-## Resume in an authorized Codex environment
-
-Open the parent workspace containing all six directories. Read the root `AGENTS.md`,
-`entrotter/CODEX_GOAL.md` and `entrotter/CODEX_START.txt`. Paste the latter into Codex to
-set the current chat's persistent goal; files alone do not start or schedule Codex.
+From the parent workspace (not this repository):
 
 ```bash
-python3 entrotter/scripts/verify.py
-python3 entrotter/scripts/publish.py          # review dry-run plan
-# Requires gh authentication and permission in the existing entrotter organization:
-python3 entrotter/scripts/publish.py --apply
-# After installing the verified Foundry version in a suitable environment:
-python3 entrotter/scripts/verify.py --require-anvil
+PATH="$PWD/.tools/foundry-v1.8.3:$PATH" python3 entrotter/scripts/verify.py --require-anvil
+python3 entrotter/scripts/reproduce_clean.py
+# Add --historical with the archive/Foundry environment below for a clean fork run.
+SSL_CERT_FILE=/etc/ssl/cert.pem PATH="$PWD/.tools/foundry-v1.8.3:$PATH" PYTHONPATH=engine/src ENTROTTER_RPC_URL=https://eth.drpc.org python3 entrotter/scripts/check_historical.py
 ```
 
-If a repository now exists, inspect/clone it and reconcile through PRs. Never overwrite
-remote work with this archive. The intended site is `https://entrotter.github.io/`,
-**not a claim of a live deployment**. Do not create a CNAME or configure any custom domain.
-Record actual URLs, SHAs, Actions outcomes and HTTP verification before updating status.
+The TLS bundle override is for this macOS Python installation; do not disable
+certificate validation. Public archive service availability can change. PublicNode
+served the 2024 block header but rejected state reads as pruned. dRPC served the
+required historical state. Archive failure is explicit, never a synthetic fallback.
 
-Progress toward the Colosseum quality target is governed by `CODEX_GOAL.md` and
-`release-gates.json`. No winning outcome, uninterrupted execution or submitted entry
-is claimed or guaranteed. At a blocker, checkpoint exact facts and continue independent
-approved work rather than fabricating completion.
+## Open gates and next actions
+
+1. All current engine/scenario/viewer changes are merged and live. Five component
+   repos now require passing CI and one PR approval, including admins. Apply the
+   same protection to coordination after its evidence checkpoint merges.
+2. Complete security/delivery: whole-process CPU/RSS/time/disk/concurrency bounds,
+   SIGTERM handling, deeper RPC/API fault tests, lint/types/security/dependency and
+   docs-link CI, remaining immutable dependencies, and branch protections.
+3. Add constrained causal agent observations/actions and one real recorded agent;
+   disclose model/prompt/limits/cost. Build three sourced cases and untouched
+   holdouts. Current manually prescribed actions are not an integrated agent.
+4. Compare the same task with direct Anvil scripting. Historical trace replay remains unsupported; never
+   describe archived-state actions as a reconstructed counterfactual market.
+5. Complete accessibility/link review and submission materials. Actual pitch/demo
+   videos, three genuine target-user evaluations, joined-event verification and
+   owner eligibility remain pending. Outreach and submission require owner approval.
+
+No arbitrary user code execution, public engine, paid service, package publication,
+mainnet transaction, customer outreach or competition submission was performed.
+The current per-EVM memory bound is not a complete process sandbox. Preserve these
+limits in the product and release-gates.json. Overall completion remains unproven.

@@ -17,22 +17,27 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: entrotter/engine
+          ref: 6a3e03341eccd44fcd04a990db21cc5509e0c84d
           path: engine
       - uses: actions/checkout@v4
         with:
           repository: entrotter/sdk-python
+          ref: f65f45de26c2658e2269a02a5dbe7c90c74b1cba
           path: sdk-python
       - uses: actions/checkout@v4
         with:
           repository: entrotter/cli
+          ref: b6a7f4d96cec08f4779968b9f63bab3f9b405fe8
           path: cli
       - uses: actions/checkout@v4
         with:
           repository: entrotter/scenarios
+          ref: b8bf6f025a872dbc6854965c08f3dba587c86d28
           path: scenarios
       - uses: actions/checkout@v4
         with:
           repository: entrotter/entrotter.github.io
+          ref: da2f2e73d6b9599f72930678aac4b41d208ba74e
           path: entrotter.github.io
       - uses: actions/setup-python@v5
         with:

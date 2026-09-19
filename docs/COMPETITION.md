@@ -1,28 +1,21 @@
-# Competition research snapshot and submission evidence
+# Competition requirements — checked 2026-09-20 JST
 
-Checked against the official Colosseum hackathon page on 2026-09-19.
-Source: https://colosseum.com/hackathon
+The [event page](https://colosseum.com/worldsfair) lists October 12, 2026.
+The [official rules, section 5](https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf)
+specify **11:59 p.m. Pacific on October 12, 2026**, equivalent to
+**October 13 at 06:59 UTC / 15:59 JST**. The rules allow schedule changes.
+The joined account/event and completed registration remain unverified.
 
-The displayed Crypto World's Fair window is Sep 14-Oct 12. Confirm the exact
-submission deadline/time zone and current eligibility in the joined event
-before planning the final cutoff. All chains are currently eligible; there is
-no requirement to add a token or deploy an unnecessary smart contract.
+The rules require each member to register, restrict a participant to one team
+and one submission, and specify age, location/sanctions, employment and third-party
+rights conditions. Owner eligibility needs confirmation against section 3.
 
-The official criteria include founder/market fit, insight, execution, market
-size, communication, viability and traction. Good engineering alone is not a
-complete submission. The listed videos are a 2-3 minute presentation and a
-product demo of at most 3 minutes. Disclose relevant pre-event development.
+The [submission FAQ](https://colosseum.com/hackathon) requests product/team details,
+logo, code link, a 2–3 minute pitch, a demo no longer than 3 minutes, and distribution
+and demand evidence. It requires disclosure of relevant prior development.
+Record the supplied archive and Codex-assisted changes separately. Videos and
+three real target-user evaluations are pending; scripts do not prove either.
 
-Entrotter's proposed wedge: developers who need reproducible evidence before
-allowing an onchain agent to act. Proposed revenue hypotheses: paid hosted
-experiments, private scenario packs and team CI reports. These are hypotheses,
-not existing customers, revenue, usage or commitments. Keep commercial SaaS
-operations off the GitHub Pages documentation site.
-
-Evidence to create: runnable installation, a real chain-state demo with source
-pins, at least one unfavorable agent result, measured runtime/cost, comparisons
-with direct Anvil scripting and existing simulation tools, and real user feedback.
-Do not backdate commits, fabricate testing, manufacture customer quotes, send
-unsolicited outreach, or submit the competition entry without the owner's review.
-Record AI assistance and provenance honestly. Record unanswered interview requests
-as unanswered, not as validated demand. There is no guaranteed prize outcome.
+All-chain eligibility is stated in the FAQ. The six public repositories are the
+OSS deliverable; package publication, paid hosting, outreach and final submission
+remain outside current authorization. No prize outcome is promised.
