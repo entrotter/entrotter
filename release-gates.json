@@ -40,7 +40,7 @@
         "actual Codex model decisions on one artificial local-EVM case; metadata and token usage recorded",
         "clean recorded-model replay from fresh public dependencies in 5.148 seconds, no model call",
         "three sourced archived-state cases plus two pre-frozen unused implementation holdouts, all executed with non-agent/risk/model policies",
-        "ten exact risk/model action-record replays on fresh archived-state forks; all models matched slower-than-rule outcomes"
+        "ten exact risk/model action-record replays on fresh archived-state forks; model matched rule decisions and had greater measured runtime in each case"
       ],
       "todo": [
         "same-task direct Anvil comparison",

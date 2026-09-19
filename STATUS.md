@@ -96,7 +96,7 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   passed post-run inspection. Evidence: `evidence/causal-v1/`, with the initial
   missing-RPC failure retained. See `docs/HISTORICAL_AGENT_EVALUATION.md`.
 - Engine/agent schema/model integration remain pending independent review in
-  engine #8, scenarios #5/#6 and coordination #8 plus the forthcoming benchmark PR.
+  engine #8, scenarios #5/#6 and coordination #8/#9.
   Coordination #8 integration CI passed. The holdouts are now evaluated; do not
   reuse them as untouched cases for a tuned policy. All source/prompt pins remain.
 
@@ -113,7 +113,9 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 3. Obtain independent review of the agent and benchmark PRs. Further policy
    tuning needs new unused cases; these two holdouts are now evaluated. The original
    archived Uniswap report remains a manually prescribed intervention example.
-4. Compare the same task with direct Anvil scripting. Historical trace replay remains unsupported; never
+4. Next implementation slice: compare the frozen 19M task with a standalone
+   direct Anvil script, preserving identical proposals, source pins and outcome
+   checks. Record runtime without claiming a statistical speed advantage. Historical trace replay remains unsupported; never
    describe archived-state actions as a reconstructed counterfactual market.
 5. Complete accessibility/link review and submission materials. Actual pitch/demo
    videos, three genuine target-user evaluations, joined-event verification and
