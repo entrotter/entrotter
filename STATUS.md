@@ -288,6 +288,36 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   review remains required. Owned browser/server and clean baseline worktree were
   removed. Frozen engine/scenario inputs are unchanged.
 
+## Proposed bounded execution defaults
+
+- Engine PR #16 (`dddba4a2c3efdd429e36520e8fc9d163888089e2`) routes public runner,
+  CLI and API defaults through the existing bounded worker; missing configuration
+  fails closed. Native execution requires an explicit developer opt-out. CLI PR
+  #8 (`952bfb5aba14b674dd959035a5625fadbd2b07d1`) adds --local --native, rejects
+  older unsupported engines and cannot override an API server's mode.
+- Three default-path checks failed before the change and a FIFO input timed out.
+  Inputs now require regular files and bounded reads. Afterward 129 unit/native
+  engine tests, ten real Docker tests, 15 CLI tests and 20 coordination tests pass.
+  Default runner/engine CLI/API and standalone CLI results agree; missing workers
+  preserve exports. An independent idle worker expired after 181.405 seconds.
+- Actual default CLI-SDK-API fixture/Anvil, 507, 16 busy responses and recovery
+  pass. The default archived 19M run matches the complete prior artifact in
+  10.097 seconds. A fresh public checkout, venv, image build and verified default
+  fixture run took 11.682 seconds with an already-running daemon and warm caches.
+  No cold-machine installation or new model/market-performance claim is made.
+- Engine/CLI quality, matrix, native/Docker and link CI passed. Downloaded scans
+  match source; engine retains 15 findings, CLI has none, and each 42-package audit
+  reports no known vulnerabilities. Downloaded MIT wheels match source and pass
+  a fresh installed default-run/failure-preservation check. Coordination
+  PR #23's three integration jobs passed (35465814576), plus links 35465814613.
+  Downloaded source/runner/artifact pins agree; Linux clean default reproduction
+  took 7.444 seconds including Foundry download, with warm Docker build caches.
+  The dedicated VM is stopped, no owned workers remain and Docker context is unchanged.
+- See docs/BOUNDED_DEFAULT.md, bounded-worker-pins.json and
+  evidence/bounded-default/summary.json. Both changes remain unmerged, the frozen
+  engine/scenario checkouts are unchanged, and the separate agent branch is not
+  incorporated. Aggregate CLI admission/retention and image/VM disk remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -302,11 +332,12 @@ required historical state. Archive failure is explicit, never a synthetic fallba
    tuning needs new unused cases; these two holdouts are now evaluated. The original
    archived Uniswap report remains a manually prescribed intervention example.
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
-   security/delivery gates next: default bounded execution, aggregate CLI budgets
+   security/delivery gates next: aggregate CLI budgets, review/integration of the
+   proposed bounded default,
    and remaining repo quality/native dependency checks. Preserve the frozen engine checkout; use an isolated worktree.
    A dedicated local Colima profile now provides a verified Linux cgroup v2
    Docker daemon. The opt-in worker is tested in engine PR #11; native execution
-   remains the default. See docs/WORKER_SECURITY.md and its measured evidence.
+   remains the main-branch default until PR #16 is reviewed and merged. See docs/WORKER_SECURITY.md and its measured evidence.
    Historical trace replay remains unsupported; do not imply a reconstructed market.
 5. Obtain independent review of the accessibility PR, deploy through protected main,
    and verify the live site; manual assistive-technology evaluation remains open.
