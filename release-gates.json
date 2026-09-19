@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T19:28:14.927786+00:00",
+  "updated_at": "2026-09-19T19:53:37.081177+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -41,7 +41,8 @@
         "clean recorded-model replay from fresh public dependencies in 5.148 seconds, no model call",
         "three sourced archived-state cases plus two pre-frozen unused implementation holdouts, all executed with non-agent/risk/model policies",
         "ten exact risk/model action-record replays on fresh archived-state forks; model matched rule decisions and had greater measured runtime in each case",
-        "six interleaved same-task raw Anvil/Entrotter runs with identical complete common outcomes; no speed advantage shown"
+        "six interleaved same-task raw Anvil/Entrotter runs with identical complete common outcomes; no speed advantage shown",
+        "Proposed bounded-default public clean checkout/venv/image-build/example reproduces exact fixture in 11.682 seconds locally with running Docker and warm caches; not a cold installation measurement"
       ],
       "todo": [
         "independent approval and merge of engine/schema/coordination agent PRs"
@@ -81,10 +82,12 @@
         "Six-repository local and GitHub documentation-link checks passed 102 occurrences with explicit exclusions; complete reports retained, PRs pending review",
         "Reproduced and fixed overload TCP early-close race: failing real-socket regression, 124 native tests, bounded idle/trickle checks, 16-attempt CLI-SDK-API integration and all Linux/Docker/quality CI pass; engine #15/coordination #17 pending independent review",
         "SDK/CLI proposed quality gates: 18/13 local tests, Ruff/mypy, complete zero-finding Bandit scans, 42-package locked audits and installed-wheel checks; both repo CI passed, independent review pending",
-        "Updated SDK/CLI exact source pins passed real Linux CLI-SDK-API fixture/Anvil/quota/16-overload integration; downloaded reports and installed CI wheels verified; coordination #19 pending review"
+        "Updated SDK/CLI exact source pins passed real Linux CLI-SDK-API fixture/Anvil/quota/16-overload integration; downloaded reports and installed CI wheels verified; coordination #19 pending review",
+        "Proposed engine #16/CLI #8 default to bounded worker with explicit native opt-out; failing-before default/FIFO regressions and 129 native/unit, ten real Docker, 15 CLI tests pass",
+        "Actual bounded-default local CLI and CLI-SDK-API fixture/Anvil/quota/overload integration, exact archived 19M artifact and fresh installed CI-wheel default checks pass; independent review pending"
       ],
       "todo": [
-        "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",
+        "Bound aggregate CLI work/retention and image/VM storage; independently review and integrate default workers and the separate agent branch; preserve explicit native/daemon-failure limits",
         "Extend lint/types/security/dependency gates to coordination, scenarios, website and separate agent branch; add native/container-OS advisory coverage",
         "remaining cross-repo dependency pins",
         "Independent review and merge of security, resource and CI PRs, including overload-response fix"
@@ -156,7 +159,10 @@
     "sdk_quality_suite": 18,
     "cli_quality_suite": 13,
     "website_accessibility_groups_per_platform": 18,
-    "website_axe_scans_per_platform": 14
+    "website_axe_scans_per_platform": 14,
+    "bounded_default_engine_native_suite": 129,
+    "bounded_default_real_docker_suite": 10,
+    "bounded_default_cli_suite": 15
   },
   "evidence": [
     "evidence/verification.json",
@@ -214,6 +220,8 @@
     "evidence/docs-links/summary.json",
     "evidence/overload-response/summary.json",
     "evidence/sdk-cli-quality/summary.json",
-    "evidence/website-accessibility/summary.json"
+    "evidence/website-accessibility/summary.json",
+    "evidence/bounded-default/summary.json",
+    "evidence/clean-bounded-reproduction.json"
   ]
 }

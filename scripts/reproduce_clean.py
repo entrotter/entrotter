@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure a public clean-checkout offline run in a fresh stdlib-only venv."""
+"""Measure a public clean checkout; native/recorded defaults stay frozen, bounded is explicit."""
 import argparse
 import json
 import os
@@ -14,8 +14,12 @@ parser = argparse.ArgumentParser()
 mode = parser.add_mutually_exclusive_group()
 mode.add_argument('--historical', action='store_true', help='Require archive RPC and real Anvil; no fallback')
 mode.add_argument('--agent', action='store_true', help='Replay recorded model decisions on local Anvil, no model call')
+mode.add_argument('--bounded', action='store_true', help='Build and use the bounded default from separately pinned public sources')
+parser.add_argument('--foundry-archive', type=Path, help='For --bounded: predownloaded Foundry archive, still checksum-verified')
 args = parser.parse_args()
-pins = json.loads((ROOT / "dependency-pins.json").read_text())
+if args.foundry_archive and not args.bounded:
+    parser.error('--foundry-archive requires --bounded')
+pins = json.loads((ROOT / ("bounded-worker-pins.json" if args.bounded else "dependency-pins.json")).read_text())
 started = time.perf_counter()
 with tempfile.TemporaryDirectory(prefix="entrotter-reproduce-") as folder:
     work = Path(folder)
@@ -29,6 +33,14 @@ with tempfile.TemporaryDirectory(prefix="entrotter-reproduce-") as folder:
     python = str(work / "venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python"))
     env = dict(os.environ)
     env["PYTHONPATH"] = os.pathsep.join(str(work / name / "src") for name in ["engine", "sdk-python", "cli"])
+    image_manifest = None
+    if args.bounded:
+        build = [python, 'scripts/build_worker.py', '--output', str(work / 'image.json')]
+        if args.foundry_archive:
+            build += ['--archive', str(args.foundry_archive.resolve())]
+        subprocess.run(build, cwd=work / 'engine', env=env, check=True, capture_output=True, text=True, timeout=180)
+        image_manifest = json.loads((work / 'image.json').read_text())
+        env['ENTROTTER_WORKER_IMAGE'] = image_manifest['image_id']
     scenario = 'evm/ethereum-uniswap-slippage.json' if args.historical else 'fixtures/liquidity-shock.json'
     sample = 'ethereum-uniswap-slippage.json' if args.historical else 'liquidity-shock.json'
     commands = [
@@ -53,12 +65,16 @@ write_report(run_agent(r["scenario"], AgentController(ReplayPolicy(r["agent"]), 
     assert report == expected
 elapsed = time.perf_counter() - started
 result = {"status": "passed", "wall_seconds_including_clone_and_venv": elapsed,
-          'mode': 'recorded-agent-local-evm' if args.agent else ('archived-state' if args.historical else 'offline'),
+          'mode': 'bounded-offline' if args.bounded else ('recorded-agent-local-evm' if args.agent else ('archived-state' if args.historical else 'offline')),
           "under_five_minutes": elapsed < 300, "dependency_pins": pins,
           "environment": "fresh venv without pip; no system site packages or third-party runtime dependencies",
           "artifact_id": report["artifact_id"], "matches_recorded_sample" if args.agent else "matches_public_sample": True,
           "scope": "five code/data/site repos; coordination checkout already present"}
-filename = 'clean-agent-reproduction.json' if args.agent else ('clean-historical-reproduction.json' if args.historical else 'clean-reproduction.json')
+if args.bounded:
+    result['bounded_worker'] = image_manifest
+    result['prerequisites'] = 'Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included.'
+    result['predownloaded_foundry_archive'] = bool(args.foundry_archive)
+filename = 'clean-bounded-reproduction.json' if args.bounded else ('clean-agent-reproduction.json' if args.agent else ('clean-historical-reproduction.json' if args.historical else 'clean-reproduction.json'))
 (ROOT / 'evidence' / filename).write_text(json.dumps(result, indent=2) + "\n")
 print(json.dumps(result, indent=2))
 raise SystemExit(0 if elapsed < 300 else 1)

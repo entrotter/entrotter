@@ -189,3 +189,8 @@ dependency, packaging and real API checks, including the local SDK provenance.
 [Report viewer accessibility evidence](docs/WEBSITE_ACCESSIBILITY.md) records
 keyboard/reflow regressions, exact chart alternatives and actual Linux browser
 CI. These proposed changes still await review and deployment.
+
+[Bounded default execution](docs/BOUNDED_DEFAULT.md) records the proposed change
+from opt-in workers to normal CLI/API execution with kernel limits. Its separate
+source pins and migration instructions require a local Docker daemon; the frozen
+native examples above remain tied to their existing revisions until review/merge.

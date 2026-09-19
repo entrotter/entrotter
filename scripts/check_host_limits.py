@@ -8,6 +8,7 @@ exercise the production 128-file and 128-MiB defaults.
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import socket
 import subprocess
@@ -56,9 +57,53 @@ def revision(module):
     return commit
 
 
+def check_default_worker(engine, inputs, root, manifest_path):
+    """Real public entrypoints, source-bound image, and unavailable-daemon rejection."""
+    manifest = json.loads(manifest_path.read_text())
+    assert os.environ.get('ENTROTTER_WORKER_IMAGE') == manifest['image_id']
+    sources = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+               for p in (engine / 'src/entrotter_engine').glob('*.py')}
+    sources['Dockerfile'] = hashlib.sha256((engine / 'container/Dockerfile').read_bytes()).hexdigest()
+    assert sources == manifest['source_files']
+    assert hashlib.sha256(json.dumps(sources, sort_keys=True).encode()).hexdigest() == manifest['source_digest']
+    from entrotter_engine.isolated import client, verify_daemon
+    with client() as prefix:
+        info = verify_daemon(prefix)
+        label = subprocess.check_output([*prefix, 'image', 'inspect', '--format',
+                     '{{index .Config.Labels "org.entrotter.source"}}', manifest['image_id']],
+                     text=True, timeout=10).strip()
+    assert label == manifest['source_digest']
+    target = root / 'local-default.json'
+    ids = {}
+    for name, source in inputs.items():
+        base = [sys.executable, '-m', 'entrotter_cli', 'run', str(source), '--local', '-o', str(target)]
+        completed = subprocess.run(base, capture_output=True, text=True, timeout=45)
+        assert completed.returncode == 0, 'Default local CLI execution failed'
+        report = RunResult.parse(json.loads(target.read_bytes())).report
+        ids[name] = report['artifact_id']
+        previous = target.read_bytes()
+        missing = {**os.environ, 'ENTROTTER_DOCKER_SOCKET': str(root / 'missing.sock'),
+                   'ENTROTTER_WORKER_IMAGE': ''}
+        rejected = subprocess.run(base, env=missing, capture_output=True, text=True, timeout=10)
+        assert rejected.returncode == 1 and 'Traceback' not in rejected.stderr
+        assert target.read_bytes() == previous
+        if name == 'fixture':
+            native = subprocess.run([*base, '--native'], env=missing,
+                                    capture_output=True, text=True, timeout=10)
+            assert native.returncode == 0, 'Explicit trusted native control failed'
+            assert json.loads(target.read_bytes()) == report
+    return {'image_id': manifest['image_id'], 'image_source_digest': manifest['source_digest'],
+            'manifest_sha256': hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+            'actual_source_matches_image_manifest_and_label': True,
+            'cgroup_version': info['CgroupVersion'], 'artifact_ids': ids,
+            'local_cli_without_mode_opt_in': True, 'missing_worker_fails_without_export_replacement': True,
+            'explicit_native_fixture_matches': True}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--worker-manifest', type=Path, help='Verify the bounded default with this built image manifest')
     args = parser.parse_args()
     pins = {'engine': revision(api_module), 'sdk-python': revision(sdk_module), 'cli': revision(cli_module)}
     engine = Path(api_module.__file__).resolve().parents[2]
@@ -66,6 +111,7 @@ def main():
     started = time.monotonic()
     with tempfile.TemporaryDirectory(prefix='entrotter-host-check-') as directory:
         root = Path(directory)
+        worker = check_default_worker(engine, inputs, root, args.worker_manifest) if args.worker_manifest else None
         server = ObservedServer(0, output=root / 'saved')
         server.store = ArtifactStore(root / 'saved', max_files=2)
         calls = []
@@ -143,9 +189,12 @@ def main():
             server.server_close()
             thread.join(timeout=3)
         assert not thread.is_alive()
+        if worker:
+            assert worker['artifact_ids'] == {name: report['artifact_id'] for name, report in reports.items()}
     result = {
         'status': 'passed', 'kind': 'integration verification, not a performance benchmark',
         'tested_commits': pins, 'checker_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'default_worker': worker,
         'wall_seconds': time.monotonic() - started,
         'artifact_ids': {name: report['artifact_id'] for name, report in reports.items()},
         'verified': ['actual CLI/SDK/API fixture and Anvil runs', 'SDK get and saved-file full equality',
@@ -157,7 +206,7 @@ def main():
                              'busy_cli_attempts': 16},
         'archive_or_model_calls': False,
         'limitations': ['Lowered file-count quota for integration; production thresholds tested separately',
-                        'Native local EVM execution; Docker enforcement is a separate CI job',
+                        'Uses the tested API constructor default; worker manifest enables additional default-path proof. Kernel enforcement is a separate CI job',
                         'Aggregate CLI exports/concurrency and image/VM storage remain operator-controlled']}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + '\n')
