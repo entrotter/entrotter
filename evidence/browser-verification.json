@@ -1,6 +1,27 @@
 {
-  "status": "blocked",
-  "checks_completed": [],
-  "reason": "Chromium navigation to the local test server returned net::ERR_BLOCKED_BY_ADMINISTRATOR. No visual or full browser verification is claimed.",
-  "fallback": "Production JavaScript hashing/metric functions are tested separately in Node without browser navigation."
+  "status": "passed",
+  "scope": "Live GitHub Pages; initial fixture tests plus final deployed EVM report",
+  "checks": [
+    "Live desktop report integrity and metrics",
+    "Negative recovery control displayed",
+    "Tampered local import rejected and stale values cleared",
+    "Hostile HTML-like Unicode title remains inert text",
+    "No network request on local import",
+    "No unexpected third-party requests or JS exceptions",
+    "390px mobile layout without horizontal overflow",
+    "Keyboard skip link navigates to main",
+    "Local EVM viewer: 6 receipt rows, exact USDC units, no mobile overflow, switch back to fixture",
+    "Latest deployed EVM viewer: exact 2556.134769 USDC, 6 receipt rows, desktop/mobile, tamper rejection, only same-origin GET requests"
+  ],
+  "screenshots": [
+    "site-desktop.png",
+    "site-mobile.png",
+    "evm-desktop.png",
+    "evm-mobile.png"
+  ],
+  "remaining": [
+    "Complete accessibility audit beyond skip link",
+    "Comprehensive external link audit"
+  ],
+  "deployed_commit": "ab121348b0ffbec5650f9eadf0a0b11f639d9780"
 }

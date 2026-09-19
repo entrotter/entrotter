@@ -1,0 +1,121 @@
+{
+  "schema_version": "0.1.0",
+  "engine_version": "0.1.0",
+  "mode": "evm-fork",
+  "scenario": {
+    "schema_version": "0.1.0",
+    "id": "ethereum-state-fork",
+    "title": "Ethereum pinned-state execution template",
+    "mode": "evm-fork",
+    "provenance": {
+      "kind": "historical-fork",
+      "description": "Starts from a real archived Ethereum block, but the actor funding and intervention are synthetic. This template needs an archive RPC and has not yet been validated on one."
+    },
+    "source": {
+      "chain_id": 1,
+      "block_number": 19000000
+    },
+    "actor": "0x1000000000000000000000000000000000000001",
+    "actor_balance_wei": "10000000000000000000",
+    "allowed_targets": [
+      "0x2000000000000000000000000000000000000002"
+    ],
+    "steps": [
+      {
+        "baseline": null,
+        "candidate": {
+          "to": "0x2000000000000000000000000000000000000002",
+          "value_wei": "1000000000000000000",
+          "gas": 21000
+        }
+      }
+    ]
+  },
+  "source": {
+    "chain_id": 1,
+    "block_number": 19000000,
+    "block_hash": "0xcf384012b91b081230cdf17a3f7dd370d8e67056058af6b272b3d54aa2714fac",
+    "timestamp": 1705173443
+  },
+  "local_chain_id": 31337,
+  "baseline": {
+    "tool_version": "anvil/v1.8.3",
+    "start_block": 19000000,
+    "start_timestamp": 1705173443,
+    "trace": [
+      {
+        "step": 0,
+        "action": null,
+        "status": "noop",
+        "gas_used": "0",
+        "actor_balance_wei": "10000000000000000000"
+      }
+    ],
+    "tokens": [],
+    "metrics": {
+      "initial_balance_wei": "10000000000000000000",
+      "final_balance_wei": "10000000000000000000",
+      "balance_delta_wei": "0",
+      "gas_used": "0",
+      "reverted_transactions": 0,
+      "rejected_transactions": 0
+    }
+  },
+  "candidate": {
+    "tool_version": "anvil/v1.8.3",
+    "start_block": 19000000,
+    "start_timestamp": 1705173443,
+    "trace": [
+      {
+        "step": 0,
+        "action": {
+          "to": "0x2000000000000000000000000000000000000002",
+          "value_wei": "1000000000000000000",
+          "gas": 21000
+        },
+        "status": "success",
+        "gas_used": "21000",
+        "transaction_hash": "0xdb50bc3e60490088be5d01062c17c94e127db55bf9f718c214349d1685611896",
+        "receipt": {
+          "type": "0x2",
+          "status": "0x1",
+          "cumulativeGasUsed": "0x5208",
+          "logs": [],
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "transactionHash": "0xdb50bc3e60490088be5d01062c17c94e127db55bf9f718c214349d1685611896",
+          "transactionIndex": "0x0",
+          "blockHash": "0x4d7e308bea9622fcd7885d77afd186045180ac12f0f3bb5ad5db3c7fd58bad24",
+          "blockNumber": "0x121eac1",
+          "gasUsed": "0x5208",
+          "effectiveGasPrice": "0x4b1ea3fb8",
+          "from": "0x1000000000000000000000000000000000000001",
+          "to": "0x2000000000000000000000000000000000000002",
+          "contractAddress": null,
+          "blockTimestamp": 1705173455
+        },
+        "actor_balance_wei": "8999576539448808000"
+      }
+    ],
+    "tokens": [],
+    "metrics": {
+      "initial_balance_wei": "10000000000000000000",
+      "final_balance_wei": "8999576539448808000",
+      "balance_delta_wei": "-1000423460551192000",
+      "gas_used": "21000",
+      "reverted_transactions": 0,
+      "rejected_transactions": 0
+    }
+  },
+  "comparison": {
+    "final_balance_delta_wei": "-1000423460551192000"
+  },
+  "assumptions": [
+    "Paired isolated Anvil instances start from the same source state.",
+    "Actor native balance is overridden equally and account impersonation is local only.",
+    "This re-executes supplied actions, not subsequent historical blocks or market responses.",
+    "Each slot mines one block at a fixed 12-second interval. Transaction order is supplied.",
+    "Native and tracked token changes are exact units, not profit or portfolio valuation. Unlisted assets are not tracked.",
+    "No LLM agent, MEV, mempool, external price or bridge model is provided."
+  ],
+  "artifact_id": "bf02cf09a05b248febc1f31d95715c8b055f80b1e3e89a5fc23367270b90618e"
+}

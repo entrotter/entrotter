@@ -1,0 +1,51 @@
+{
+  "repositories": [
+    {
+      "repository": "entrotter/engine",
+      "url": "https://github.com/entrotter/engine",
+      "commit": "f5a6b5cfa470b5b048ba3a2041c0205b31c74bb9"
+    },
+    {
+      "repository": "entrotter/sdk-python",
+      "url": "https://github.com/entrotter/sdk-python",
+      "commit": "f65f45de26c2658e2269a02a5dbe7c90c74b1cba"
+    },
+    {
+      "repository": "entrotter/cli",
+      "url": "https://github.com/entrotter/cli",
+      "commit": "b6a7f4d96cec08f4779968b9f63bab3f9b405fe8"
+    },
+    {
+      "repository": "entrotter/scenarios",
+      "url": "https://github.com/entrotter/scenarios",
+      "commit": "f3325510156d23f36fba157cc4f7b986c600e448"
+    },
+    {
+      "repository": "entrotter/entrotter.github.io",
+      "url": "https://github.com/entrotter/entrotter.github.io",
+      "commit": "23cc86610071beb6b27c28702e28e284e1337c6e"
+    },
+    {
+      "repository": "entrotter/entrotter",
+      "url": "https://github.com/entrotter/entrotter",
+      "commit": "26507adc5c6ac2d3d7816080aa28403fb9c5a651"
+    }
+  ],
+  "pages_status": "live_http_200_verified",
+  "pages_run_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35451881322",
+  "pages_workflow": "success",
+  "verified_at": "2026-09-19T15:56:18.330021+00:00",
+  "http_verification": "curl and Python trusted OS CA bundle; deployed initial HTML byte-matched repository; real browser navigation passed",
+  "initial_deployment": {
+    "conclusion": "success",
+    "headSha": "23cc86610071beb6b27c28702e28e284e1337c6e",
+    "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35451881322"
+  },
+  "latest_deployment": {
+    "run_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35453228118",
+    "commit": "ab121348b0ffbec5650f9eadf0a0b11f639d9780",
+    "conclusion": "success",
+    "html_matches_commit": true,
+    "browser_evm_verified": true
+  }
+}

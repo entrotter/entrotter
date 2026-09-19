@@ -37,7 +37,9 @@ else:
     checks.append({'repository':'entrotter.github.io','command':'node --test tests/report.test.mjs','exit_code':None,'status':'not_run_node_unavailable'})
 report={'executed_at':datetime.now(timezone.utc).isoformat(),'python':sys.version.split()[0],
         'anvil_installed':shutil.which('anvil') is not None,
+        'anvil_version':subprocess.check_output(['anvil','--version'],text=True).strip() if shutil.which('anvil') else None,
         'archive_rpc_configured':bool(os.getenv('ENTROTTER_RPC_URL')),
         'historical_execution':'not_performed_by_this_script','checks':checks}
 (EVIDENCE/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
-raise SystemExit(int(any(c['exit_code'] for c in checks)))
+raise SystemExit(int(any(c['exit_code'] != 0 or
+                         (args.require_anvil and c.get('contains_skipped_tests')) for c in checks)))
