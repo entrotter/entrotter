@@ -96,7 +96,6 @@ jobs:
     env:
       PYTHONPATH: engine/src:sdk-python/src:cli/src
       ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
-      ENTROTTER_EXPORT_STATE_DIR: ${{ runner.temp }}/entrotter-export-state
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -128,6 +127,7 @@ jobs:
           image = json.load(open('entrotter/evidence/export-budget/ci/image.json'))['image_id']
           with open(os.environ['GITHUB_ENV'], 'a') as output:
               output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
+              output.write('ENTROTTER_EXPORT_STATE_DIR=' + os.path.join(os.environ['RUNNER_TEMP'], 'entrotter-export-state') + '\n')
           PY
       - name: Verify shared daemon admission, default CLI-SDK-API, preservation and quotas
         run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/export-budget/ci/image.json --output entrotter/evidence/export-budget/ci/integration.json

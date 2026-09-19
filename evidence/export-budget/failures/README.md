@@ -18,3 +18,8 @@ renames. It still verifies old-output preservation and temporary-file cleanup.
 Final engine/CLI logs include these passing tests. Workspace prefixes in text
 logs are normalized to `<workspace>` and trailing whitespace is stripped;
 measurements and errors are preserved.
+
+`workflow-context.json` retains the first coordination workflow rejection.
+The new job-level environment used a runner context that is unavailable there.
+The runner step now sets the shared directory through `GITHUB_ENV`; this does
+not change runtime implementation or remove a test.
