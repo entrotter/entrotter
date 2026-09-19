@@ -185,3 +185,7 @@ local reproduction, full result artifacts and the limits of static link scanning
 
 [SDK and CLI quality evidence](docs/SDK_CLI_QUALITY.md) records independent source,
 dependency, packaging and real API checks, including the local SDK provenance.
+
+[Report viewer accessibility evidence](docs/WEBSITE_ACCESSIBILITY.md) records
+keyboard/reflow regressions, exact chart alternatives and actual Linux browser
+CI. These proposed changes still await review and deployment.

@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T19:04:31.231751+00:00",
+  "updated_at": "2026-09-19T19:28:14.927786+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -98,15 +98,18 @@
         "Pages deployment and live HTTP 200 verified",
         "live desktop/mobile rendering",
         "tamper rejection, inert hostile text and local-only import",
-        "keyboard skip link",
+        "initial skip-link scrolling smoke check; focus-transfer defect found and fixed in proposed website PR #10",
         "no third-party browser requests",
         "EVM report viewer local browser checks passed",
         "latest EVM viewer deployed and verified on desktop/mobile",
-        "Static website Markdown/HTML/CSS file, fragment and public HTTP links: 29 occurrences passed locally and in CI; no UI deployment change"
+        "Static website Markdown/HTML/CSS file, fragment and public HTTP links: 29 occurrences passed locally and in CI; no UI deployment change",
+        "Website PR #10: same-runner before failures and 18 passing macOS/Linux keyboard/reflow/import/error/forced-color checks; 14 zero-violation axe scans with explicit incomplete contrast evidence per final run; pending independent review and deployment",
+        "Pinned browser development tools, strict npm audit and Pages build prerequisite verified in Linux CI; downloaded site/runner hashes match local evidence"
       ],
       "blocked": [],
       "todo": [
-        "broader accessibility audit; dynamic JavaScript links remain covered by separate browser tests"
+        "Independent review/merge and live Pages/browser verification of accessibility changes",
+        "Manual assistive-technology evaluation; automated Chromium checks do not establish complete WCAG conformance"
       ]
     },
     {
@@ -151,7 +154,9 @@
     "separate_engine_quality_tests": 121,
     "separate_overload_fix_engine_tests": 124,
     "sdk_quality_suite": 18,
-    "cli_quality_suite": 13
+    "cli_quality_suite": 13,
+    "website_accessibility_groups_per_platform": 18,
+    "website_axe_scans_per_platform": 14
   },
   "evidence": [
     "evidence/verification.json",
@@ -208,6 +213,7 @@
     "evidence/engine-quality-coordination-tests.log",
     "evidence/docs-links/summary.json",
     "evidence/overload-response/summary.json",
-    "evidence/sdk-cli-quality/summary.json"
+    "evidence/sdk-cli-quality/summary.json",
+    "evidence/website-accessibility/summary.json"
   ]
 }
