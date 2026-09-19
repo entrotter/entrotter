@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T17:33:22.343312+00:00",
+  "updated_at": "2026-09-19T17:53:22.795378+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -69,10 +69,14 @@
         "Native lifetime-pipe guardian tested with real owner SIGTERM/SIGKILL, guardian failure and watchdog; engine PR #10 pending review",
         "Opt-in Docker worker: actual CPU throttling, OOM/PID/tmpfs/noexec limits, CLI/API equivalence, detached 180.916-second expiry, owner/signal cleanup; engine PR #11 pending review",
         "Isolated historical 19M Uniswap report exactly matches complete public reference artifact",
-        "Dedicated real-Docker Linux CI passed 10 enforcement/lifetime tests at engine 05448c3; run 35458208203"
+        "Dedicated real-Docker Linux CI passed 10 enforcement/lifetime tests at engine 05448c3; run 35458208203",
+        "API 128 MiB/128-file store and eight-handler absolute socket bounds verified with real files, processes and sockets; engine PR #12 pending review",
+        "Eight MiB report exports with atomic failure preservation in engine and standalone CLI; CLI PR #5 pending review",
+        "Actual CLI-SDK-API fixture and native Anvil roundtrips, 507/503 rejection, no automatic POST retry and recovery verified",
+        "Pinned Linux CLI-SDK-API host-bounds CI passed; artifact IDs agree with macOS integration, run 35459506934"
       ],
       "todo": [
-        "Promote bounded execution appropriately; cap host artifact/image storage, aggregate CLI work and API connection threads; preserve native/daemon failure limits",
+        "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",
         "complete lint/type/dependency/security/docs-link CI",
         "remaining cross-repo dependency pins"
       ]
@@ -131,7 +135,9 @@
     "separate_engine_hardening_note": "Overlaps existing suite; isolated main-based PR #9, pending review",
     "separate_worker_native_tests": 96,
     "separate_real_docker_tests": 10,
-    "separate_worker_note": "Main-based engine PR #11; overlaps prior engine native suites, no addition to frozen workspace total"
+    "separate_worker_note": "Main-based engine PR #11; overlaps prior engine native suites, no addition to frozen workspace total",
+    "separate_host_bounds_engine_tests": 114,
+    "separate_cli_export_tests": 9
   },
   "evidence": [
     "evidence/verification.json",
@@ -164,6 +170,14 @@
     "evidence/isolated-worker-system.json",
     "evidence/isolated-worker-historical.json",
     "evidence/worker-coordination-tests.log",
-    "evidence/isolated-worker-ci-tests.log"
+    "evidence/isolated-worker-ci-tests.log",
+    "evidence/host-resource-bounds.json",
+    "evidence/host-limits-integration.json",
+    "evidence/engine-host-bounds-tests.log",
+    "evidence/engine-host-bounds-before.log",
+    "evidence/cli-export-tests.log",
+    "evidence/cli-export-before.log",
+    "evidence/host-limits-ci.json",
+    "evidence/host-bounds-coordination-tests.log"
   ]
 }

@@ -55,3 +55,38 @@ jobs:
         with:
           name: verification-evidence
           path: entrotter/evidence/
+  host-bounds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: entrotter
+      - uses: actions/checkout@v4
+        with:
+          repository: entrotter/engine
+          ref: 5e2663661cb26b17247ed34b2f31297095ba65e6
+          path: engine
+      - uses: actions/checkout@v4
+        with:
+          repository: entrotter/sdk-python
+          ref: f65f45de26c2658e2269a02a5dbe7c90c74b1cba
+          path: sdk-python
+      - uses: actions/checkout@v4
+        with:
+          repository: entrotter/cli
+          ref: d842c56bd9cf2c0845f5666b4ea0b02d2be34489
+          path: cli
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: v1.8.3
+      - name: Verify CLI-SDK-API success, quota errors and connection recovery
+        run: PYTHONPATH=engine/src:sdk-python/src:cli/src python entrotter/scripts/check_host_limits.py --output entrotter/evidence/host-limits-ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: host-limits-evidence
+          path: entrotter/evidence/host-limits-ci.json
+          if-no-files-found: error
