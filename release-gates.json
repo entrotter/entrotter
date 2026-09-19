@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T16:36:33.292597+00:00",
+  "updated_at": "2026-09-19T16:49:24.224851+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -40,10 +40,10 @@
         "actual Codex model decisions on one artificial local-EVM case; metadata and token usage recorded",
         "clean recorded-model replay from fresh public dependencies in 5.148 seconds, no model call",
         "three sourced archived-state cases plus two pre-frozen unused implementation holdouts, all executed with non-agent/risk/model policies",
-        "ten exact risk/model action-record replays on fresh archived-state forks; model matched rule decisions and had greater measured runtime in each case"
+        "ten exact risk/model action-record replays on fresh archived-state forks; model matched rule decisions and had greater measured runtime in each case",
+        "six interleaved same-task raw Anvil/Entrotter runs with identical complete common outcomes; no speed advantage shown"
       ],
       "todo": [
-        "same-task direct Anvil comparison",
         "independent approval and merge of engine/schema/coordination agent PRs"
       ],
       "blocked": [
@@ -64,7 +64,8 @@
         "64 MiB per-EVM memory cap and persistent fork cache disabled",
         "public CI including real Anvil passed",
         "private vulnerability reporting verified on six repos",
-        "all six main branches require CI and one approval, including admins"
+        "all six main branches require CI and one approval, including admins",
+        "RPC diagnostic redaction regression and real EVM suite passed in isolated engine PR #9, pending approval"
       ],
       "todo": [
         "SIGTERM and hard whole-process CPU/memory/time/disk quotas",
@@ -97,7 +98,8 @@
       "passed": [
         "honest goal and backlog",
         "competition requirements note",
-        "current official event and rules checked; exact PT/UTC/JST deadline recorded"
+        "current official event and rules checked; exact PT/UTC/JST deadline recorded",
+        "same-task direct Anvil comparison with exact outcome equality and honest workflow distinction"
       ],
       "todo": [
         "verify joined registration and owner eligibility",
@@ -114,13 +116,15 @@
     }
   ],
   "test_summary": {
-    "python_passed": 145,
+    "python_passed": 150,
     "javascript_passed": 13,
     "skipped": 0,
     "historical_repeat_runs": 2,
     "note": "Historical runs are separate from offline/local tests. Details in evidence files; no full-gate completion claim.",
     "historical_agent_cases": 5,
-    "historical_agent_exact_replays": 10
+    "historical_agent_exact_replays": 10,
+    "separate_engine_hardening_tests": 83,
+    "separate_engine_hardening_note": "Overlaps existing suite; isolated main-based PR #9, pending review"
   },
   "evidence": [
     "evidence/verification.json",
@@ -142,6 +146,8 @@
     "evidence/agent-integration-provenance.json",
     "evidence/causal-v1/evaluation.json",
     "evidence/causal-v1/holdout.json",
-    "evidence/causal-v1/review.json"
+    "evidence/causal-v1/review.json",
+    "evidence/direct-anvil-comparison.json",
+    "evidence/engine-rpc-diagnostics-tests.log"
   ]
 }

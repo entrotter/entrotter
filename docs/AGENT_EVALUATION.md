@@ -90,6 +90,6 @@ disabled. The current-state preflight can differ from the next execution block.
 
 The subsequent [historical comparison](HISTORICAL_AGENT_EVALUATION.md) completed
 three sourced cases and two pre-frozen implementation holdouts with exact replay.
-The same-task direct Anvil comparison and broader resource controls remain open.
+The [same-task direct Anvil comparison](DIRECT_ANVIL_COMPARISON.md) is now measured; broader resource controls remain open.
 Results retain adverse outcomes and make no claims of future-profit prediction
 or model superiority.
