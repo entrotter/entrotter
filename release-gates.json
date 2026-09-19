@@ -91,11 +91,12 @@
         "Worker image signature and full detected OS/language package advisory gate passes on actual macOS arm64/Linux amd64 images: 26 inventoried packages, no known reported findings or suppressions; 142 native/unit and 16 actual Docker tests pass. Engine #18 and coordination #27 await independent review; native Anvil/host remain outside scan.",
         "Foundry native gate verifies exact source/workflow/issuer/archive/Anvil attestations and scans every one of 1,126 signed Cargo identities for arm64/amd64 without reported findings. Linux actual-worker/native/image and all three pinned integration jobs pass at engine #19. All 172 non-Cargo entries and compiler/C-library/build-system gaps remain explicit; independent review/merge pending.",
         "Proposed engine #20/CLI #9 share 128 MiB/128-file saved+pending export retention across folders/processes. Production ceiling, real SIGKILL/race, actual CLI contract and default Docker/API checks pass; local 164 engine, 30 CLI and 16 Docker tests plus all engine/CLI Linux CI pass. Coordination #31 passes all three integration jobs and links at 77a754e; downloaded source/checker/helper/image and complete report IDs match. Public reproduction takes 6.278 seconds with running Docker/warm caches; independent review/merge pending.",
-        "Coordination proposed quality gate covers 19 production sources, including hidden action helper; 26 local tests and six real Lychee regressions pass. Optimized wheel validation failed before and now rejects before installation; 83 explicit guards preserve predicates. Three frozen-provider type diagnostics and 75 full security findings remain author-reviewed and visible; 50 locked Python packages have no reported findings. PR #33 passes all three Linux integration jobs, full quality and links at f05eae7. Downloaded source/type/finding/lock reports and full fixture/Anvil IDs match; normal and optimized export results agree. Public clone/venv/build reproduction: 6.748 seconds with running Docker and warm caches. Independent review/merge pending."
+        "Coordination proposed quality gate covers 19 production sources, including hidden action helper; 26 local tests and six real Lychee regressions pass. Optimized wheel validation failed before and now rejects before installation; 83 explicit guards preserve predicates. Three frozen-provider type diagnostics and 75 full security findings remain author-reviewed and visible; 50 locked Python packages have no reported findings. PR #33 passes all three Linux integration jobs, full quality and links at f05eae7. Downloaded source/type/finding/lock reports and full fixture/Anvil IDs match; normal and optimized export results agree. Public clone/venv/build reproduction: 6.748 seconds with running Docker and warm caches. Independent review/merge pending.",
+        "Scenarios PR #8: reproduced nested-result reference failure fixed with offline registry and mandatory dependencies. All schemas/frozen inputs unchanged. All 14 tests pass locally against two engine variants and on Linux Python 3.11/3.12/3.13; 19 existing result envelopes including 12 agent records validate offline. Five Python files pass Ruff/mypy/full Bandit without findings, all 48 quality and six schema packages audited without reported issues/skips. Contracts 35474622711, quality 35474622690 and links 35474622683 pass at 3a78ecc; downloaded hashes/inventories match. Independent approval/merge pending."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
-        "Extend lint/types/security/dependency gates to scenarios, website and separate agent branch; independently review/integrate coordination quality including the frozen provider diagnostic reasons; native/compiler/build-system coverage limits remain explicit",
+        "Extend lint/types/security/dependency gates to website and separate agent branch; independently review/integrate coordination quality including the frozen provider diagnostic reasons; native/compiler/build-system coverage limits remain explicit",
         "remaining cross-repo dependency pins",
         "Independent review and merge of security, resource and CI PRs, including overload-response fix"
       ]
@@ -175,7 +176,9 @@
     "coordination_quality_tests": 26,
     "coordination_real_lychee_regressions": 6,
     "coordination_quality_workspace_python": 156,
-    "coordination_quality_workspace_javascript": 13
+    "coordination_quality_workspace_javascript": 13,
+    "scenario_contract_suite": 14,
+    "scenario_contract_note": "Separate proposed schema suite, overlaps frozen seven-test scenario suite; no addition to workspace total"
   },
   "evidence": [
     "evidence/verification.json",
@@ -238,6 +241,7 @@
     "evidence/clean-bounded-reproduction.json",
     "evidence/daemon-admission/summary.json",
     "evidence/export-budget/summary.json",
-    "evidence/coordination-quality/summary.json"
+    "evidence/coordination-quality/summary.json",
+    "evidence/scenario-contracts/summary.json"
   ]
 }
