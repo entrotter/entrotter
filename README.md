@@ -194,3 +194,7 @@ CI. These proposed changes still await review and deployment.
 from opt-in workers to normal CLI/API execution with kernel limits. Its separate
 source pins and migration instructions require a local Docker daemon; the frozen
 native examples above remain tied to their existing revisions until review/merge.
+
+[Shared daemon worker admission](docs/DAEMON_WORKER_ADMISSION.md) records the
+proposed one-worker default across independent CLI/API processes, ownership-safe
+cleanup, real contention tests and explicit recovery limits.

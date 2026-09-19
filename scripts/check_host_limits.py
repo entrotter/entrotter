@@ -140,6 +140,45 @@ def main():
                 assert client.get(report['artifact_id']).report == report
                 assert json.loads((root / 'saved' / (report['artifact_id'] + '.json')).read_bytes()) == report
                 reports[name] = report
+            if worker:
+                # Independent standalone CLI and API process paths must share the
+                # same daemon slot. This is a real idle bounded Docker worker.
+                from entrotter_engine.isolated import client as docker_client, worker_args, WORKER_NAME
+                previous = output.read_bytes()
+                before = len(calls)
+                with docker_client() as prefix:
+                    command = worker_args(prefix, worker['image_id'], WORKER_NAME)
+                    command.insert(-1, '--detach')
+                    incumbent = subprocess.check_output(command, stdin=subprocess.DEVNULL,
+                                                        text=True, timeout=10).strip()
+                    try:
+                        local_busy = subprocess.run(
+                            [sys.executable, '-m', 'entrotter_cli', 'run', str(inputs['fixture']),
+                             '--local', '-o', str(output)], capture_output=True, text=True, timeout=30)
+                        assert local_busy.returncode == 1 and 'busy' in local_busy.stderr.lower()
+                        api_busy = cli_run(inputs['fixture'])
+                        assert api_busy.returncode == 1 and 'HTTP 429' in api_busy.stderr
+                        # SDK intentionally omits server error bodies; the engine
+                        # real-HTTP suite checks the exact worker_busy code.
+                        assert 'not automatically retried' in api_busy.stderr
+                        assert 'Traceback' not in local_busy.stderr + api_busy.stderr
+                        assert output.read_bytes() == previous
+                        assert len(calls) == before + 1  # One POST, no automatic retry.
+                        assert len(list((root / 'saved').glob('*.json'))) == 2
+                        state = subprocess.check_output(
+                            [*prefix, 'inspect', '--format', '{{.Id}} {{.State.Running}}', WORKER_NAME],
+                            text=True, timeout=10).strip()
+                        assert state == incumbent + ' true', 'Rejected caller removed incumbent worker'
+                    finally:
+                        subprocess.run([*prefix, 'rm', '--force', incumbent], check=True,
+                                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=10)
+                assert cli_run(inputs['fixture']).returncode == 0
+                worker['daemon_shared_admission'] = {
+                    'standalone_local_cli_rejected': True, 'cli_sdk_api_429': True,
+                    'api_posts': len(calls) - before - 1,
+                    'existing_export_and_incumbent_preserved': True,
+                    'successful_run_after_release': True,
+                    'scope': 'one container worker per configured daemon; no native/host-process/storage bound'}
             assert reports['fixture']['mode'] == 'fixture'
             assert reports['local']['mode'] == 'evm-local'
             assert [step['status'] for step in reports['local']['candidate']['trace']] == ['success', 'reverted']
@@ -207,7 +246,7 @@ def main():
         'archive_or_model_calls': False,
         'limitations': ['Lowered file-count quota for integration; production thresholds tested separately',
                         'Uses the tested API constructor default; worker manifest enables additional default-path proof. Kernel enforcement is a separate CI job',
-                        'Aggregate CLI exports/concurrency and image/VM storage remain operator-controlled']}
+                        'Independent export retention, host processes, explicit native execution and image/VM storage remain operator-controlled']}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps(result, indent=2))
