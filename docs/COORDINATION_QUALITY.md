@@ -87,7 +87,14 @@ python3 -m venv .venv
 
 The worktree names above describe this development workspace; supply your own
 clean checkouts of the declared pins. Evidence and commands are recorded in
-[the evidence summary](../evidence/coordination-quality/summary.json). The proposed
-change remains unmerged. Scenario/website/agent-branch quality, host resource
+[the evidence summary](../evidence/coordination-quality/summary.json).
+[PR #33](https://github.com/entrotter/entrotter/pull/33) passes quality, links and
+all three integration jobs at `f05eae7`. Downloaded full reports agree with local
+source hashes, dependency locks, retained diagnostics and complete report IDs.
+Normal/optimized export outputs agree. Public clone/venv/build reproduction takes
+6.748 seconds with running Docker and warm build caches; cold installation and
+VM startup are excluded. Initial YAML and Python 3.12 conditional-dependency
+failures are preserved with their fixes. The proposed change remains unmerged.
+Scenario/website/agent-branch quality, host resource
 limits, independent review, accessibility deployment and real submission/user
 evidence remain separate open gates.
