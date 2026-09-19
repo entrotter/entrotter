@@ -448,6 +448,34 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   processes, images or VM storage. Never reset the ledger to free quota.
   Both PRs remain unmerged and require independent review; the goal stays active.
 
+## Coordination quality and optimized verification: implementation pending review
+
+- Issue #32 adds lint/type/security/dependency gates over all 19 executable
+  coordination Python sources and hidden production action helpers. Ruff lint
+  covers all 19; formatting covers 18. The historical Codex provider remains
+  byte-identical to its pre-execution freeze, enforced by an exact source hash.
+- Mypy checks every tool against its actual pinned agent or worker engine variant.
+  Three existing optional-pipe/selector diagnostics in the frozen provider are
+  retained with exact messages, source/version pins and individual rationales.
+  Other groups have no errors. No engine stubs or missing-import suppression is
+  introduced; this is normal typing, not strict or runtime JSON validation.
+- An actual optimized-Python regression shows mismatched wheel source could reach
+  installation because asserts were disabled. The fix uses explicit exceptions
+  for 83 predicates; AST comparison confirms predicates/lazy messages are retained.
+  The installed-module path guard is explicit too. The regression and real
+  optimized cross-CLI shared-export capacity/recovery checks now pass.
+- All 26 local coordination tests and six actual Lychee regressions pass. Recorded
+  model decisions replay exactly on real Anvil with the unchanged full artifact
+  1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b.
+  No new archive/model call or model-performance claim is made. Full Bandit retains
+  75 author-reviewed findings; 50 hash-locked Python packages have no reported
+  known vulnerabilities. The schema-only lock is covered by that same audit.
+- All coordination Actions are now pinned by commit. Existing three integration
+  jobs remain, with an added optimized export check and a separate quality job.
+  Linux CI is pending. See docs/COORDINATION_QUALITY.md and
+  evidence/coordination-quality/. Frozen historical inputs remain unchanged;
+  independent review and overall goal completion remain pending.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
