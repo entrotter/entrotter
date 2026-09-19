@@ -379,7 +379,7 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   close native dependency, host caller/disk, independent review or submission
   gates. Frozen engine/scenario checkouts remain unchanged.
 
-## Native release provenance and signed Cargo inventory: local proof
+## Native release provenance and signed Cargo inventory: verified, review pending
 
 - Engine PR #19 (`6410c37663d37685a30effccd87844e1740b8637`) adds a separate
   native release gate. Both Foundry 1.8.3 Linux archives have verified exact
@@ -394,7 +394,16 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 - All 149 local unit/native tests pass, including seven negative policy tests.
   Ruff/mypy covers 19 source/scripts and full Bandit keeps 24 reviewed findings
   (20 low, four medium). Runtime Python source, Dockerfile and frozen historical
-  inputs are unchanged. Linux actual-worker/audit CI is pending.
+  inputs are unchanged. All five engine Linux workflows pass. Actual-worker run
+  35470277261 passes 16 Docker tests and both full native/image advisory gates;
+  downloaded signed inventory, binary/archive/source/auditor/report hashes match.
+  Its 26 OS packages and 1,126 Cargo packages have no reported findings.
+- Coordination proof 573b6c3 passes all three integration jobs (35470453881) and
+  links (35470453897). Downloaded pins, checker, full artifact IDs and runtime
+  image manifest agree with the prior verified execution. Public clone/venv/build
+  reproduction takes 5.928 seconds on Linux with running Docker and warm caches.
+  Engine PR #19 and coordination PR #29 remain unmerged. The dedicated/default
+  VM profiles remain stopped; no local VM was started for this audit-only slice.
 - See docs/NATIVE_RELEASE_AUDIT.md and evidence/native-release-audit/. Compressed
   raw evidence retains full signatures and inventories with original-byte hashes.
   Independent review/merge and the overall goal remain pending.

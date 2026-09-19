@@ -74,3 +74,26 @@ proves the claimed origin, not independent source review or bit-for-bit
 reproducible compilation. No absence-of-vulnerabilities or public multi-tenant
 safety claim follows from this scan. Native/image quotas and remaining human
 review, deployment, user-validation and submission gates stay open.
+
+
+## Linux verification checkpoint
+
+Engine `6410c37663d37685a30effccd87844e1740b8637` passes all five workflows.
+Run 35470277261 executes 16 actual Docker checks and both package gates. Its
+1,126 Cargo packages and 26 OS packages have no reported findings. Downloaded
+source/auditor, archive/binary, signed SBOM and raw report hashes are verified;
+policy evaluation over the downloaded inventory also passes. The full 24-finding
+Bandit scan agrees with local results, all 42 Python dependencies have no reported
+advisories, and the MIT wheel's 14 Python files match source.
+
+[Coordination PR #29](https://github.com/entrotter/entrotter/pull/29), proof commit
+`573b6c3a67773dbaeafaaedb413c638e5a44fcb5`, passes all three integration jobs
+(35470453881) and links (35470453897). Pinned dependencies, checker and complete
+fixture/EVM result IDs match the prior runtime verification. Public-source clone,
+fresh venv, image build and fixture execution take 5.928 seconds on Linux with
+Docker already running and warm caches; installation/VM startup are excluded.
+
+Both PRs remain unmerged pending independent approval. Frozen benchmark inputs
+remain clean and both local VM profiles remain stopped. This checkpoint adds
+provenance/inventory coverage and does not change runtime or close the limits
+listed above.
