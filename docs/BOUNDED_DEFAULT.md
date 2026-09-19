@@ -74,8 +74,13 @@ full scans, source pins, image inputs, installed-wheel results and test logs.
   default local execution and failed-worker export preservation.
 
 The dedicated coordination `bounded-default` CI job builds the source-bound
-image and runs the full CLI/SDK/API check and clean public reproduction. Its
-results must be inspected separately; a committed workflow is not success.
+image and runs the full CLI/SDK/API check and clean public reproduction. [Run 35465814576](https://github.com/entrotter/entrotter/actions/runs/35465814576)
+passed all three integration jobs; [links](https://github.com/entrotter/entrotter/actions/runs/35465814613)
+also passed. Downloaded pins, checker hash, full artifact IDs and image source
+hashes match local evidence across arm64/amd64. Linux clean reproduction took
+7.444 seconds, including a fresh Foundry download; the same job's Docker
+image/build caches were warm. The dedicated local VM is stopped with no owned
+workers left, and the existing Docker context/default profile are unchanged.
 Existing frozen workspace and native host-budget jobs keep their source pins.
 
 ## Reproduce

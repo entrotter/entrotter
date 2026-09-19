@@ -308,8 +308,11 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 - Engine/CLI quality, matrix, native/Docker and link CI passed. Downloaded scans
   match source; engine retains 15 findings, CLI has none, and each 42-package audit
   reports no known vulnerabilities. Downloaded MIT wheels match source and pass
-  a fresh installed default-run/failure-preservation check. New coordination
-  bounded-default CI is committed separately and still needs result inspection.
+  a fresh installed default-run/failure-preservation check. Coordination
+  PR #23's three integration jobs passed (35465814576), plus links 35465814613.
+  Downloaded source/runner/artifact pins agree; Linux clean default reproduction
+  took 7.444 seconds including Foundry download, with warm Docker build caches.
+  The dedicated VM is stopped, no owned workers remain and Docker context is unchanged.
 - See docs/BOUNDED_DEFAULT.md, bounded-worker-pins.json and
   evidence/bounded-default/summary.json. Both changes remain unmerged, the frozen
   engine/scenario checkouts are unchanged, and the separate agent branch is not

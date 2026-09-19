@@ -1,11 +1,12 @@
 {
   "schema_version": "0.1.0",
-  "checked_at": "2026-09-19T19:52:07.129219+00:00",
-  "status": "verified_locally_and_in_engine_cli_ci; coordination_default_ci_pending",
+  "checked_at": "2026-09-19T19:58:30.183540+00:00",
+  "status": "verified_local_and_ci; independent_review_and_merge_pending",
   "issue": "https://github.com/entrotter/entrotter/issues/22",
   "prs": {
     "engine": "https://github.com/entrotter/engine/pull/16",
-    "cli": "https://github.com/entrotter/cli/pull/8"
+    "cli": "https://github.com/entrotter/cli/pull/8",
+    "coordination": "https://github.com/entrotter/entrotter/pull/23"
   },
   "commits": {
     "engine": "dddba4a2c3efdd429e36520e8fc9d163888089e2",
@@ -70,9 +71,30 @@
     "No arbitrary agent code, upstream transactions, image/package registry publication or competition submission",
     "All PRs remain unmerged pending independent review; native/main release and live Pages are unchanged",
     "Local log workspace/temp prefixes replaced with /workspace and /tmp; trailing whitespace normalized",
-    "Initial image build used a wrong local archive filename; retained failure precedes successful checksum-verified build"
+    "Initial image build used a wrong local archive filename; retained failure precedes successful checksum-verified build",
+    "Committed CI test logs extract only the named test step from public logs; complete run URLs/IDs are retained."
   ],
   "files": {
+    "ci/engine-docker-tests.log": {
+      "sha256": "e7f720522221f7b5b6137a84f02bad872e3cf376e6de2d8024fc76e9d1e94ace",
+      "bytes": 5051
+    },
+    "ci/clean-reproduction.json": {
+      "sha256": "a6ece4225fceed10c54c4ede6bda1b48fd0502445e06e7a4fee22b0a82ea56f2",
+      "bytes": 2880
+    },
+    "ci/engine-native-tests.log": {
+      "sha256": "68af8eba871305ed2305caf51d8c97731158c75b1ee9b6861a6db284609adfdf",
+      "bytes": 26932
+    },
+    "ci/integration.json": {
+      "sha256": "5eb5fff7d0a64d2a2b07dfdcd163411ac8a48d0dca32dfbd56a5d97df15d04e4",
+      "bytes": 2205
+    },
+    "ci/image.json": {
+      "sha256": "eb194149a1c5db53535cd303dd7866e8bcef850f801ff485a6e3c84eb0683c45",
+      "bytes": 1779
+    },
     "local/docker-tests.log": {
       "sha256": "8bcce5c8605930afbf2a7fe73b977eae74accd81fa712536a2ae4de4051be014",
       "bytes": 1495
@@ -145,5 +167,33 @@
       "sha256": "bea522db16da5127cda4ab898f6fdfe2a9dc4c923391172bd4b8ee686be341cb",
       "bytes": 22282
     }
+  },
+  "coordination_ci": {
+    "commit": "29e2be912dee3193e355ce1d551bbc757a7e11b8",
+    "integration_run": 35465814576,
+    "links_run": 35465814613,
+    "jobs": {
+      "integration": "success",
+      "host-bounds": "success",
+      "bounded-default": "success",
+      "docs-links": "success"
+    },
+    "downloaded_default_evidence": true,
+    "source_pins_checker_and_artifact_ids_match_local": true,
+    "image_source_hashes_match_across_architectures": true,
+    "clean_default_reproduction_seconds": 7.4435970010000005,
+    "clean_default_archive_predownloaded": false,
+    "artifact": {
+      "id": 10591710599,
+      "github_reported_digest": "sha256:37db16665f0c53070a7c3e843614d6ec03ee650e2f62bd7a0cce96bb57aa77ad",
+      "size_in_bytes": 4236
+    }
+  },
+  "cleanup": {
+    "owned_workers_absent_before_vm_stop": true,
+    "dedicated_colima_profile": "entrotter",
+    "dedicated_profile_stopped": true,
+    "existing_default_profile_still_stopped": true,
+    "docker_context_unchanged": "colima"
   }
 }
