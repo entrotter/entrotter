@@ -230,9 +230,14 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   or reset while preserving timeout/recovery assertions; its failure is retained.
 - The actual CLI→SDK→API check now requires 16 consecutive busy CLI responses and
   verifies no work, no replacement export, 507 handling, real Anvil reports and
-  recovery. Local verification passed. Its CI engine pin is the exact fix commit.
-  See evidence/overload-response/summary.json. Linux CI is still pending; this does
-  not erase the earlier failed run or establish completion of the broader gates.
+  recovery. Local and Linux verification passed; full artifact IDs and checker hashes agree.
+  The exact engine fix commit passed Python matrix, 124 native tests, all ten real
+  Docker enforcement tests, quality and link jobs. Downloaded quality evidence
+  retains 15 findings, audits 42 packages without known vulnerabilities, and the
+  wheel's 14 Python files match source. Coordination integration/link CI passed.
+  See evidence/overload-response/summary.json. PRs engine #15 and coordination #17
+  remain unmerged pending review. This does not erase the original failed run or
+  complete broader gates. Live Pages again returned 200 with exact source HTML.
 
 ## Open gates and next actions
 

@@ -78,13 +78,14 @@
         "Full engine Bandit scan retains 15 author-reviewed findings with exact source/finding hashes and tested fail-closed review policy",
         "All 42 engine Python tool/build dependencies hash locked and audited without skips or reported known vulnerabilities; engine Actions pinned by commit",
         "Engine quality/native/Docker/matrix CI passed at ba0adfb; downloaded complete quality reports and verified every CI wheel source file",
-        "Six-repository local and GitHub documentation-link checks passed 102 occurrences with explicit exclusions; complete reports retained, PRs pending review"
+        "Six-repository local and GitHub documentation-link checks passed 102 occurrences with explicit exclusions; complete reports retained, PRs pending review",
+        "Reproduced and fixed overload TCP early-close race: failing real-socket regression, 124 native tests, bounded idle/trickle checks, 16-attempt CLI-SDK-API integration and all Linux/Docker/quality CI pass; engine #15/coordination #17 pending independent review"
       ],
       "todo": [
         "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",
         "Extend lint/types/security/dependency gates to other repos and separate agent branch; add native/container-OS advisory coverage",
         "remaining cross-repo dependency pins",
-        "Verify Linux CI and independently review saturated API early-close fix in engine #15; local regression, 124 native tests and 16-attempt CLI-SDK-API integration pass"
+        "Independent review and merge of security, resource and CI PRs, including overload-response fix"
       ]
     },
     {
@@ -145,7 +146,8 @@
     "separate_worker_note": "Main-based engine PR #11; overlaps prior engine native suites, no addition to frozen workspace total",
     "separate_host_bounds_engine_tests": 114,
     "separate_cli_export_tests": 9,
-    "separate_engine_quality_tests": 121
+    "separate_engine_quality_tests": 121,
+    "separate_overload_fix_engine_tests": 124
   },
   "evidence": [
     "evidence/verification.json",
