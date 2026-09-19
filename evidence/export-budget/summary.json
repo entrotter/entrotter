@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
-  "checked_at": "2026-09-19T22:03:32.795149+00:00",
-  "status": "local_and_engine_cli_ci_passed; coordination_ci_pending; independent_review_required",
+  "checked_at": "2026-09-19T22:08:52.816266+00:00",
+  "status": "verified_local_and_linux_ci; independent_review_and_merge_pending",
   "issue": "https://github.com/entrotter/entrotter/issues/30",
   "engine_pr": "https://github.com/entrotter/engine/pull/20",
   "cli_pr": "https://github.com/entrotter/cli/pull/9",
@@ -190,7 +190,8 @@
     "cli-links.json": "b8fa1e97f7585d543c6bb53e406ea4f1963335bf5b6b4d46be32f757a11e42bc",
     "cli-tests.log": "15cd4836b1a2f6e62445e296be7b92de528daabd05b229b3fb31080615ac0ada",
     "compressed-inputs.json": "381081575b6f4ad2cc7fdfc26283eb26ccbbe52585c437a0a43719abd4f90b34",
-    "coordination-links.json": "3bd1db769940f9c74b5f197618ddc0871106575f5c4a4768746fd35ea2df2994",
+    "coordination-ci.json": "77535ef26e36e61d9eccaa92599e7556822e023978ec6bc69a6dad9dc8002628",
+    "coordination-links.json": "b8cfd01a33d5fec0644d43db40636c5abb3059c148309ead354c83ad941a6670",
     "coordination-tests.log": "bb3936e1e958abbb6b42fe0b716f15093e4c3b675b72f4c54c4e2b8c0a8d84d2",
     "docker-ci.log": "10348b7a69310b0a69bfa37f4121ae4959433d0cc17913e0dcb7621a1f66c5dd",
     "docker-tests.log": "ad4d84d19b3cb36632c08459b50d95b64a13f83b59c13b70210996ca1f20faf4",
@@ -218,6 +219,11 @@
     "image-local/signature.log": "4bfe2b5ee29716434b11f0d0b110fd7a30f98c8fe0c2a1805773b152a825d0e4",
     "image-local/summary.json": "af8e08daf0ba79209c2e7780e70c10a773afdea2ba9b8c191fff9db2062db9bc",
     "image.json": "ffb7189b32d26656be89f575b3e31c5918350027b9c6abafeadc0ad7fe17fbb5",
+    "integration-ci/clean-reproduction.json": "8fad9dddd4e48f2c639b4bcde0a11e00dd98d6e46ab0f5aafe8d533ff2988228",
+    "integration-ci/export-contract.json": "5b0cdd08e915cd24e3754c4ec807ad2fb93d7f2f25943ef6d04b8ff1e81e3eeb",
+    "integration-ci/image.json": "ca65b97a983475511ecf7affa12d69a6d68a2873b6206cb8e86bd3ce3baaa656",
+    "integration-ci/integration.json": "4ec1ae36a26530546ea9ded7f537f78632b5715c2bde566490f220f48208fa39",
+    "integration-ci/verification.json": "bafed858204b0aa7da06abbc6c32ebdbe44426cc0a5eb8be1012349be4a69a9d",
     "integration.json": "6964ace7e66c59264d3be1c4c4a8e327a87149f77a3f1105b89ea63ad7f2c1a3",
     "native-ci/attestations.json.gz": "dccf6ab433687dcd134b2801e454f131254b83a37e10146197352634817eb1ce",
     "native-ci/database.json": "92de68cd3f0a2654590783e05c2ad07df537a400b7876a491254f22c526abdf6",
@@ -248,5 +254,27 @@
     "quality-engine/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
     "quality-engine/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
     "quality-engine/verification.json": "a106d7529f731953736259a9e7d204163413e27d7e349b19ed7a2d9ad61aff4b"
+  },
+  "coordination_pr": "https://github.com/entrotter/entrotter/pull/31",
+  "cleanup": {
+    "VM_started_for_this_slice": true,
+    "dedicated_profile": "Stopped",
+    "original_default_profile": "Stopped",
+    "docker_context": "colima",
+    "owned_workers_before_stop": [],
+    "frozen_engine_clean": true,
+    "frozen_scenarios_clean": true
+  },
+  "integration_ci": {
+    "status": "passed",
+    "proof_commit": "77a754eec02d020291134ad80d7d69470e89c632",
+    "integration_run": 35472379661,
+    "links_run": 35472379628,
+    "all_three_jobs_passed": true,
+    "source_checker_shared_protocol_and_pins_match": true,
+    "full_fixture_and_evm_artifact_ids_match": true,
+    "image_source_files_and_native_binary_match": true,
+    "clean_reproduction_seconds": 6.277971051999998,
+    "scope": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
   }
 }

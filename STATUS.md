@@ -434,8 +434,14 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 - Both actual CLIs agree on 128 shared slots, reject the next output, preserve
   old destinations and recover after manual deletion. Separate actual default
   Docker CLI-SDK-API fixture/Anvil/admission/507/503/no-retry checks pass. No new
-  historical or model-performance claim is made. Pinned coordination CI is
-  being verified; frozen historical inputs remain unchanged.
+  historical or model-performance claim is made. Coordination PR #31 passes all
+  three integration jobs (35472379661) and links (35472379628) at 77a754e.
+  Downloaded source/checker/helper/image pins and full report IDs agree. Public
+  clone/venv/build reproduction takes 6.278 seconds on Linux with running Docker
+  and warm build caches, not a cold installation. The initial workflow context
+  rejection is retained and fixed. Frozen historical inputs remain unchanged.
+  No owned workers remain; dedicated/default VM profiles are stopped and the
+  original Docker context is unchanged.
 - See docs/SHARED_EXPORT_BUDGET.md and evidence/export-budget/. This bounds
   cooperating file-content writers, not pre-existing untracked files, operator
   moves/renames, older clients, distinct roots, filesystem metadata, host caller

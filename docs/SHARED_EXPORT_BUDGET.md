@@ -77,6 +77,13 @@ CI run IDs, downloaded report verification and remaining limits.
   still require independent approval. Both 42-package Python advisory audits and
   actual worker OS/native advisory gates pass at their recorded database time.
 
+Coordination [PR #31](https://github.com/entrotter/entrotter/pull/31) passes all
+three integration jobs and links at proof commit `77a754e`. Downloaded Linux
+source/checker/helper/image pins and full fixture/Anvil report IDs match local
+evidence. Public clone/venv/image-build reproduction takes 6.278 seconds with
+running Docker and warm build caches; this excludes cold installation/VM startup.
+The initial workflow context rejection and its fix are retained.
+
 No new historical or model-performance claim follows from this storage change.
 Independent review, host/VM resource limits, broader repository delivery gates,
 accessibility deployment and genuine user/submission evidence remain open.
