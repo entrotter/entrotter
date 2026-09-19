@@ -10,7 +10,7 @@ remote history. Use the existing six sibling Git checkouts and focused PRs.
 - Foundry v1.8.3 release archive downloaded and SHA-256 checked against GitHub
   release metadata. Local executable: `../.tools/foundry-v1.8.3/anvil` from this
   coordination repo. `evidence/foundry-install.json` records exact version/digest.
-- Full workspace check: **121 Python tests and 13 JavaScript tests passed**,
+- Full workspace check: **141 Python tests and 13 JavaScript tests passed**,
   including actual Anvil transfer/revert/rejection, state isolation, startup
   timeout/cancellation, missing receipt cleanup, token storage and decimal pins.
   Fault-injection tests are labelled; no real EVM test was silently replaced.
@@ -58,9 +58,32 @@ certificate validation. Public archive service availability can change. PublicNo
 served the 2024 block header but rejected state reads as pruned. dRPC served the
 required historical state. Archive failure is explicit, never a synthetic fallback.
 
+## New agent slice: verified locally, awaiting independent review
+
+- Engine PR #8 (`bb8b3e8d32c7cbd49629d337758f30bfdf805045`) adds typed
+  execute/hold decisions over current observations, a bounded gas budget and exact
+  recorded replay. Its Python matrix and dedicated real-Anvil CI passed.
+- Scenarios PR #5 (`828cfe37f2a2d6d7f2db868a0856a28c080b7a94`) defines the
+  optional result recording schema; its validation CI passed. Both PRs are open,
+  not merged. Main still requires an independent approval.
+- A real `gpt-5.6-sol` Codex CLI policy completed two decisions on an artificial
+  local-EVM transfer/revert example. Non-agent execution reverted once (42,006 gas);
+  both deterministic risk and model policies executed the transfer and held the
+  revert (21,000 gas). The model took 8.721 seconds versus risk 0.313 seconds; no
+  model advantage is demonstrated. Model alias, exact prompt, usage, limits and
+  unavailable seed/monetary cost are recorded, not invented.
+- Complete model artifact `1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b`
+  reproduced exactly without a model call. Fresh public dependency checkouts and
+  a stdlib-only venv reproduced it in **5.148 seconds**, including clone/setup.
+  See `evidence/clean-agent-reproduction.json` and `docs/AGENT_EVALUATION.md`.
+- Trusted CLI subprocess timeout/output/error handling and cleanup pass offline
+  tests. This is not a general code sandbox or an egress firewall. No arbitrary
+  providers can be selected through JSON/HTTP. Current dependency pins identify
+  tested proposed engine/schema commits, pending independent review.
+
 ## Open gates and next actions
 
-1. All current engine/scenario/viewer/evidence changes are merged and live. All
+1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
    six repositories now require passing CI and one PR approval, including admins.
    Protection read-back is in evidence/branch-protection.json. Future PRs need a
    reviewer distinct from the author; do not bypass these protections. The final
@@ -68,9 +91,9 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 2. Complete security/delivery: whole-process CPU/RSS/time/disk/concurrency bounds,
    SIGTERM handling, deeper RPC/API fault tests, lint/types/security/dependency and
    docs-link CI, remaining immutable dependencies, and branch protections.
-3. Add constrained causal agent observations/actions and one real recorded agent;
-   disclose model/prompt/limits/cost. Build three sourced cases and untouched
-   holdouts. Current manually prescribed actions are not an integrated agent.
+3. Extend the verified local agent slice to three sourced cases and untouched
+   holdouts. The original archived Uniswap report still uses manually prescribed
+   actions; the newly recorded model case is local and artificial.
 4. Compare the same task with direct Anvil scripting. Historical trace replay remains unsupported; never
    describe archived-state actions as a reconstructed counterfactual market.
 5. Complete accessibility/link review and submission materials. Actual pitch/demo

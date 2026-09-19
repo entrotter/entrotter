@@ -148,3 +148,13 @@ Foundry v1.8.3 is required. On macOS, if Python lacks a certificate bundle, set
 `SSL_CERT_FILE=/etc/ssl/cert.pem` to use the trusted OS bundle. Never disable TLS.
 This is supplied-action execution on archived state, not historical trace replay,
 a reconstructed alternative market, or an integrated-agent benchmark.
+
+## Recorded model decisions
+
+The experimental local controller now connects typed `execute`/`hold` model
+responses to real Anvil execution and replays a full recording without another
+model call. In the artificial transfer/revert example, the model and a simple
+preflight rule made identical decisions; the rule was faster. See
+[agent evaluation](docs/AGENT_EVALUATION.md) for receipts, measured timings,
+metadata, exact replay commands and pending historical/holdout work. The engine
+and schema PRs require independent review before this becomes a main-branch release.
