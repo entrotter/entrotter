@@ -192,6 +192,29 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   files match the tested source. Other repos, native/container-OS audits and
   docs-link gates remain open.
 
+## Documentation links verified across all six repositories
+
+- Checksum-pinned Lychee 0.24.2 checks each PR's tracked Markdown/HTML/CSS,
+  including hidden templates, local files, fragments and public HTTP links.
+  Six real-checker regression tests prove missing targets/fragments/CSS/HTTP 404
+  failures, tracked-input coverage and rejection of an empty successful scan.
+- All six local scans and all six GitHub link jobs passed: 102 successful link
+  occurrences, one explicitly excluded local API example, no errors/timeouts.
+  Downloaded CI reports match every local input hash; CI records its merge SHA.
+  Complete results are in evidence/docs-links/summary.json and adjacent reports.
+- README navigation now links workspace setup, contributing, security and license.
+  Previously engine/SDK had zero extracted links and CLI only an excluded example.
+  Consumer actions use immutable coordination commit ea74aec66c5234edb935e4b12c14ec686dc73f80.
+  PRs: coordination #16, engine #14, SDK #5, CLI #6, scenarios #7, website #9.
+  These are unmerged, pending independent review. Main required-check lists are
+  unchanged. Static scanning does not complete the accessibility/dynamic UI gate.
+- An existing host-bounds job failed at its CLI 503 assertion (run 35461539934).
+  A local saturated-API probe reproduced five generic transport errors in 59 CLI
+  attempts while all eight slots stayed occupied. It is not a link-check failure.
+  The failure log/probe are retained; investigate response/close timing next and
+  add a regression before claiming the host integration stable. Frozen engine
+  and historical scenario inputs remain unchanged.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -201,7 +224,7 @@ required historical state. Archive failure is explicit, never a synthetic fallba
    protection checkpoint is committed locally pending the next reviewed docs PR.
 2. Complete security/delivery: whole-process CPU/RSS/time/disk/concurrency bounds,
    SIGTERM handling, deeper RPC/API fault tests, lint/types/security/dependency and
-   docs-link CI, remaining immutable dependencies, and branch protections.
+   remaining repo quality CI, immutable dependencies, and branch protections.
 3. Obtain independent review of the agent and benchmark PRs. Further policy
    tuning needs new unused cases; these two holdouts are now evaluated. The original
    archived Uniswap report remains a manually prescribed intervention example.

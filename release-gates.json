@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T18:18:17.571054+00:00",
+  "updated_at": "2026-09-19T18:36:45.091707+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -77,12 +77,14 @@
         "Engine PR #13: Ruff lint/format and mypy on 17 production source/scripts; full local native suite passes 121 tests",
         "Full engine Bandit scan retains 15 author-reviewed findings with exact source/finding hashes and tested fail-closed review policy",
         "All 42 engine Python tool/build dependencies hash locked and audited without skips or reported known vulnerabilities; engine Actions pinned by commit",
-        "Engine quality/native/Docker/matrix CI passed at ba0adfb; downloaded complete quality reports and verified every CI wheel source file"
+        "Engine quality/native/Docker/matrix CI passed at ba0adfb; downloaded complete quality reports and verified every CI wheel source file",
+        "Six-repository local and GitHub documentation-link checks passed 102 occurrences with explicit exclusions; complete reports retained, PRs pending review"
       ],
       "todo": [
         "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",
-        "Extend lint/types/security/dependency gates to other repos and separate agent branch; add docs-link checks and native/container-OS advisory coverage",
-        "remaining cross-repo dependency pins"
+        "Extend lint/types/security/dependency gates to other repos and separate agent branch; add native/container-OS advisory coverage",
+        "remaining cross-repo dependency pins",
+        "Fix reproduced saturated API early-close transport race: generic CLI error instead of HTTP 503; failed CI and local probe retained"
       ]
     },
     {
@@ -96,11 +98,12 @@
         "keyboard skip link",
         "no third-party browser requests",
         "EVM report viewer local browser checks passed",
-        "latest EVM viewer deployed and verified on desktop/mobile"
+        "latest EVM viewer deployed and verified on desktop/mobile",
+        "Static website Markdown/HTML/CSS file, fragment and public HTTP links: 29 occurrences passed locally and in CI; no UI deployment change"
       ],
       "blocked": [],
       "todo": [
-        "broader accessibility and link audit"
+        "broader accessibility audit; dynamic JavaScript links remain covered by separate browser tests"
       ]
     },
     {
@@ -196,6 +199,7 @@
     "evidence/engine-security-source-drift.log",
     "evidence/engine-bandit-ci.json",
     "evidence/engine-python-audit-ci.json",
-    "evidence/engine-quality-coordination-tests.log"
+    "evidence/engine-quality-coordination-tests.log",
+    "evidence/docs-links/summary.json"
   ]
 }

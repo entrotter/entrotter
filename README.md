@@ -1,5 +1,7 @@
 # Entrotter
 
+[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
+
 **A time machine for onchain agents.**
 
 Rewind a state. Change a decision. Inspect the evidence.
@@ -24,12 +26,12 @@ runs locally. See STATUS.md for current verification and open acceptance gates.
 
 | Repository | Owns | Does not own |
 | --- | --- | --- |
-| `entrotter/entrotter` | Roadmap, workspace, goal and submission evidence | Runtime business logic |
-| `entrotter/engine` | Validation, experiments, Anvil, local API | Frontend or SDK |
-| `entrotter/sdk-python` | HTTP client, typed results, hash checks | Engine internals |
-| `entrotter/cli` | CLI and user-facing diagnostics | Protocol simulation |
-| `entrotter/scenarios` | Schemas, fixtures and scenario provenance | Service execution |
-| `entrotter/entrotter.github.io` | Documentation and report viewer | Wallet keys, accounts or backend compute |
+| [entrotter/entrotter](https://github.com/entrotter/entrotter) | Roadmap, workspace, goal and submission evidence | Runtime business logic |
+| [entrotter/engine](https://github.com/entrotter/engine) | Validation, experiments, Anvil, local API | Frontend or SDK |
+| [entrotter/sdk-python](https://github.com/entrotter/sdk-python) | HTTP client, typed results, hash checks | Engine internals |
+| [entrotter/cli](https://github.com/entrotter/cli) | CLI and user-facing diagnostics | Protocol simulation |
+| [entrotter/scenarios](https://github.com/entrotter/scenarios) | Schemas, fixtures and scenario provenance | Service execution |
+| [entrotter/entrotter.github.io](https://github.com/entrotter/entrotter.github.io) | Documentation and report viewer | Wallet keys, accounts or backend compute |
 
 Keep the six checkouts as sibling directories. Schema and API version 0.1.0
 is the contract between them. Do not split further until there is an independent
@@ -177,3 +179,6 @@ limits are open gates.
 The [host resource bounds](docs/HOST_RESOURCE_LIMITS.md) add proposed API report
 quotas, connection limits and safe CLI exports, with real CLI/SDK/API fault and
 recovery evidence. These PRs remain subject to independent review.
+
+[Documentation link checks](docs/LINK_CHECKS.md) describe the shared CI policy,
+local reproduction, full result artifacts and the limits of static link scanning.
