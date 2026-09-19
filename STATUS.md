@@ -486,6 +486,31 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   Frozen historical inputs remain unchanged. Independent review and overall goal
   completion remain pending.
 
+## Scenario contracts and quality: verified, review pending
+
+- Scenarios PR #8 (`3a78ecca24334ae87119a5a0b64c84ba6dd71de1`) fixes a
+  reproduced result-schema reference failure using a fully local schema registry.
+  Valid nested agent recordings now pass; invalid choices/extensions/reasons and
+  exchange counts fail. Unknown relative, HTTP and file references fail without
+  retrieval attempts. Missing schema dependencies fail instead of skipping tests.
+- All three schema files and every scenario/benchmark/manifest remain byte-identical.
+  The catalog test now includes historical scenarios and detects missing, unlisted
+  or duplicate examples; all five frozen cases also receive schema validation.
+  Fourteen tests pass locally against both agent and worker engine variants.
+- Python 3.11/3.12/3.13 Linux jobs pass all 14 tests without skips. All 19 existing
+  public result envelopes, including 12 agent records, pass offline validation.
+  No historical/model execution or Docker VM was needed. The v0.1 envelope still
+  does not fully constrain nested scenario/trace fields or verify hashes/semantics.
+- Ruff, normal mypy and full unsuppressed Bandit cover all five Python sources,
+  including tests; no type/security findings. Strict audits report no known issues
+  or skipped packages across 48 locked tools and six schema dependencies (a subset).
+  Immutable Actions, binary-only hashed installs and all 11 docs-link occurrences
+  pass. Downloaded CI source/schema/lock hashes and complete inventories match local.
+  Contracts run 35474622711, quality 35474622690, links 35474622683 all pass.
+- See docs/SCENARIO_CONTRACTS.md and evidence/scenario-contracts/. PR #8 and its
+  stacked prerequisites require independent review/merge. Website and separate
+  agent-branch quality, broader resource/delivery and submission gates remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All

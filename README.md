@@ -204,3 +204,6 @@ cross-process saved/pending report limits, crash recovery and operator inspectio
 
 [Coordination quality](docs/COORDINATION_QUALITY.md) records complete tooling scans,
 optimized-Python verification, locked dependencies and frozen-source exceptions.
+
+[Offline schema contracts](docs/SCENARIO_CONTRACTS.md) records local reference
+resolution, mandatory checks, frozen input compatibility and scenario quality CI.
