@@ -189,8 +189,8 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   from its upload; this was fixed with explicit hidden-file inclusion and an error
   on missing output. Final quality/native/Docker/matrix CI all passed; downloaded
   reports retain all 15 findings and the 42-package audit. The CI wheel's 14 Python
-  files match the tested source. Other repos, native/container-OS audits and
-  docs-link gates remain open.
+  files match the tested source. At that checkpoint, other repos, native/container-OS audits and
+  docs-link gates remained open; subsequent slices are recorded below.
 
 ## Documentation links verified across all six repositories
 
@@ -239,6 +239,32 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   remain unmerged pending review. This does not erase the original failed run or
   complete broader gates. Live Pages again returned 200 with exact source HTML.
 
+## SDK and CLI quality gates
+
+- SDK PR #6 and CLI PR #7 add Ruff lint/format, normal mypy, complete unsuppressed
+  Bandit scans, strict advisory audits of all 42 locked tool/build packages, and
+  fresh-wheel checks. SDK has no runtime dependencies. CLI builds its unpublished
+  SDK dependency from exact source b0c2ba3bba411e548af44101ae06e879bd7b5dc0,
+  verifies its dependency graph and never resolves it from a package registry.
+- SDK 18 and CLI 13 local tests pass. The SDK now ships its verified `py.typed`
+  marker. The CLI's optional engine stub describes only the v0.1 boundary; actual
+  engine behavior is separately tested. Source scans cover four SDK/five CLI
+  files, with zero findings/skips. Both 42-package audits report no known issues.
+- A correctly hashed array/object mode previously raised TypeError. The SDK's
+  failing regression is retained; it now emits ClientError, and CLI rejects the
+  report without a traceback. All 16 existing archived-state/agent reports pass
+  hash/parser checks. This does not constitute new historical/model execution.
+- Fresh venv installs use only local wheels with `--no-index --no-deps`, confirm
+  MIT metadata/source equality, and exercise SDK import and CLI doctor/verify/
+  inspect without an engine package. Real CLI→SDK→API fixture/Anvil, quota and
+  16-attempt overload/recovery checks pass locally. SDK and CLI quality/matrix/
+  link CI passed. The newly pinned Linux cross-repository job also passed; exact
+  source pins, checker hash and complete report IDs match local results. Downloaded
+  SDK/CLI quality reports match every scanned source hash; both CI wheel contents
+  and MIT/dependency metadata were checked. See docs/SDK_CLI_QUALITY.md and
+  evidence/sdk-cli-quality/summary.json. Coordination PR #19 records the evidence;
+  all three PRs remain unmerged and require independent review.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -254,7 +280,7 @@ required historical state. Archive failure is explicit, never a synthetic fallba
    archived Uniswap report remains a manually prescribed intervention example.
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
    security/delivery gates next: default bounded execution, aggregate CLI budgets
-   and CI lint/types/dependency/security/docs-link checks. Preserve the frozen engine checkout; use an isolated worktree.
+   and remaining repo quality/native dependency checks. Preserve the frozen engine checkout; use an isolated worktree.
    A dedicated local Colima profile now provides a verified Linux cgroup v2
    Docker daemon. The opt-in worker is tested in engine PR #11; native execution
    remains the default. See docs/WORKER_SECURITY.md and its measured evidence.

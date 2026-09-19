@@ -70,12 +70,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: entrotter/sdk-python
-          ref: f65f45de26c2658e2269a02a5dbe7c90c74b1cba
+          ref: b0c2ba3bba411e548af44101ae06e879bd7b5dc0
           path: sdk-python
       - uses: actions/checkout@v4
         with:
           repository: entrotter/cli
-          ref: d842c56bd9cf2c0845f5666b4ea0b02d2be34489
+          ref: aba6a6147b2b4b96facf758f9b95b63d8e6b5952
           path: cli
       - uses: actions/setup-python@v5
         with:
