@@ -88,6 +88,8 @@ event. There is no independent egress firewall or hard whole-process CPU/RSS/dis
 quota. Arbitrary downloaded code execution and HTTP-selected providers remain
 disabled. The current-state preflight can differ from the next execution block.
 
-Three sourced historical cases, untouched holdouts, a same-task direct Anvil
-comparison and broader resource controls are still required. Results must retain
-adverse outcomes and make no claims of future-profit prediction or model superiority.
+The subsequent [historical comparison](HISTORICAL_AGENT_EVALUATION.md) completed
+three sourced cases and two pre-frozen implementation holdouts with exact replay.
+The same-task direct Anvil comparison and broader resource controls remain open.
+Results retain adverse outcomes and make no claims of future-profit prediction
+or model superiority.

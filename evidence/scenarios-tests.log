@@ -1,3 +1,4 @@
+test_frozen_inputs_and_split_are_unchanged (test_benchmark_cases.FrozenCaseTests.test_frozen_inputs_and_split_are_unchanged) ... ok
 test_existing_report_envelope_still_accepts_no_agent (test_recording_schema.RecordingSchemaTests.test_existing_report_envelope_still_accepts_no_agent) ... ok
 test_shape_rejects_executable_action_extensions (test_recording_schema.RecordingSchemaTests.test_shape_rejects_executable_action_extensions) ... ok
 test_all_runtime_validate (test_scenarios.ScenarioTests.test_all_runtime_validate) ... ok
@@ -6,6 +7,6 @@ test_manifest_paths (test_scenarios.ScenarioTests.test_manifest_paths) ... ok
 test_no_real_claims_in_synthetic (test_scenarios.ScenarioTests.test_no_real_claims_in_synthetic) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 0.041s
+Ran 7 tests in 0.047s
 
 OK

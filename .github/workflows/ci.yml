@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: entrotter/scenarios
-          ref: 828cfe37f2a2d6d7f2db868a0856a28c080b7a94
+          ref: 5b718984ac67b8fb49e02f4dab676ae212d2aa58
           path: scenarios
       - uses: actions/checkout@v4
         with:

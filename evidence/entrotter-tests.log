@@ -1,3 +1,6 @@
+test_changed_manifest_fails_before_any_execution (test_benchmark_guard.BenchmarkGuardTests.test_changed_manifest_fails_before_any_execution) ... ok
+test_dirty_engine_cannot_silently_change_holdout_policy (test_benchmark_guard.BenchmarkGuardTests.test_dirty_engine_cannot_silently_change_holdout_policy) ... ok
+test_split_loading_does_not_execute_or_generate (test_benchmark_guard.BenchmarkGuardTests.test_split_loading_does_not_execute_or_generate) ... ok
 test_bounded_process_stdin_and_no_secret_environment_forwarding (test_codex_policy.CodexBoundaryTests.test_bounded_process_stdin_and_no_secret_environment_forwarding) ... ok
 test_empty_or_invalid_usage_never_looks_completed (test_codex_policy.CodexBoundaryTests.test_empty_or_invalid_usage_never_looks_completed) ... ok
 test_nonzero_exit_redacts_stderr (test_codex_policy.CodexBoundaryTests.test_nonzero_exit_redacts_stderr) ... ok
@@ -12,6 +15,6 @@ test_public_manifest_boundaries (test_workspace.WorkspaceTests.test_public_manif
 test_sdk_api_roundtrip (test_workspace.WorkspaceTests.test_sdk_api_roundtrip) ... ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 1.014s
+Ran 15 tests in 1.152s
 
 OK
