@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T16:49:24.224851+00:00",
+  "updated_at": "2026-09-19T17:33:22.343312+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -65,10 +65,14 @@
         "public CI including real Anvil passed",
         "private vulnerability reporting verified on six repos",
         "all six main branches require CI and one approval, including admins",
-        "RPC diagnostic redaction regression and real EVM suite passed in isolated engine PR #9, pending approval"
+        "RPC diagnostic redaction regression and real EVM suite passed in isolated engine PR #9, pending approval",
+        "Native lifetime-pipe guardian tested with real owner SIGTERM/SIGKILL, guardian failure and watchdog; engine PR #10 pending review",
+        "Opt-in Docker worker: actual CPU throttling, OOM/PID/tmpfs/noexec limits, CLI/API equivalence, detached 180.916-second expiry, owner/signal cleanup; engine PR #11 pending review",
+        "Isolated historical 19M Uniswap report exactly matches complete public reference artifact",
+        "Dedicated real-Docker Linux CI passed 10 enforcement/lifetime tests at engine 05448c3; run 35458208203"
       ],
       "todo": [
-        "SIGTERM and hard whole-process CPU/memory/time/disk quotas",
+        "Promote bounded execution appropriately; cap host artifact/image storage, aggregate CLI work and API connection threads; preserve native/daemon failure limits",
         "complete lint/type/dependency/security/docs-link CI",
         "remaining cross-repo dependency pins"
       ]
@@ -124,7 +128,10 @@
     "historical_agent_cases": 5,
     "historical_agent_exact_replays": 10,
     "separate_engine_hardening_tests": 83,
-    "separate_engine_hardening_note": "Overlaps existing suite; isolated main-based PR #9, pending review"
+    "separate_engine_hardening_note": "Overlaps existing suite; isolated main-based PR #9, pending review",
+    "separate_worker_native_tests": 96,
+    "separate_real_docker_tests": 10,
+    "separate_worker_note": "Main-based engine PR #11; overlaps prior engine native suites, no addition to frozen workspace total"
   },
   "evidence": [
     "evidence/verification.json",
@@ -148,6 +155,15 @@
     "evidence/causal-v1/holdout.json",
     "evidence/causal-v1/review.json",
     "evidence/direct-anvil-comparison.json",
-    "evidence/engine-rpc-diagnostics-tests.log"
+    "evidence/engine-rpc-diagnostics-tests.log",
+    "evidence/worker-security.json",
+    "evidence/engine-guardian-tests.log",
+    "evidence/engine-worker-tests.log",
+    "evidence/isolated-worker-tests.log",
+    "evidence/isolated-worker-image.json",
+    "evidence/isolated-worker-system.json",
+    "evidence/isolated-worker-historical.json",
+    "evidence/worker-coordination-tests.log",
+    "evidence/isolated-worker-ci-tests.log"
   ]
 }
