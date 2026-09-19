@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T15:51:43.293224+00:00",
+  "updated_at": "2026-09-19T16:22:48.473899+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -35,13 +35,18 @@
         "adverse recovery example",
         "clean public checkout reproduction in fresh stdlib-only venv: 5.335 seconds",
         "single historical source case repeated identically",
-        "clean public checkout historical run in 13.877 seconds, exact artifact match"
+        "clean public checkout historical run in 13.877 seconds, exact artifact match",
+        "typed current-observation execute/hold interface with exact replay; engine PR #8 pending approval",
+        "actual Codex model decisions on one artificial local-EVM case; metadata and token usage recorded",
+        "clean recorded-model replay from fresh public dependencies in 5.148 seconds, no model call"
       ],
       "todo": [
-        "constrained typed causal agent interface",
-        "actual agent integration and recorded model/tool actions",
         "three sourced scenarios plus untouched holdouts",
-        "same-task direct Anvil comparison"
+        "same-task direct Anvil comparison",
+        "independent approval and merge of engine/schema/coordination agent PRs"
+      ],
+      "blocked": [
+        "served immutable model identity and dollar cost unavailable from authenticated CLI; requested alias and usage disclosed"
       ]
     },
     {
@@ -58,12 +63,11 @@
         "64 MiB per-EVM memory cap and persistent fork cache disabled",
         "public CI including real Anvil passed",
         "private vulnerability reporting verified on six repos",
-        "five component main branches require CI and one approval, including admins"
+        "all six main branches require CI and one approval, including admins"
       ],
       "todo": [
         "SIGTERM and hard whole-process CPU/memory/time/disk quotas",
         "complete lint/type/dependency/security/docs-link CI",
-        "coordination repo main protection pending checkpoint merge",
         "remaining cross-repo dependency pins"
       ]
     },
@@ -109,7 +113,7 @@
     }
   ],
   "test_summary": {
-    "python_passed": 121,
+    "python_passed": 141,
     "javascript_passed": 13,
     "skipped": 0,
     "historical_repeat_runs": 2,
@@ -126,6 +130,12 @@
     "evidence/publication.json",
     "evidence/repository-security.json",
     "evidence/clean-historical-reproduction.json",
-    "evidence/branch-protection.json"
+    "evidence/branch-protection.json",
+    "evidence/agent-local-prescribed.json",
+    "evidence/agent-local-risk.json",
+    "evidence/agent-local-codex.json",
+    "evidence/agent-model-verification.json",
+    "evidence/clean-agent-reproduction.json",
+    "evidence/agent-integration-provenance.json"
   ]
 }
