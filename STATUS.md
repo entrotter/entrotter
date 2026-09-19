@@ -169,6 +169,29 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   execution and complete CI hygiene remain open. Socket timeout does not forcibly
   cancel admitted native Python work. PRs remain unmerged pending independent review.
 
+## Engine quality and Python dependency gates
+
+- Engine PR #13 (`ba0adfb233b685f99f35cbbe33331fee83360504`) adds Ruff lint/
+  formatting and mypy over all 17 production source/scripts, fixing 28 initial
+  lint and 19 initial typing findings. JSON boundaries still need runtime validation.
+- Full Bandit scanning retains 15 expected findings (13 low, two medium), with
+  exact code/source hashes and per-finding reasons. No rules or advisory IDs are
+  suppressed. Author-reviewed reasons still need independent approval; this is
+  not a proof of security. Policy failure paths are tested.
+- All 42 Python tool/build dependencies are version/hash locked; the strict audit
+  reported no known vulnerabilities and no skipped packages. Runtime dependencies
+  remain empty. All engine GitHub Actions now use immutable commit IDs.
+- The local suite passed 121 tests with real Anvil. The full historical Uniswap
+  artifact still matches exactly. An MIT-licensed wheel with no runtime dependencies
+  built and reproduced the fixture from a fresh venv in isolated Python mode.
+  See `docs/ENGINE_QUALITY.md` and `evidence/engine-quality.json` for exact scope.
+- Linux quality checks passed. The first job omitted hidden generated report files
+  from its upload; this was fixed with explicit hidden-file inclusion and an error
+  on missing output. Final quality/native/Docker/matrix CI all passed; downloaded
+  reports retain all 15 findings and the 42-package audit. The CI wheel's 14 Python
+  files match the tested source. Other repos, native/container-OS audits and
+  docs-link gates remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All

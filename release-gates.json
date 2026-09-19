@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T17:53:22.795378+00:00",
+  "updated_at": "2026-09-19T18:18:17.571054+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -73,11 +73,15 @@
         "API 128 MiB/128-file store and eight-handler absolute socket bounds verified with real files, processes and sockets; engine PR #12 pending review",
         "Eight MiB report exports with atomic failure preservation in engine and standalone CLI; CLI PR #5 pending review",
         "Actual CLI-SDK-API fixture and native Anvil roundtrips, 507/503 rejection, no automatic POST retry and recovery verified",
-        "Pinned Linux CLI-SDK-API host-bounds CI passed; artifact IDs agree with macOS integration, run 35459506934"
+        "Pinned Linux CLI-SDK-API host-bounds CI passed; artifact IDs agree with macOS integration, run 35459506934",
+        "Engine PR #13: Ruff lint/format and mypy on 17 production source/scripts; full local native suite passes 121 tests",
+        "Full engine Bandit scan retains 15 author-reviewed findings with exact source/finding hashes and tested fail-closed review policy",
+        "All 42 engine Python tool/build dependencies hash locked and audited without skips or reported known vulnerabilities; engine Actions pinned by commit",
+        "Engine quality/native/Docker/matrix CI passed at ba0adfb; downloaded complete quality reports and verified every CI wheel source file"
       ],
       "todo": [
         "Promote bounded execution appropriately; bound aggregate CLI work/retention and image/VM storage; preserve native/daemon failure limits",
-        "complete lint/type/dependency/security/docs-link CI",
+        "Extend lint/types/security/dependency gates to other repos and separate agent branch; add docs-link checks and native/container-OS advisory coverage",
         "remaining cross-repo dependency pins"
       ]
     },
@@ -137,7 +141,8 @@
     "separate_real_docker_tests": 10,
     "separate_worker_note": "Main-based engine PR #11; overlaps prior engine native suites, no addition to frozen workspace total",
     "separate_host_bounds_engine_tests": 114,
-    "separate_cli_export_tests": 9
+    "separate_cli_export_tests": 9,
+    "separate_engine_quality_tests": 121
   },
   "evidence": [
     "evidence/verification.json",
@@ -178,6 +183,19 @@
     "evidence/cli-export-tests.log",
     "evidence/cli-export-before.log",
     "evidence/host-limits-ci.json",
-    "evidence/host-bounds-coordination-tests.log"
+    "evidence/host-bounds-coordination-tests.log",
+    "evidence/engine-quality.json",
+    "evidence/engine-quality-tests.log",
+    "evidence/engine-quality-historical.json",
+    "evidence/engine-quality-wheel-smoke.json",
+    "evidence/engine-bandit-local.json",
+    "evidence/engine-python-audit-local.json",
+    "evidence/engine-python-dependency-scope.json",
+    "evidence/engine-mypy-before.log",
+    "evidence/engine-ruff-before.log",
+    "evidence/engine-security-source-drift.log",
+    "evidence/engine-bandit-ci.json",
+    "evidence/engine-python-audit-ci.json",
+    "evidence/engine-quality-coordination-tests.log"
   ]
 }
