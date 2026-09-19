@@ -103,7 +103,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 0718b20e47a2b69dcd6ac2ac7112f189131f9ec6
+          ref: a9741942d9a4a87de62f9b9b90fb6cbe7d092648
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -120,16 +120,16 @@ jobs:
           python-version: '3.12'
       - name: Build source-bound local image
         run: |
-          mkdir -p entrotter/evidence/daemon-admission/ci
-          python engine/scripts/build_worker.py --output entrotter/evidence/daemon-admission/ci/image.json
+          mkdir -p entrotter/evidence/worker-image-audit/ci
+          python engine/scripts/build_worker.py --output entrotter/evidence/worker-image-audit/ci/image.json
           python - <<'PY'
           import json, os
-          image = json.load(open('entrotter/evidence/daemon-admission/ci/image.json'))['image_id']
+          image = json.load(open('entrotter/evidence/worker-image-audit/ci/image.json'))['image_id']
           with open(os.environ['GITHUB_ENV'], 'a') as output:
               output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
           PY
       - name: Verify shared daemon admission, default CLI-SDK-API, preservation and quotas
-        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/daemon-admission/ci/image.json --output entrotter/evidence/daemon-admission/ci/integration.json
+        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/worker-image-audit/ci/image.json --output entrotter/evidence/worker-image-audit/ci/integration.json
       - name: Measure a clean public checkout with the bounded default
         run: python entrotter/scripts/reproduce_clean.py --bounded
       - name: Verify no owned worker remains
@@ -140,8 +140,8 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: daemon-admission-evidence
+          name: worker-image-integration-evidence
           path: |
-            entrotter/evidence/daemon-admission/ci/
+            entrotter/evidence/worker-image-audit/ci/
             entrotter/evidence/clean-bounded-reproduction.json
           if-no-files-found: error

@@ -348,6 +348,29 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   no daemon-failure guarantee or public multi-tenant safety is asserted.
   Independent review/merge remains required; the overall goal stays active.
 
+## Worker image advisory and provenance gate in progress
+
+- The prior actual worker scan reported 151 Debian package findings and six pip
+  findings; a signed distroless alternative still reported 130 findings. Full
+  inventories are retained. The selected digest-pinned public Chainguard Python
+  3.14 base and built worker inventory 26 packages, including Python/libc/TLS,
+  with no known reported findings at the recorded database timestamp.
+- Engine commit `a9741942d9a4a87de62f9b9b90fb6cbe7d092648` adds checksum-pinned
+  Cosign/Trivy, exact signing identity/image/source checks, database freshness,
+  mandatory core-package coverage and failure on every finding. All severities
+  and unfixed issues remain enabled. Native Anvil inventory is still outside
+  coverage; the checksum-verified binary's individual digest is recorded.
+- Local 142 unit/native-Anvil and 16 real Docker tests pass. The initial CPU
+  probe failed under Python 3.14's changed multiprocessing default; it now uses
+  explicit fork and asserts child exit codes plus actual throttling. The first
+  failure is retained. Ruff/mypy/full 20-finding Bandit policy and 42-package
+  Python advisory checks pass. Actual standalone CLI-SDK-API integration passes,
+  and two 19M fork runs match the complete existing artifact (9.528/9.150 seconds).
+  Linux matrix/native/quality/link CI passes; actual Linux image CI is pending.
+- See docs/WORKER_IMAGE_AUDIT.md and evidence/worker-image-audit/. This does not
+  close native dependency, host caller/disk, independent review or submission
+  gates. Frozen engine/scenario checkouts remain unchanged.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
