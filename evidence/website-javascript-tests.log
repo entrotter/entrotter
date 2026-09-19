@@ -2,67 +2,67 @@ TAP version 13
 # Subtest: production JS verifies Python artifact: liquidity-shock
 ok 1 - production JS verifies Python artifact: liquidity-shock
   ---
-  duration_ms: 5.105375
+  duration_ms: 5.089167
   ...
 # Subtest: production JS verifies Python artifact: recovery-trap
 ok 2 - production JS verifies Python artifact: recovery-trap
   ---
-  duration_ms: 2.649958
+  duration_ms: 2.335041
   ...
 # Subtest: production JS verifies Python artifact: depeg-stress
 ok 3 - production JS verifies Python artifact: depeg-stress
   ---
-  duration_ms: 1.718292
+  duration_ms: 1.631
   ...
 # Subtest: tampered metric fails integrity validation
 ok 4 - tampered metric fails integrity validation
   ---
-  duration_ms: 2.198209
+  duration_ms: 2.034584
   ...
 # Subtest: unknown schema is not accepted
 ok 5 - unknown schema is not accepted
   ---
-  duration_ms: 0.73575
+  duration_ms: 0.630167
   ...
 # Subtest: canonical ASCII escaping includes supplementary Unicode
 ok 6 - canonical ASCII escaping includes supplementary Unicode
   ---
-  duration_ms: 0.2125
+  duration_ms: 0.189791
   ...
 # Subtest: finite numerical display validation
 ok 7 - finite numerical display validation
   ---
-  duration_ms: 0.181083
+  duration_ms: 0.234709
   ...
 # Subtest: JS re-canonicalization matches exported content hash
 ok 8 - JS re-canonicalization matches exported content hash
   ---
-  duration_ms: 2.051625
+  duration_ms: 2.211959
   ...
 # Subtest: real archived-state artifact passes hash and receipt view validation
 ok 9 - real archived-state artifact passes hash and receipt view validation
   ---
-  duration_ms: 4.848875
+  duration_ms: 4.884334
   ...
 # Subtest: token units preserve integers beyond Number safe precision
 ok 10 - token units preserve integers beyond Number safe precision
   ---
-  duration_ms: 0.268167
+  duration_ms: 0.258709
   ...
 # Subtest: missing source hash cannot appear as a historical report
 ok 11 - missing source hash cannot appear as a historical report
   ---
-  duration_ms: 0.58525
+  duration_ms: 0.564292
   ...
 # Subtest: mismatched token addresses cannot share a comparison row
 ok 12 - mismatched token addresses cannot share a comparison row
   ---
-  duration_ms: 0.436417
+  duration_ms: 0.354625
   ...
 # Subtest: malformed receipt state and oversized traces fail closed
 ok 13 - malformed receipt state and oversized traces fail closed
   ---
-  duration_ms: 0.73125
+  duration_ms: 0.772292
   ...
 1..13
 # tests 13
@@ -72,4 +72,4 @@ ok 13 - malformed receipt state and oversized traces fail closed
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 109.4675
+# duration_ms 106.51075

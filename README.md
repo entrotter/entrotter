@@ -158,3 +158,8 @@ preflight rule made identical decisions; the rule was faster. See
 [agent evaluation](docs/AGENT_EVALUATION.md) for receipts, measured timings,
 metadata, exact replay commands and pending historical/holdout work. The engine
 and schema PRs require independent review before this becomes a main-branch release.
+
+The [frozen historical comparison](docs/HISTORICAL_AGENT_EVALUATION.md) now includes
+three sourced cases and two previously unused implementation holdouts. All ten
+risk/model recordings replayed exactly on fresh forks. The model matched the
+preflight rule and took longer in every case; evidence retains that adverse result.

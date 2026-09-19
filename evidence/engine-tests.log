@@ -92,6 +92,6 @@ test_unknown_policy (test_engine.ValidationTests.test_unknown_policy) ... ok
 test_zero_price (test_engine.ValidationTests.test_zero_price) ... ok
 
 ----------------------------------------------------------------------
-Ran 92 tests in 4.315s
+Ran 92 tests in 4.292s
 
 OK

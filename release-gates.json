@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T16:22:48.473899+00:00",
+  "updated_at": "2026-09-19T16:36:33.292597+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -38,10 +38,11 @@
         "clean public checkout historical run in 13.877 seconds, exact artifact match",
         "typed current-observation execute/hold interface with exact replay; engine PR #8 pending approval",
         "actual Codex model decisions on one artificial local-EVM case; metadata and token usage recorded",
-        "clean recorded-model replay from fresh public dependencies in 5.148 seconds, no model call"
+        "clean recorded-model replay from fresh public dependencies in 5.148 seconds, no model call",
+        "three sourced archived-state cases plus two pre-frozen unused implementation holdouts, all executed with non-agent/risk/model policies",
+        "ten exact risk/model action-record replays on fresh archived-state forks; model matched rule decisions and had greater measured runtime in each case"
       ],
       "todo": [
-        "three sourced scenarios plus untouched holdouts",
         "same-task direct Anvil comparison",
         "independent approval and merge of engine/schema/coordination agent PRs"
       ],
@@ -113,11 +114,13 @@
     }
   ],
   "test_summary": {
-    "python_passed": 141,
+    "python_passed": 145,
     "javascript_passed": 13,
     "skipped": 0,
     "historical_repeat_runs": 2,
-    "note": "Historical runs are separate from offline/local tests. Details in evidence files; no full-gate completion claim."
+    "note": "Historical runs are separate from offline/local tests. Details in evidence files; no full-gate completion claim.",
+    "historical_agent_cases": 5,
+    "historical_agent_exact_replays": 10
   },
   "evidence": [
     "evidence/verification.json",
@@ -136,6 +139,9 @@
     "evidence/agent-local-codex.json",
     "evidence/agent-model-verification.json",
     "evidence/clean-agent-reproduction.json",
-    "evidence/agent-integration-provenance.json"
+    "evidence/agent-integration-provenance.json",
+    "evidence/causal-v1/evaluation.json",
+    "evidence/causal-v1/holdout.json",
+    "evidence/causal-v1/review.json"
   ]
 }

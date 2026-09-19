@@ -10,7 +10,7 @@ remote history. Use the existing six sibling Git checkouts and focused PRs.
 - Foundry v1.8.3 release archive downloaded and SHA-256 checked against GitHub
   release metadata. Local executable: `../.tools/foundry-v1.8.3/anvil` from this
   coordination repo. `evidence/foundry-install.json` records exact version/digest.
-- Full workspace check: **141 Python tests and 13 JavaScript tests passed**,
+- Full workspace check: **145 Python tests and 13 JavaScript tests passed**,
   including actual Anvil transfer/revert/rejection, state isolation, startup
   timeout/cancellation, missing receipt cleanup, token storage and decimal pins.
   Fault-injection tests are labelled; no real EVM test was silently replaced.
@@ -81,6 +81,25 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   providers can be selected through JSON/HTTP. Current dependency pins identify
   tested proposed engine/schema commits, pending independent review.
 
+## Frozen historical agent evaluation completed
+
+- Three sourced Ethereum/Uniswap states plus two implementation holdouts were
+  evaluated with identical proposals and starting states. Scenario freeze commit
+  `1ce15d9` predates new protocol-state execution; 19M remains explicitly explored.
+  Scenarios PR #6 (`5b718984ac67b8fb49e02f4dab676ae212d2aa58`) has passing CI.
+- At 17M and 20M all policies executed successful swaps. At 18M, 19M and 21M,
+  prescribed swaps reverted while both risk/model policies held. Model and risk
+  observations, choices, final metrics and token balances agree in every case.
+  The model was slower in all five; no model superiority or portfolio PnL claimed.
+- All ten risk/model reports replayed exactly from recordings on fresh forks.
+  All 15 report hashes, ten agent schemas, and receipt-derived gas arithmetic
+  passed post-run inspection. Evidence: `evidence/causal-v1/`, with the initial
+  missing-RPC failure retained. See `docs/HISTORICAL_AGENT_EVALUATION.md`.
+- Engine/agent schema/model integration remain pending independent review in
+  engine #8, scenarios #5/#6 and coordination #8/#9.
+  Coordination #8 integration CI passed. The holdouts are now evaluated; do not
+  reuse them as untouched cases for a tuned policy. All source/prompt pins remain.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -91,10 +110,12 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 2. Complete security/delivery: whole-process CPU/RSS/time/disk/concurrency bounds,
    SIGTERM handling, deeper RPC/API fault tests, lint/types/security/dependency and
    docs-link CI, remaining immutable dependencies, and branch protections.
-3. Extend the verified local agent slice to three sourced cases and untouched
-   holdouts. The original archived Uniswap report still uses manually prescribed
-   actions; the newly recorded model case is local and artificial.
-4. Compare the same task with direct Anvil scripting. Historical trace replay remains unsupported; never
+3. Obtain independent review of the agent and benchmark PRs. Further policy
+   tuning needs new unused cases; these two holdouts are now evaluated. The original
+   archived Uniswap report remains a manually prescribed intervention example.
+4. Next implementation slice: compare the frozen 19M task with a standalone
+   direct Anvil script, preserving identical proposals, source pins and outcome
+   checks. Record runtime without claiming a statistical speed advantage. Historical trace replay remains unsupported; never
    describe archived-state actions as a reconstructed counterfactual market.
 5. Complete accessibility/link review and submission materials. Actual pitch/demo
    videos, three genuine target-user evaluations, joined-event verification and
