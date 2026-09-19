@@ -64,3 +64,25 @@ unchanged. This is experimental local software, not a hosted multi-tenant servic
 
 Upstream references: [Chainguard signature verification](https://edu.chainguard.dev/chainguard/containers/security-and-compliance/verifying-chainguard-images-and-metadata-signatures-with-cosign/),
 [Trivy native Rust inventory coverage](https://github.com/aquasecurity/trivy/blob/v0.74.0/docs/guide/coverage/language/rust.md).
+
+## Verified checkpoint
+
+[Engine PR #18](https://github.com/entrotter/engine/pull/18), commit
+`a9741942d9a4a87de62f9b9b90fb6cbe7d092648`, passes 142 unit/native tests and
+16 actual Docker tests. All five engine workflows pass; Linux image-audit run
+35469285580 retained the actual amd64 inventory and exact base signature.
+Downloaded raw report hashes and source/auditor pins agree with local evidence.
+Both architectures inventory 26 packages without reported findings.
+
+[Coordination PR #27](https://github.com/entrotter/entrotter/pull/27), proof commit
+`b6bd48bb17cd950e5a12a7d766276291b33a35da`, passes all three integration jobs
+(run 35469413504) and links (35469413528). Local CLI-SDK-API and Linux result IDs,
+source manifest and checker hashes agree. Two actual bounded 19M fork runs match
+the complete previous report in 9.528 and 9.150 seconds. Public dependency clone,
+fresh venv, worker build and fixture verification took 20.672 seconds locally
+and 5.017 seconds on Linux with running Docker and warm caches; VM installation
+and startup are excluded. No new performance or market advantage is asserted.
+
+The dedicated VM is stopped, no owned workers remain, and the original Docker
+context/default profile are unchanged. Both PRs remain unmerged pending
+independent approval. All broader limitations above remain release gates.

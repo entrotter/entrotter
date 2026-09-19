@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
-  "checked_at": "2026-09-19T21:05:55.867245+00:00",
-  "status": "local_verified; linux_image_and_coordination_ci_pending; independent_review_required",
+  "checked_at": "2026-09-19T21:10:21.106929+00:00",
+  "status": "verified_local_and_linux_ci; independent_review_and_merge_pending",
   "issue": "https://github.com/entrotter/entrotter/issues/26",
   "engine_pr": "https://github.com/entrotter/engine/pull/18",
   "commits": {
@@ -169,17 +169,33 @@
     "alternative/packages.json": "d65c9020944b372dcff150e4cc55819161201d2809de6f88da503303a5a19adf",
     "alternative/signature.json": "32503fa9d23baa2d285acfd04b6e0364ad0785697076d88690173dc654428a2a",
     "before/packages.json": "81e6777a92ac3e8de38b679f360f5e8da4d0f86da771aa835b776151dbb937ae",
+    "ci/clean-reproduction.json": "c5eb84981ad64271e162c367b160e7b90b0ef1ed2c1d35e21b4abc5f5b50a253",
+    "ci/image.json": "46f4d23c9ed0313d46f61aada45882fe81a09e6162378854b4b1bd9a11d8ac60",
+    "ci/integration.json": "4de83bf641ed506fec03980e7cd7bc98be66c6cb6581cd57c5d183af87d7c85c",
+    "ci/verification.json": "2df36bd0f2282049a21cd7e8d38352906ab341b1eec43332591a02b800761d54",
+    "engine-ci.json": "2b5004aedd2f53d45f7a8a7a259e0a7a64bfd9675a828cb9fd513474ea46a2fc",
+    "failures/README.md": "e236a3aedbb5cc2a6276b557788617cceda930d8fefe43ef8056a984d3974afe",
     "failures/missing-checkout-pythonpath.log": "d4103870ef3ca3cdd310d7f92b738bb1bae7330960b98eca496b17b6d98ffe9f",
     "failures/python314-default-start-method.log": "6d8f0f313a2b4e96fa218725944bbe47eb3b120367455725fcaf807482985d0a",
+    "image-ci/database.json": "cecc4e1e2eb2a6bc0e8d491323ea9d68e6ff067838a86a2cd1e7055753889f8a",
+    "image-ci/docker-tests.log": "334ce5013497781522cabe3ec1fc3f1bc66e111b8c3d6ab3da6cc2caf04d79fa",
+    "image-ci/image.json": "44a60765e96b5e51e67b29b20974441f86c3778315ae3cc5620ff73edbd47d49",
+    "image-ci/packages.json": "d4c569eac07cfce140d5de432909dfac93678cf339ed50cb8776be492ff375e5",
+    "image-ci/scanner.log": "2444f61bb86aa7e80f8e02f0a8ba829d9512098ee5c905c4afa27364dce274bc",
+    "image-ci/signature.json": "fbe3fd1cd02b833c9d47b6898ed38083d8665800756a4c0aa5794a1b801a53e1",
+    "image-ci/signature.log": "4bfe2b5ee29716434b11f0d0b110fd7a30f98c8fe0c2a1805773b152a825d0e4",
+    "image-ci/summary.json": "97ef7cc9083fea317f3548a451b8f327c0d9db7fc0e7123b99d46758fb836d77",
+    "image-ci/verification.json": "537738bc19493d6307a4e7831f6f6d32913c927395ad4deb98e75bc062296992",
     "local/bandit.json": "a76ea17046be0807d91aad89813a4af5acb10ddf1c545011845629e8c8abed43",
     "local/build.log": "ea1d52b0dbfa6bb6130f91c92b780f9e49337bd4a1e816c26f9b5a94c346cc69",
     "local/check_history.py": "baf2e41fec18bcb66db5f3babc1df436ced9fed2a45db93c91f15b68549b87f8",
-    "local/coordination-links.json": "3fa30b24d78f865647824fca04998083ce949b2a859452b4f961c3e8630eeb74",
+    "local/clean-reproduction.json": "ee5d528823eaf560dcfeb362cbc5f4d590a46236cdb6e3e932fc6a742d8be22b",
+    "local/coordination-links.json": "24341e690660e6bf9fe45fc2ddc006b328ecf46eb849c3752d6703fa532eb295",
     "local/coordination-tests.log": "da183810b94d5e485deb301a556992ab8f81c0ba0ee7c8dae2e67c523d3890d9",
     "local/database.json": "3cda2fd9a741e54ce3e01bb3c675a152bbf763be0c0c729a219c8d66aa5bf24a",
     "local/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
     "local/docker-tests.log": "d83ca979f75555d9b62ccd2f191d7b98f25a00aae86086a5cc9412996ec72e48",
-    "local/engine-links.json": "8cf6df29c83f073f8d9e8bf6cea1bfeb83d0329adaebbc448c92783e66063953",
+    "local/engine-links.json": "40a2d9de944b4ccb6b65e216da7a22ae2684bc258962b4374ee91dbfe6181597",
     "local/historical.json": "6a605a18fd441fa2edf050e1f623664104ff13e1105eb9f04b310acd21d9bc34",
     "local/image.json": "3138c452af4985619cd44db6ec8229b65080c8b9f8577f01000e8a4d631180a8",
     "local/integration.json": "71d4a04299de5393bed6b777aee35ae7b1294706e7dbbc04f9185a27d5187acf",
@@ -193,5 +209,85 @@
     "quality-ci/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
     "quality-ci/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
     "quality-ci/verification.json": "083db722d7e837f4e22c3ff6e3017f3940c28c6412277b0cfa516b040680ddc1"
-  }
+  },
+  "coordination_pr": "https://github.com/entrotter/entrotter/pull/27",
+  "image_ci": {
+    "status": "passed",
+    "run": 35469285580,
+    "engine": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+    "actual_docker_tests": 16,
+    "inventories": [
+      {
+        "type": "wolfi",
+        "class": "os-pkgs",
+        "packages": 26,
+        "findings": 0
+      }
+    ],
+    "source_and_auditor_hashes_match_local": true,
+    "downloaded_report_hash_verified": true,
+    "policy_reevaluation": "passed with current unexpired database metadata",
+    "base_signer_and_digest_match_local": true,
+    "image_architecture": "amd64",
+    "same_application_source_as_arm64": true,
+    "native_binary_inventory_complete": false
+  },
+  "integration_ci": {
+    "status": "passed",
+    "proof_commit": "b6bd48bb17cd950e5a12a7d766276291b33a35da",
+    "integration_run": 35469413504,
+    "links_run": 35469413528,
+    "source_manifest_and_checker_match": true,
+    "full_fixture_and_evm_artifact_ids_match": true,
+    "shared_admission_checks_match": true,
+    "linux_clean_reproduction_seconds": 5.017141688999999,
+    "local_clean_reproduction_seconds": 20.671856333006872,
+    "note": "Docker already running; build caches warm. Native binary/image IDs differ by architecture; no cold-machine timing claim."
+  },
+  "cleanup": {
+    "owned_workers_before_stop": 0,
+    "dedicated_profile": "Stopped",
+    "original_default_profile": "Stopped",
+    "docker_context": "colima",
+    "frozen_engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "frozen_scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+    "both_frozen_worktrees_clean": true
+  },
+  "engine_ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 35469285570,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285581,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Documentation links",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285597,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Engine quality and Python dependency audit",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285577,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Local EVM integration",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285580,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Isolated worker enforcement",
+      "status": "completed"
+    }
+  ]
 }

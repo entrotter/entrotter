@@ -348,7 +348,7 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   no daemon-failure guarantee or public multi-tenant safety is asserted.
   Independent review/merge remains required; the overall goal stays active.
 
-## Worker image advisory and provenance gate in progress
+## Worker image advisory and provenance gate verified; review pending
 
 - The prior actual worker scan reported 151 Debian package findings and six pip
   findings; a signed distroless alternative still reported 130 findings. Full
@@ -366,7 +366,15 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   failure is retained. Ruff/mypy/full 20-finding Bandit policy and 42-package
   Python advisory checks pass. Actual standalone CLI-SDK-API integration passes,
   and two 19M fork runs match the complete existing artifact (9.528/9.150 seconds).
-  Linux matrix/native/quality/link CI passes; actual Linux image CI is pending.
+  All five engine Linux workflows pass, including 16 Docker checks and the
+  complete image signature/advisory gate (35469285580). Downloaded inventories,
+  source/auditor pins, signatures and report hashes are verified. Coordination
+  proof b6bd48b passes all three integration jobs (35469413504) and links
+  (35469413528). Public-source clone/venv/build reproduction took 20.672 seconds
+  locally and 5.017 seconds on Linux, with running Docker and warm caches.
+  Engine PR #18 and coordination PR #27 remain unmerged; independent review is
+  required. No owned workers remain; the dedicated VM is stopped and the
+  original Docker context/default profile are unchanged.
 - See docs/WORKER_IMAGE_AUDIT.md and evidence/worker-image-audit/. This does not
   close native dependency, host caller/disk, independent review or submission
   gates. Frozen engine/scenario checkouts remain unchanged.
