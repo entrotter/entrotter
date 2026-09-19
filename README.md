@@ -207,3 +207,6 @@ optimized-Python verification, locked dependencies and frozen-source exceptions.
 
 [Offline schema contracts](docs/SCENARIO_CONTRACTS.md) records local reference
 resolution, mandatory checks, frozen input compatibility and scenario quality CI.
+
+[Website quality](docs/WEBSITE_QUALITY.md) records numeric input regressions,
+complete source checks, retained findings and actual browser/CI evidence.
