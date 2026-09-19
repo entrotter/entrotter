@@ -1,4 +1,4 @@
-# Developer/CI tools only; production runtime remains standard-library-only.
+# Developer/verification tools; local engine/SDK/CLI sources are pinned separately.
 ruff==0.15.16
 mypy==1.18.2
 bandit==1.9.4
@@ -10,3 +10,6 @@ build==1.6.1
 # Optional legacy browser smoke tool and frozen schema contract tests.
 playwright==1.63.0
 jsonschema==4.23.0
+
+# Parse workflow/action syntax before accepting repository quality.
+PyYAML==6.0.3

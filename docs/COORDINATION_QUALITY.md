@@ -63,7 +63,9 @@ recorded check time. Local engine/SDK/CLI imports come from exact source commits
 not similarly named public registry packages. Browser/Node/native binaries and
 the host are outside this Python package audit.
 
-All coordination workflow actions are now pinned to immutable commits. Existing
+All coordination workflow actions are now pinned to immutable commits. YAML
+syntax is parsed separately; GitHub validates workflow schema/context semantics.
+Inline workflow snippets are outside the Python source-file scan. Existing
 frozen, host-bounds and default-worker integration jobs remain. The new job checks
 source quality, dependencies and negative gate tests, retaining full reports.
 The default-worker job also checks optimized export validation. The reusable docs

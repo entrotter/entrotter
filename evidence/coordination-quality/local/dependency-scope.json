@@ -10,7 +10,8 @@
     "pip",
     "build",
     "playwright",
-    "jsonschema"
+    "jsonschema",
+    "pyyaml"
   ],
   "audited_locked_packages": 50,
   "installed_versions": {
@@ -65,7 +66,7 @@
     "pip": "26.2.1",
     "setuptools": "84.0.0"
   },
-  "requirements_sha256": "5e901caec9ae5e751f80fb68e51f3217563b11bfa38877a083ea971e1e45740b",
+  "requirements_sha256": "158b8b715a74754dc53f43ec14829e39caa2d3e9fc10b9dc7f6e2ffe57ca6253",
   "contract_test_versions": {
     "attrs": "26.1.0",
     "jsonschema": "4.23.0",

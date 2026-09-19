@@ -47,7 +47,7 @@
     "scripts/reproduce_clean.py": "e2203976e89d6e917da495e4caded90d095dc5d918b2b31e71bfb42b245c663e",
     "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333"
   },
-  "requirements_quality_sha256": "5e901caec9ae5e751f80fb68e51f3217563b11bfa38877a083ea971e1e45740b",
+  "requirements_quality_sha256": "158b8b715a74754dc53f43ec14829e39caa2d3e9fc10b9dc7f6e2ffe57ca6253",
   "requirements_contracts_sha256": "458af576587b241771e8ba7d289b13d47c2bde7b803b759905bde98b6f083f2b",
   "limitations": [
     "Three frozen-provider type diagnostics and 75 security findings are retained and author-reviewed, not independently approved",
@@ -57,7 +57,7 @@
     "Scenario, website and separate agent-branch quality and broader release/submission gates remain open"
   ],
   "files": {
-    "failures/README.md": "2a10e487854b48fa8ad473bcd408e90dc53eeb2857c3d9bbcc9e4195111e10aa",
+    "failures/README.md": "1c2a443554c639ede331792f8ab0820e43715c3e0955f35081f8111536f4b4a5",
     "failures/agent-types-before.log": "e9e57a1d51cd037f589583c55088dc4be2d9dbecce9503453477e4542c9ddf7a",
     "failures/bandit-before.json": "4d6e019fffe7f94f69a0c13e7ba29b159cc8528fd691f42132461ebe27e42bc6",
     "failures/general-types-before.log": "d525fb62370fdd0f8acadb0d4257b8dc2fa368d6afc7101cc6f4d4d847f7ee96",
@@ -65,10 +65,11 @@
     "failures/optimized-wheel-before.log": "09694731567c3f8e5cd2664a9d99f47caa8abeba69e51faf51aefbe9faaaedb0",
     "failures/ruff-before.log": "2abd2e1474d87140fa4115c034d617443be95f6914e21edb923b5dab443440b1",
     "failures/worker-types-before.log": "ec92f4d8527e60107b7dbcd5feb810648a8989ae07799249e342b972e985d5cc",
+    "failures/workflow-yaml-before.log": "560667f01156a8f2e3270b9ce99c5769e7805250830b8ba4f681956a5672634a",
     "links.json": "50f1a5f6c051f1ac7aff0b9ff8e0fb16571e3f7eac099c3e4e75b58e69b3cfdd",
     "local/bandit.json": "2f134cf6ea47b944ae46e0a01f5b4f318c94db3c34b7c94926dee178b7d9c163",
     "local/dependencies.json": "2adefbd033b0ff442eb63d4326f657700336bd90cab85315380f179a8f332675",
-    "local/dependency-scope.json": "12ecb5abc3ec252fcb2f34990d5ff5a00340df8210a3926c708c11c7d46085bd",
+    "local/dependency-scope.json": "9fdf4826dff356901f5cfbeaf353c2ec881169bba28545c84c9a6fa92bf22fc4",
     "local/types/agent.log": "98e7933fd9a877ee34064f316b1577872279da8301f2afaa8d5f662641075e8b",
     "local/types/general.log": "14fdf673bd175fe32ef42df34666481bb15e465313f7dbef32d0aea2ba76a26e",
     "local/types/summary.json": "bfd6b175802e7bbf2802933837e4bb34d1cd01ae2b2310022aac1fa0d00a48e3",

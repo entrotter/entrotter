@@ -25,3 +25,9 @@ installation and 50-package audit pass.
 
 Text logs normalize the local workspace prefix and strip trailing whitespace.
 Historical evidence and the pinned model-provider source were not rewritten.
+
+The first integration workflow at fac0e42 was rejected before running (GitHub
+run 35473462414). `workflow-yaml-before.log` reproduces the YAML parser error:
+the inline `--only-binary=:all:` argument ended with a colon followed by a space.
+A block command fixes it. The quality job now parses every workflow/action YAML
+file; GitHub remains responsible for workflow-context/schema validation.

@@ -55,6 +55,18 @@ jobs:
           python -m venv .venv
           .venv/bin/python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-quality.txt
           .venv/bin/python -m pip check
+      - name: Parse every workflow and action YAML file
+        run: |
+          .venv/bin/python - <<'PYAML'
+          from pathlib import Path
+          import yaml
+          paths = sorted(Path('.github').rglob('*.yml'))
+          if not paths:
+              raise ValueError('No workflow configuration found')
+          for path in paths:
+              yaml.safe_load(path.read_text())
+          print('Parsed', len(paths), 'YAML files; GitHub validates workflow semantics separately')
+          PYAML
       - name: Lint and format production tooling
         run: |
           .venv/bin/python -m ruff check scripts .github/actions/docs-links/check.py
