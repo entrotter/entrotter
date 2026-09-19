@@ -72,9 +72,10 @@
     "jsonschema": "4.23.0",
     "jsonschema-specifications": "2025.9.1",
     "referencing": "0.37.0",
-    "rpds-py": "2026.6.3"
+    "rpds-py": "2026.6.3",
+    "typing-extensions": "4.16.0"
   },
-  "contract_lock_sha256": "458af576587b241771e8ba7d289b13d47c2bde7b803b759905bde98b6f083f2b",
+  "contract_lock_sha256": "eacfe2b88d635c5f5dead09a39d0f239310006c88f9b451b8b680173e54e44b2",
   "local_runtime": "Local engine/SDK/CLI source pins are checked separately; no registry fallback",
   "limitations": [
     "Python package advisory scope only; browser/Node/native/host binaries are separate gates"

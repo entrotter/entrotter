@@ -31,3 +31,9 @@ run 35473462414). `workflow-yaml-before.log` reproduces the YAML parser error:
 the inline `--only-binary=:all:` argument ended with a colon followed by a space.
 A block command fixes it. The quality job now parses every workflow/action YAML
 file; GitHub remains responsible for workflow-context/schema validation.
+
+Integration run 35473624321 rejected an incomplete Python 3.12 schema lock:
+`referencing` conditionally requires `typing-extensions` below Python 3.13.
+The lock compiled on 3.13 omitted it. Both its version and hashes are now
+explicit in the contract lock and remain covered by the 50-package quality
+audit. The hash-required installation was not relaxed.
