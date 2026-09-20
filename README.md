@@ -219,3 +219,7 @@ approval and dependency-pin integration remain pending.
 [Submission review package](submission/README.md) includes recorded pitch/demo
 videos, measured evidence, explicit AI/prior-work disclosure and unvalidated
 market/evaluation plans. Owner review and genuine demand validation remain open.
+
+[Fresh bounded agent reproduction](docs/BOUNDED_AGENT_INTEGRATION.md) combines
+immutable public checkouts, a new venv and worker build, exact recorded-agent replay
+and standalone CLI verification. Docker/VM setup is a measured-scope prerequisite.

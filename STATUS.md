@@ -602,6 +602,37 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   export used the ordinary shared ledger, which was not reset. Independent review
   of this material, human listening/fact checking and genuine demand remain open.
 
+## Public bounded-agent checkout and cross-repository integration
+
+- The bounded CI/type/dependency pins now select engine `abb4662`, plus the
+  quality-checked scenario/viewer branches. Independent approval is
+  still pending. Frozen benchmark dependency pins, provider source, historical
+  reports and native compatibility jobs are unchanged.
+- `scripts/reproduce_clean.py --bounded-agent` fetches five public dependencies,
+  creates a new stdlib-only venv, builds the bounded worker, replays the original
+  local model recording and runs standalone CLI verify/inspect through the SDK.
+  Complete artifact equality passes in **20.403 seconds** locally. The companion
+  bounded fixture passes in **18.588 seconds**. Docker/VM installation/startup are
+  excluded and build caches may be warm; no cold-machine claim is made.
+- The preserved `--agent` native path still exactly reproduces the same report
+  in 4.420 seconds. No new model or archive call, policy tuning or public report
+  replacement occurred. New `--output` keeps measurements separate from old files.
+- Actual default CLI-SDK-API fixture/Anvil, admission, quota/preservation and
+  overload/recovery checks pass on the new engine, as do ordinary/optimized
+  cross-CLI export checks. Ruff/mypy passes; all 75 security findings remain
+  source-bound and visible, all 50 locked Python packages have no reported
+  findings, and six quality policy tests pass. New flag fails before the change;
+  the stale source-security review also correctly rejects before refresh.
+- PR #41 passes all five Linux checks at `5dba8e4`: integration 35479672160,
+  quality 35479672206 and links 35479672162. Fresh public bounded replay takes
+  6.673 seconds and fixture reproduction 6.962 seconds with running Docker/warm
+  caches. Downloaded source/image inventories, complete artifact IDs, full security
+  fingerprints, type reports and all dependency identities match local evidence.
+  No workers remain; both local VM profiles are stopped.
+- See docs/BOUNDED_AGENT_INTEGRATION.md and evidence/bounded-agent-integration/.
+  No product/schema changes or new deployment. Independent review/integration,
+  host caller/image/VM storage limits and human submission gates remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -618,7 +649,8 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
    security/delivery gates next: host caller/storage budgets, review/integration of the
    proposed bounded default and shared daemon admission,
-   and integration of the now quality-checked bounded-agent branch. Preserve the frozen engine checkout; use an isolated worktree.
+   and protected review/merge of the bounded-agent integration and its current
+   dependency pins. Preserve the frozen engine checkout; use an isolated worktree.
    A dedicated local Colima profile now provides a verified Linux cgroup v2
    Docker daemon. The opt-in worker is tested in engine PR #11; native execution
    remains the main-branch default until PR #16 is reviewed and merged. See docs/WORKER_SECURITY.md and its measured evidence.

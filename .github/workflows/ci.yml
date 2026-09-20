@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 0d3857839b2187541e573bec2e58042ad5bf0b45
+          ref: abb4662ce960e08b2aa3a2c8a1c10719339edccc
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -121,23 +121,25 @@ jobs:
           python-version: '3.12'
       - name: Build source-bound local image
         run: |
-          mkdir -p entrotter/evidence/coordination-quality/integration-ci
-          python engine/scripts/build_worker.py --output entrotter/evidence/coordination-quality/integration-ci/image.json
+          mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci
+          python engine/scripts/build_worker.py --output entrotter/evidence/bounded-agent-integration/integration-ci/image.json
           python - <<'PY'
           import json, os
-          image = json.load(open('entrotter/evidence/coordination-quality/integration-ci/image.json'))['image_id']
+          image = json.load(open('entrotter/evidence/bounded-agent-integration/integration-ci/image.json'))['image_id']
           with open(os.environ['GITHUB_ENV'], 'a') as output:
               output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
               output.write('ENTROTTER_EXPORT_STATE_DIR=' + os.path.join(os.environ['RUNNER_TEMP'], 'entrotter-export-state') + '\n')
           PY
       - name: Verify shared daemon admission, default CLI-SDK-API, preservation and quotas
-        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/coordination-quality/integration-ci/image.json --output entrotter/evidence/coordination-quality/integration-ci/integration.json
+        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/bounded-agent-integration/integration-ci/image.json --output entrotter/evidence/bounded-agent-integration/integration-ci/integration.json
       - name: Verify shared export accounting across real CLI processes
-        run: python entrotter/scripts/check_export_budget.py --output entrotter/evidence/coordination-quality/integration-ci/export-contract.json
+        run: python entrotter/scripts/check_export_budget.py --output entrotter/evidence/bounded-agent-integration/integration-ci/export-contract.json
       - name: Verify export failures still reject under Python optimization
-        run: python -O entrotter/scripts/check_export_budget.py --output entrotter/evidence/coordination-quality/integration-ci/optimized-export-contract.json
+        run: python -O entrotter/scripts/check_export_budget.py --output entrotter/evidence/bounded-agent-integration/integration-ci/optimized-export-contract.json
       - name: Measure a clean public checkout with the bounded default
-        run: python entrotter/scripts/reproduce_clean.py --bounded
+        run: python entrotter/scripts/reproduce_clean.py --bounded --output entrotter/evidence/bounded-agent-integration/integration-ci/clean-fixture.json
+      - name: Measure clean public bounded agent replay and standalone CLI verification
+        run: python entrotter/scripts/reproduce_clean.py --bounded-agent --output entrotter/evidence/bounded-agent-integration/integration-ci/clean-agent.json
       - name: Verify no owned worker remains
         if: always()
         run: |
@@ -148,6 +150,5 @@ jobs:
         with:
           name: coordination-integration-evidence
           path: |
-            entrotter/evidence/coordination-quality/integration-ci/
-            entrotter/evidence/clean-bounded-reproduction.json
+            entrotter/evidence/bounded-agent-integration/integration-ci/
           if-no-files-found: error
