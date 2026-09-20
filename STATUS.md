@@ -689,6 +689,31 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   evaluation, adoption or completed release gates. Independent review and the
   previously recorded resource/submission limitations remain open.
 
+## Reference bounded API host service
+
+- A systemd user service now applies one CPU quota, 256 MiB/no swap, 64 tasks,
+  descriptor/core limits and a one-hour session limit to the API caller process.
+  The startup checker reads actual kernel settings and refuses missing or excessive
+  controls. This is a proposed operator-installed Linux mode, not a universal cap
+  on arbitrary Python/CLI callers or a public service.
+- The dedicated Colima 0.8.1 guest reports two CPUs, 2 GiB configured RAM/no swap
+  and a 10 GiB writable disk containing home/tmp/Docker data. Host-share write
+  attempts fail with EROFS. Disk exhaustion and the one-hour expiry are not claimed
+  tested; a two-second scaled timeout is exercised instead.
+- Actual VM CLI-SDK-API fixture and real-Anvil results exactly match stored reports
+  and the earlier complete artifact IDs. CPU throttling, task admission EAGAIN,
+  OOM-kill, timeout and refusal of an unbounded service start all pass. The API
+  remains healthy after fault probes; no worker/probe units remain afterward.
+  The service was then stopped, remains disabled at boot, and both local VM
+  profiles are verified stopped.
+- Two new policy tests, six existing policy tests, full type checking on 20 sources
+  and the complete 75-finding security policy pass. Initial user-bus setup failures
+  were resolved before the successful run, not silently skipped. See
+  docs/BOUNDED_HOST_SERVICE.md and evidence/host-service/summary.json.
+- This narrows the API-host/guest-storage gap for the measured operating profile.
+  Ordinary host callers, hypervisor/log/cache overhead, whole-build deadlines,
+  protected integration and human submission gates remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All

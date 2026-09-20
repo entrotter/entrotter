@@ -226,3 +226,6 @@ and standalone CLI verification. Docker/VM setup is a measured-scope prerequisit
 
 [Required CI checks](docs/REQUIRED_CHECKS.md) records the enforced main-branch
 policy, successful source checkpoints and migration of older partial PRs.
+
+[Bounded API host service](docs/BOUNDED_HOST_SERVICE.md) adds a verified Linux
+service envelope and dedicated-VM operating profile, with measured scope limits.

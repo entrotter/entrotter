@@ -622,6 +622,7 @@
     "scripts/publish.py": "e54c579a177ab5877e5cb9e8d7626a0c0f6fbf1e3f72067495cbf8b58597cfe8",
     "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
     "scripts/reproduce_clean.py": "0e1b9f29bd1dad1bfe9f09f8f75aae4be00b2ecc232be9ec276a04203a7a0576",
-    "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333"
+    "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333",
+    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb"
   }
 }
