@@ -664,7 +664,7 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   run 35480730300 exercises the updated network-download build path.
 - A real build from the pinned 121,395,735-byte arm64 archive and an actual Docker
   fixture pass. Worker source digest remains `fba06f6dd633858f91dd89d4f48a51c8447696f32e9eb3820302d09bcb379f42`,
-  and the complete report equals native execution. No source/runtime/schema change
+  and the complete report equals native execution. No runtime/schema change
   or new model/archive-RPC evaluation occurred. Both local VM profiles are stopped.
 - Bounded reproduction, quality and integration pins now select this proposed
   engine commit. Frozen native/benchmark variants remain unchanged. The engine PR
