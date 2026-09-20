@@ -674,6 +674,21 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 - Caller-process limits, image/build-cache/VM storage and SIGKILL staging leftovers
   remain open. This setup fix does not complete G3 or authorize public hosting.
 
+## Scoped first contributions available in all six repositories
+
+- A GitHub audit found open `good first issue` tasks only in SDK and CLI. Four
+  scoped documentation tasks now cover coordination #44, engine #23, scenarios #9
+  and website #12, each with starting files, acceptance checks and evidence limits.
+  Existing SDK #1 and CLI #1 are reused rather than duplicated.
+- All six issue bodies, open states and labels were read back from GitHub.
+  `evidence/first-contribution-paths.json` records URLs and body hashes;
+  [first contributions](docs/FIRST_CONTRIBUTION.md) provides a visible entry point
+  from README and CONTRIBUTING. No assignment or customer outreach was performed.
+- This completes the missing issue-availability portion of G3. The tasks themselves
+  are open contributor opportunities, not claimed implementation, accessibility
+  evaluation, adoption or completed release gates. Independent review and the
+  previously recorded resource/submission limitations remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All

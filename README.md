@@ -1,6 +1,6 @@
 # Entrotter
 
-[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
+[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [First contributions](docs/FIRST_CONTRIBUTION.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
 
 **A time machine for onchain agents.**
 
