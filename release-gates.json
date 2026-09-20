@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T22:37:50.775690+00:00",
+  "updated_at": "2026-09-19T23:56:39.310584+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -42,7 +42,8 @@
         "three sourced archived-state cases plus two pre-frozen unused implementation holdouts, all executed with non-agent/risk/model policies",
         "ten exact risk/model action-record replays on fresh archived-state forks; model matched rule decisions and had greater measured runtime in each case",
         "six interleaved same-task raw Anvil/Entrotter runs with identical complete common outcomes; no speed advantage shown",
-        "Proposed bounded-default public clean checkout/venv/image-build/example reproduces exact fixture in 11.682 seconds locally with running Docker and warm caches; not a cold installation measurement"
+        "Proposed bounded-default public clean checkout/venv/image-build/example reproduces exact fixture in 11.682 seconds locally with running Docker and warm caches; not a cold installation measurement",
+        "Engine PR #21 integrates bounded risk/recorded-replay execution and exactly reproduces all 19 original EVM reports (12 agent records) with no new model generation; protected review and frozen-script API/pin migration remain pending"
       ],
       "todo": [
         "independent approval and merge of engine/schema/coordination agent PRs"
@@ -93,11 +94,12 @@
         "Proposed engine #20/CLI #9 share 128 MiB/128-file saved+pending export retention across folders/processes. Production ceiling, real SIGKILL/race, actual CLI contract and default Docker/API checks pass; local 164 engine, 30 CLI and 16 Docker tests plus all engine/CLI Linux CI pass. Coordination #31 passes all three integration jobs and links at 77a754e; downloaded source/checker/helper/image and complete report IDs match. Public reproduction takes 6.278 seconds with running Docker/warm caches; independent review/merge pending.",
         "Coordination proposed quality gate covers 19 production sources, including hidden action helper; 26 local tests and six real Lychee regressions pass. Optimized wheel validation failed before and now rejects before installation; 83 explicit guards preserve predicates. Three frozen-provider type diagnostics and 75 full security findings remain author-reviewed and visible; 50 locked Python packages have no reported findings. PR #33 passes all three Linux integration jobs, full quality and links at f05eae7. Downloaded source/type/finding/lock reports and full fixture/Anvil IDs match; normal and optimized export results agree. Public clone/venv/build reproduction: 6.748 seconds with running Docker and warm caches. Independent review/merge pending.",
         "Scenarios PR #8: reproduced nested-result reference failure fixed with offline registry and mandatory dependencies. All schemas/frozen inputs unchanged. All 14 tests pass locally against two engine variants and on Linux Python 3.11/3.12/3.13; 19 existing result envelopes including 12 agent records validate offline. Five Python files pass Ruff/mypy/full Bandit without findings, all 48 quality and six schema packages audited without reported issues/skips. Contracts 35474622711, quality 35474622690 and links 35474622683 pass at 3a78ecc; downloaded hashes/inventories match. Independent approval/merge pending.",
-        "Website PR #11: all eight JS sources plus actual browser-library declaration pass lint/format/checkJs; all 14 security rules retain 32 exact source-bound author rationales with negative gate tests. Python source passes Ruff/mypy/full Bandit. All 109 Node lock entries and 42 hashed Python tools audited without known reported findings; strict Python audit skips none. Linux quality/unit/browser and docs checks pass at 6174031 (35476090427/35476090431); downloaded hashes/findings/identities match. Independent approval/merge pending."
+        "Website PR #11: all eight JS sources plus actual browser-library declaration pass lint/format/checkJs; all 14 security rules retain 32 exact source-bound author rationales with negative gate tests. Python source passes Ruff/mypy/full Bandit. All 109 Node lock entries and 42 hashed Python tools audited without known reported findings; strict Python audit skips none. Linux quality/unit/browser and docs checks pass at 6174031 (35476090427/35476090431); downloaded hashes/findings/identities match. Independent approval/merge pending.",
+        "Engine PR #21: integrated agent/protocol included in all 22 production-source quality checks; 189 native/unit and 21 real Docker tests; exact original report compatibility, strict Python/image/signed-native audits and unchanged worker bounds"
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
-        "Extend lint/types/security/dependency gates to the separate agent branch; independently review/integrate coordination quality including the frozen provider diagnostic reasons; native/compiler/build-system coverage limits remain explicit",
+        "Independently review/integrate the now quality-checked bounded-agent branch and migrate frozen consumers deliberately; independently review/integrate coordination quality including the frozen provider diagnostic reasons; native/compiler/build-system coverage limits remain explicit",
         "remaining cross-repo dependency pins",
         "Independent review and merge of security, resource and CI PRs, including overload-response fix"
       ]
@@ -249,6 +251,7 @@
     "evidence/export-budget/summary.json",
     "evidence/coordination-quality/summary.json",
     "evidence/scenario-contracts/summary.json",
-    "evidence/website-quality/summary.json"
+    "evidence/website-quality/summary.json",
+    "evidence/bounded-agent/summary.json"
   ]
 }

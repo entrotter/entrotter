@@ -210,3 +210,8 @@ resolution, mandatory checks, frozen input compatibility and scenario quality CI
 
 [Website quality](docs/WEBSITE_QUALITY.md) records numeric input regressions,
 complete source checks, retained findings and actual browser/CI evidence.
+
+The proposed [bounded agent integration](docs/BOUNDED_AGENT_REPLAY.md) reproduces
+all 19 existing EVM reports under the worker quotas, including 12 agent-recording
+replays without model calls. This is verified on an open branch; independent
+approval and dependency-pin integration remain pending.

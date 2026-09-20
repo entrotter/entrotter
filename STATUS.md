@@ -540,6 +540,37 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   and evidence/website-quality/. Independent approval/merge, live verification,
   separate agent-branch quality and remaining release/submission gates stay open.
 
+## Bounded causal-agent integration: exact replay, review pending
+
+- Engine PR #21 (`abb4662ce960e08b2aa3a2c8a1c10719339edccc`) integrates the
+  frozen causal-agent implementation into the hardened worker. Risk decisions and
+  JSON recorded replay share default quotas, daemon admission and owned cleanup;
+  arbitrary trusted providers require explicit `run_agent_native`. There is no
+  HTTP/CLI agent endpoint, provider loader, model call or native fallback.
+- Internal request/response envelopes bind the complete selection, gas budget and
+  recording. Public v0.1 contracts stay unchanged. Scenario/recording/full input/
+  full output bounds are 256 KiB/3 MiB/4 MiB/8 MiB. Native custom callbacks still
+  have no whole-process/egress sandbox; fork workers retain a general bridge.
+- All 19 archived public EVM reports re-execute as exactly equal JSON artifacts
+  in the final bounded image: 16 historical and three local runs, including
+  12 recorded agent replays. Original engine/scenario checkouts, prompt/provider,
+  benchmark and reports remain unchanged. No model generation or advantage claim.
+- Native/unit coverage reaches 189 tests and real Docker coverage 21 tests,
+  including frozen model replay, large recordings, gas/state divergence and
+  cleanup/recovery. All 22 production sources pass Ruff/mypy/full Bandit with the
+  existing 24 source-bound author findings retained, not suppressed. All 42 Python
+  dependencies, 26 image OS packages and 1,126 signed-SBOM Cargo entries pass
+  strict advisory checks with coverage limitations preserved. All 17 wheel
+  modules match source. Linux checks all pass: units 35477273945, Anvil
+  35477273947, Docker/supply-chain 35477273936, quality 35477273927 and links
+  35477273922. Downloaded hashes/fingerprints/inventories match local. No owned
+  containers remain and the dedicated VM is stopped. See
+  docs/BOUNDED_AGENT_REPLAY.md and evidence/bounded-agent/.
+- Protected review/merge and cross-repository pin integration remain open. The
+  frozen coordination benchmark scripts deliberately still target their original
+  experimental native API. No main change, package/image publication, deployment,
+  outreach, new holdout evaluation or submission was performed.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -556,7 +587,7 @@ required historical state. Archive failure is explicit, never a synthetic fallba
 4. The same-task direct Anvil comparison is now measured. Continue the remaining
    security/delivery gates next: host caller/storage budgets, review/integration of the
    proposed bounded default and shared daemon admission,
-   and remaining repo quality/native dependency checks. Preserve the frozen engine checkout; use an isolated worktree.
+   and integration of the now quality-checked bounded-agent branch. Preserve the frozen engine checkout; use an isolated worktree.
    A dedicated local Colima profile now provides a verified Linux cgroup v2
    Docker daemon. The opt-in worker is tested in engine PR #11; native execution
    remains the main-branch default until PR #16 is reviewed and merged. See docs/WORKER_SECURITY.md and its measured evidence.
