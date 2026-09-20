@@ -59,5 +59,10 @@
     "image/build-cache/VM storage",
     "hard whole-build deadline",
     "SIGKILL staging leftovers"
-  ]
+  ],
+  "integration_initial_failure": {
+    "run": "https://github.com/entrotter/entrotter/actions/runs/35481009720",
+    "reason": "quality.yml still checked out previous worker-engine pin; strict type-source validation rejected the mismatch",
+    "resolution": "Align quality workflow checkout with quality-inputs.json and bounded-worker-pins.json; retain strict source validation"
+  }
 }
