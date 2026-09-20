@@ -68,3 +68,14 @@ source fingerprints and artifact identity comparisons are retained in
 `evidence/bounded-agent-integration/`. Security findings remain visible and
 source-bound; independent review is required. No main merge, Pages deployment,
 package publication, outreach or competition submission is part of this change.
+
+At proof commit `5dba8e401956e2a71d3260f0d7cd2aaa16186a00`, all three
+[integration jobs](https://github.com/entrotter/entrotter/actions/runs/35479672160),
+[quality](https://github.com/entrotter/entrotter/actions/runs/35479672206), and
+[links](https://github.com/entrotter/entrotter/actions/runs/35479672162) pass.
+The fresh Linux replay takes 6.673 seconds and fixture 6.962 seconds; local macOS
+measurements are 20.403 and 18.588 seconds respectively. Each uses a running Docker
+daemon and may reuse image caches. Downloaded reports agree on complete artifact
+IDs and image source contents across ARM64/AMD64. Full type/source, security
+finding and dependency identities match the local checks. These results remain
+pending independent review in [PR #41](https://github.com/entrotter/entrotter/pull/41).

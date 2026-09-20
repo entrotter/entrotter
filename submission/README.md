@@ -62,6 +62,9 @@ code is MIT licensed. Packages and worker images are not published to registries
 complete EVM reports, including 12 agent recordings, with no new agent-model call.
 The new demo performs an additional real local risk run and frozen-model replay.
 This proves a reproducible observation/action contract, not a better model.
+[Fresh public bounded replay](../docs/BOUNDED_AGENT_INTEGRATION.md) now provides
+a single measured checkout/build/replay/CLI-verification command, with Docker
+setup prerequisites and exact current proposed pins.
 [Historical evaluation](../docs/HISTORICAL_AGENT_EVALUATION.md) includes three
 sourced cases plus two pre-frozen holdouts; those holdouts are now consumed. The
 model matched the risk rule and was slower in every evaluated case.

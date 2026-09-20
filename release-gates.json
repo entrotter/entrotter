@@ -97,12 +97,13 @@
         "Scenarios PR #8: reproduced nested-result reference failure fixed with offline registry and mandatory dependencies. All schemas/frozen inputs unchanged. All 14 tests pass locally against two engine variants and on Linux Python 3.11/3.12/3.13; 19 existing result envelopes including 12 agent records validate offline. Five Python files pass Ruff/mypy/full Bandit without findings, all 48 quality and six schema packages audited without reported issues/skips. Contracts 35474622711, quality 35474622690 and links 35474622683 pass at 3a78ecc; downloaded hashes/inventories match. Independent approval/merge pending.",
         "Website PR #11: all eight JS sources plus actual browser-library declaration pass lint/format/checkJs; all 14 security rules retain 32 exact source-bound author rationales with negative gate tests. Python source passes Ruff/mypy/full Bandit. All 109 Node lock entries and 42 hashed Python tools audited without known reported findings; strict Python audit skips none. Linux quality/unit/browser and docs checks pass at 6174031 (35476090427/35476090431); downloaded hashes/findings/identities match. Independent approval/merge pending.",
         "Engine PR #21: integrated agent/protocol included in all 22 production-source quality checks; 189 native/unit and 21 real Docker tests; exact original report compatibility, strict Python/image/signed-native audits and unchanged worker bounds",
-        "Latest integrated engine pin passes actual local default CLI-SDK-API/admission/quota/recovery and normal/optimized shared-export checks; source-bound quality retained. CI verification recorded separately in bounded-agent-integration evidence."
+        "Latest integrated engine pin passes actual local default CLI-SDK-API/admission/quota/recovery and normal/optimized shared-export checks; source-bound quality retained. CI verification recorded separately in bounded-agent-integration evidence.",
+        "Coordination PR #41 passes all five Linux checks at 5dba8e4; clean bounded model-record replay 6.673 seconds and fixture 6.962 seconds with running Docker/warm caches. Downloaded source/image, report IDs, full security/type/dependency inventories match local."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
         "Independently review/integrate the now quality-checked bounded-agent branch and migrate frozen consumers deliberately; independently review/integrate coordination quality including the frozen provider diagnostic reasons; native/compiler/build-system coverage limits remain explicit",
-        "remaining cross-repo dependency pins",
+        "independent approval and final promotion of the current proposed dependency pins; preserve frozen benchmark variants",
         "Independent review and merge of security, resource and CI PRs, including overload-response fix"
       ]
     },
