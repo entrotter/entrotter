@@ -22,13 +22,13 @@
     },
     {
       "path": "submission/media/entrotter-demo.srt",
-      "bytes": 3075,
-      "sha256": "f9b83d166c1e5f495d92b927598bddfffe16b11d8b3974537ec28c5670459220"
+      "bytes": 3074,
+      "sha256": "b3e3c54dc945041719cdf7bbc8a7dc5d1f09e6eb49d70ab753f4458f5d59c728"
     },
     {
       "path": "submission/media/entrotter-demo.vtt",
-      "bytes": 3044,
-      "sha256": "c430c1d3d784e9c006a3870f4a3e773a2313306eb2f5af48160931dcc8ebf638"
+      "bytes": 3043,
+      "sha256": "c11e8f31dcdc126166e7706c7dfd3fc079894e721d1bada292686f6c3d0d9a2c"
     },
     {
       "path": "submission/media/entrotter-pitch.mp4",
@@ -37,13 +37,13 @@
     },
     {
       "path": "submission/media/entrotter-pitch.srt",
-      "bytes": 3099,
-      "sha256": "19d43024093310eb1190071122f1a87568066ef8434130247dd31b4f813f10e1"
+      "bytes": 3098,
+      "sha256": "ef8c27ac2a0f64f19edf08c752617d6ef9f04bc17bd25f2977b02c05425acd51"
     },
     {
       "path": "submission/media/entrotter-pitch.vtt",
-      "bytes": 3068,
-      "sha256": "2facfd21547c840950c912da9fce7d12afa9620b1f706b2ffb2a273921b59939"
+      "bytes": 3067,
+      "sha256": "8b74d2dd22a5628abab03275132d807760d34734099a3f74db224643ce306d12"
     },
     {
       "path": "submission/media/pitch-probe.json",
@@ -278,6 +278,18 @@
       "path": "evidence/submission-media/worker-image.json",
       "bytes": 2144,
       "sha256": "552c2cb7ad4cd6546577b464b9d52cacedeaeba79e4296bcae36861721d4ed6d"
+    },
+    {
+      "path": "evidence/submission-media/local-docs-links.json.gz",
+      "bytes": 6901,
+      "sha256": "1c96f1146974abbfb6a36a6a5e8ceb90a7c7f78e87a5567a6ae17b868b4c7e0f",
+      "original_bytes": 60116,
+      "original_sha256": "fce2e332e176fe0be4c71e18b2698c33b81ca556e21e7a0304007d254f927680"
+    },
+    {
+      "path": "evidence/submission-media/review.json",
+      "bytes": 599,
+      "sha256": "8731baf92580043962dab69a31c3e8bc0877af9c33cc171b57cfe898558b4ec7"
     }
   ],
   "local_only_inputs": [
@@ -368,6 +380,7 @@
     "Audio timing uses measured continuous capture overhead; no independent human listening review.",
     "Media environment dependency versions were audited strictly, but it is not a fully hash-locked installer or product runtime.",
     "Recorded harness used ENTROTTER_EXPORT_STATE, which the engine does not recognize; actual export used its normal shared default ledger, not an isolated ledger. No ledger was reset.",
-    "Original archive dates, team, eligibility, funding and artwork rights require owner confirmation."
+    "Original archive dates, team, eligibility, funding and artwork rights require owner confirmation.",
+    "Final VTT/SRT files normalize trailing blank lines only; cue text/timing exactly matches the archived encoder output."
   ]
 }
