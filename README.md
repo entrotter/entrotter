@@ -223,3 +223,6 @@ market/evaluation plans. Owner review and genuine demand validation remain open.
 [Fresh bounded agent reproduction](docs/BOUNDED_AGENT_INTEGRATION.md) combines
 immutable public checkouts, a new venv and worker build, exact recorded-agent replay
 and standalone CLI verification. Docker/VM setup is a measured-scope prerequisite.
+
+[Required CI checks](docs/REQUIRED_CHECKS.md) records the enforced main-branch
+policy, successful source checkpoints and migration of older partial PRs.

@@ -633,13 +633,29 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   No product/schema changes or new deployment. Independent review/integration,
   host caller/image/VM storage limits and human submission gates remain open.
 
+## Required CI coverage enforced on all six main branches
+
+- Required checks increased from 13 to 32 across the six repositories, adding
+  quality, dependency/security, documentation, worker and browser jobs already
+  observed passing at the exact commits in `required-checks.json`.
+- GitHub protection was read back after the additive update and rechecked before
+  this documentation change. Every check is bound to GitHub Actions app 15368.
+  Strict freshness, one independent approval, admin enforcement and all unrelated
+  protection settings are preserved. No branch was merged or deployed.
+- Older partial PRs may lack the newly required workflows. Review and integrate
+  the cumulative workflow changes before promotion; do not remove required checks
+  to merge an older slice. Scenario matrix check names contain immutable engine
+  pins and need a deliberate protection update when those names change.
+- See [required checks](docs/REQUIRED_CHECKS.md) and
+  `evidence/required-check-coverage/verification.json`. G3 remains partial because
+  review/integration and the other recorded resource limits are still open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
    six repositories now require passing CI and one PR approval, including admins.
-   Protection read-back is in evidence/branch-protection.json. Future PRs need a
-   reviewer distinct from the author; do not bypass these protections. The final
-   protection checkpoint is committed locally pending the next reviewed docs PR.
+   Current protection read-back is in evidence/required-check-coverage/. Future
+   PRs need a reviewer distinct from the author; do not bypass these protections.
 2. Complete security/delivery: whole-process CPU/RSS/time/disk/concurrency bounds,
    SIGTERM handling, deeper RPC/API fault tests, lint/types/security/dependency and
    remaining repo quality CI, immutable dependencies, and branch protections.

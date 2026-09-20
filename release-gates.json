@@ -98,7 +98,8 @@
         "Website PR #11: all eight JS sources plus actual browser-library declaration pass lint/format/checkJs; all 14 security rules retain 32 exact source-bound author rationales with negative gate tests. Python source passes Ruff/mypy/full Bandit. All 109 Node lock entries and 42 hashed Python tools audited without known reported findings; strict Python audit skips none. Linux quality/unit/browser and docs checks pass at 6174031 (35476090427/35476090431); downloaded hashes/findings/identities match. Independent approval/merge pending.",
         "Engine PR #21: integrated agent/protocol included in all 22 production-source quality checks; 189 native/unit and 21 real Docker tests; exact original report compatibility, strict Python/image/signed-native audits and unchanged worker bounds",
         "Latest integrated engine pin passes actual local default CLI-SDK-API/admission/quota/recovery and normal/optimized shared-export checks; source-bound quality retained. CI verification recorded separately in bounded-agent-integration evidence.",
-        "Coordination PR #41 passes all five Linux checks at 5dba8e4; clean bounded model-record replay 6.673 seconds and fixture 6.962 seconds with running Docker/warm caches. Downloaded source/image, report IDs, full security/type/dependency inventories match local."
+        "Coordination PR #41 passes all five Linux checks at 5dba8e4; clean bounded model-record replay 6.673 seconds and fixture 6.962 seconds with running Docker/warm caches. Downloaded source/image, report IDs, full security/type/dependency inventories match local.",
+        "All six main branches now require 32 observed GitHub Actions checks (previously 13), including quality/security, links, Docker and browser jobs. API readback confirms strict freshness, independent approval and admin enforcement preserved; unrelated settings unchanged. See required-checks.json and evidence/required-check-coverage/."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
@@ -259,6 +260,7 @@
     "evidence/website-quality/summary.json",
     "evidence/bounded-agent/summary.json",
     "evidence/submission-media/manifest.json",
-    "evidence/bounded-agent-integration/summary.json"
+    "evidence/bounded-agent-integration/summary.json",
+    "evidence/required-check-coverage/verification.json"
   ]
 }
