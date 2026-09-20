@@ -100,7 +100,8 @@
         "Latest integrated engine pin passes actual local default CLI-SDK-API/admission/quota/recovery and normal/optimized shared-export checks; source-bound quality retained. CI verification recorded separately in bounded-agent-integration evidence.",
         "Coordination PR #41 passes all five Linux checks at 5dba8e4; clean bounded model-record replay 6.673 seconds and fixture 6.962 seconds with running Docker/warm caches. Downloaded source/image, report IDs, full security/type/dependency inventories match local.",
         "All six main branches now require 32 observed GitHub Actions checks (previously 13), including quality/security, links, Docker and browser jobs. API readback confirms strict freshness, independent approval and admin enforcement preserved; unrelated settings unchanged. See required-checks.json and evidence/required-check-coverage/.",
-        "Engine PR #22 bounds setup archive staging to 256 MiB with at most 1 MiB chunks and streaming pinned digest verification, regular-file/FIFO checks and between-read deadlines. Failing-before regression, 196 local native/unit tests, full quality policy and an actual unchanged-source Docker fixture pass. Host/image/VM quotas and hard whole-build deadlines remain outside this fix; independent review pending."
+        "Engine PR #22 bounds setup archive staging to 256 MiB with at most 1 MiB chunks and streaming pinned digest verification, regular-file/FIFO checks and between-read deadlines. Failing-before regression, 196 local native/unit tests, full quality policy and an actual unchanged-source Docker fixture pass. Host/image/VM quotas and hard whole-build deadlines remain outside this fix; independent review pending.",
+        "All six repositories have an open, scoped good first issue, verified by GitHub body/state/label readback. Four missing documentation opportunities were created, existing SDK/CLI tasks reused, and the contribution directory linked from README/CONTRIBUTING. This proves issue availability, not task completion or adoption."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
@@ -263,6 +264,7 @@
     "evidence/submission-media/manifest.json",
     "evidence/bounded-agent-integration/summary.json",
     "evidence/required-check-coverage/verification.json",
-    "evidence/worker-build-inputs.json"
+    "evidence/worker-build-inputs.json",
+    "evidence/first-contribution-paths.json"
   ]
 }

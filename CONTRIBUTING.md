@@ -1,8 +1,9 @@
 # Contributing to entrotter
 
 All code, issues, documentation, and reviews are in English. Small, focused
-pull requests are welcome. You do not need cloud accounts or paid API keys
-for the offline tests. See [README.md](README.md) for this repository's test command.
+pull requests are welcome. Choose a scoped task from the
+[first-contribution directory](docs/FIRST_CONTRIBUTION.md). You do not need cloud
+accounts or paid API keys for the offline tests. See [README.md](README.md) for this repository's test command.
 
 1. Fork this public repository and branch from `main`.
 2. Check existing issues; describe substantial API changes before implementing.
