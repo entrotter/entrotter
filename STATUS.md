@@ -571,6 +571,33 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   experimental native API. No main change, package/image publication, deployment,
   outreach, new holdout evaluation or submission was performed.
 
+## Submission videos and review package: recorded, owner review pending
+
+- Actual continuous Chromium recordings now produce a **2:51.44 pitch** and
+  **2:54.24 demo**, with local synthetic English narration and visible/separate
+  captions. Both complete H.264/AAC files decode without errors; timing, streams,
+  eight pitch layouts and representative final frames are checked. Human
+  listening review and founder/team context remain pending.
+- The demo inspects the earlier adverse Ethereum/Uniswap report, executes two
+  real bounded local-EVM calls and imports the newly generated report. Frozen
+  model replay equals the complete original artifact; zero new agent-model or
+  archive calls occur. Invalid hash rejection clears prior data and recovers.
+  All browser requests are same-origin loopback GETs, with no page errors.
+- `submission/README.md` links the actual files, exact code/report sources,
+  unvalidated market/pricing hypotheses, three-session evaluation protocol and
+  prior-work/AI/media disclosure. No user sessions, customer quotes or revenue
+  are invented. The original archive's dates/rights and owner facts need review.
+- Public event/rules rechecked. Registration navigation reached an account-create
+  page, so joined state remains unverified; no fields or agreements were submitted.
+  No outreach or final entry was sent. See `evidence/submission-media/manifest.json`
+  for hashes, precise executed helpers, audio/model provenance and scope limits.
+  The recording console is explicitly a production aid, not a shipped feature.
+- No product source changed. Review branches are still unmerged/undeployed. No
+  containers remain; the owned preview processes are closed and both VM profiles
+  are stopped. The incorrect unused export-state environment setting is disclosed;
+  export used the ordinary shared ledger, which was not reset. Independent review
+  of this material, human listening/fact checking and genuine demand remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
@@ -594,9 +621,9 @@ required historical state. Archive failure is explicit, never a synthetic fallba
    Historical trace replay remains unsupported; do not imply a reconstructed market.
 5. Obtain independent review of the accessibility PR, deploy through protected main,
    and verify the live site; manual assistive-technology evaluation remains open.
-   Continue submission materials. Actual pitch/demo
-   videos, three genuine target-user evaluations, joined-event verification and
-   owner eligibility remain pending. Outreach and submission require owner approval.
+   Review the recorded pitch/demo and submission package. Three genuine target-user
+   evaluations, joined-event verification, owner eligibility/facts and founder
+   context remain pending. Outreach and submission require owner approval.
 
 No arbitrary user code execution, public engine, paid service, package publication,
 mainnet transaction, customer outreach or competition submission was performed.
