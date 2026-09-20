@@ -592,6 +592,10 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   No outreach or final entry was sent. See `evidence/submission-media/manifest.json`
   for hashes, precise executed helpers, audio/model provenance and scope limits.
   The recording console is explicitly a production aid, not a shipped feature.
+- Coordination PR #40 passes all five checks at proof `75ab1b6`: integration
+  35479125753, quality 35479125787 and docs links 35479125785. All eight public
+  media/caption/probe files read back with exact hashes (15,411,176 bytes). Local
+  docs checks passed all 149 occurrences. CI/publication records are retained.
 - No product source changed. Review branches are still unmerged/undeployed. No
   containers remain; the owned preview processes are closed and both VM profiles
   are stopped. The incorrect unused export-state environment setting is disclosed;

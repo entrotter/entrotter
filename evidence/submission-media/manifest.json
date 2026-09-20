@@ -290,6 +290,41 @@
       "path": "evidence/submission-media/review.json",
       "bytes": 599,
       "sha256": "8731baf92580043962dab69a31c3e8bc0877af9c33cc171b57cfe898558b4ec7"
+    },
+    {
+      "path": "evidence/submission-media/ci-quality.json.gz",
+      "bytes": 821,
+      "sha256": "e1c64f568b6a52eb91240e28e3441a22db88fb6cdb4677122e4d0a321b4ef825",
+      "original_bytes": 5103,
+      "original_sha256": "3df75e799182f338f946bcca7bc8a1efffae7926a9e4bc664bb74d5121a4d157"
+    },
+    {
+      "path": "evidence/submission-media/ci-links.json.gz",
+      "bytes": 383,
+      "sha256": "31fa9cba74c5384bcc5d8fb11ef750e34d36b59f96c8490f0fb4ffce097a0558",
+      "original_bytes": 1298,
+      "original_sha256": "768fde757d7af93a2676dc9fa6cd8d30b6ccd7b77e0225da5d0546c7dd7ad205"
+    },
+    {
+      "path": "evidence/submission-media/ci-integration.json.gz",
+      "bytes": 1281,
+      "sha256": "a882d42d7a49deb3bdc26938464a38c77ee0b5b2a4da21fad9f514c2f7364058",
+      "original_bytes": 12500,
+      "original_sha256": "bdaee63b5807b2f9045ec74b4b4f20382690368034a7ec512cb83101d1e5a121"
+    },
+    {
+      "path": "evidence/submission-media/pr-checks.json.gz",
+      "bytes": 466,
+      "sha256": "1d9c853c0e0b77d71d0c30b66e379a0af724e01a8d3fa852606873c75b82f6f5",
+      "original_bytes": 1666,
+      "original_sha256": "b78c8899f77251cac92c4e3d8538aaa7ad6ddaffb5e1e81e852411c09af777c9"
+    },
+    {
+      "path": "evidence/submission-media/public-readback.json.gz",
+      "bytes": 440,
+      "sha256": "06fbf6955b208d0b05d468409af73acb01eed8c96a64591654a76793a2eb46eb",
+      "original_bytes": 1267,
+      "original_sha256": "e6d20e9280238205b0c0bc414e7581e544890b452bb139a0aecd048e864d3418"
     }
   ],
   "local_only_inputs": [
@@ -382,5 +417,15 @@
     "Recorded harness used ENTROTTER_EXPORT_STATE, which the engine does not recognize; actual export used its normal shared default ledger, not an isolated ledger. No ledger was reset.",
     "Original archive dates, team, eligibility, funding and artwork rights require owner confirmation.",
     "Final VTT/SRT files normalize trailing blank lines only; cue text/timing exactly matches the archived encoder output."
-  ]
+  ],
+  "ci": {
+    "tested_commit": "75ab1b6f1a3423e7221bde73d9db6c4b16848105",
+    "integration_run": 35479125753,
+    "quality_run": 35479125787,
+    "docs_links_run": 35479125785,
+    "required_jobs_passed": 5,
+    "public_outputs_readback": "all eight files equal exact hashes; 15411176 bytes",
+    "pr": "https://github.com/entrotter/entrotter/pull/40",
+    "independent_review": "pending"
+  }
 }
