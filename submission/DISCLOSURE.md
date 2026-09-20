@@ -1,7 +1,10 @@
 # Development, AI and media disclosure
 
-This is an owner-review draft. Do not attest to unknown dates, team identity,
-funding history, eligibility or rights through this document.
+Owner confirmations received on 2026-09-20: Doraking is the sole participant,
+confirms eligibility and reports no funding. The owner approved the existing
+videos and confirmed that the initial code and mascot were AI-generated for this
+event, with no Entrotter development before September 14. These are owner
+statements, not independently reconstructed provenance.
 
 ## Starting material and development
 
@@ -12,12 +15,12 @@ Anvil execution, public publication and deployment. Those starting files are pri
 material and must be disclosed; this project was not created from a blank folder
 in the present execution session.
 
-The original archive is no longer available at its supplied local path during
-this review. Its original-byte digest and creation/development dates have not
-been verified. The owner must identify all work predating the hackathon start,
-including earlier work contained in that archive, and confirm relevant rights.
-Git commit timestamps alone do not establish when ideas or source were created.
-The official event window begins September 14, 2026 at 6:00 a.m. Pacific; consult
+The original archive is no longer available at its supplied local path. Its
+original-byte digest is therefore unverified. The owner reports that it was
+AI-generated for this event, with no development before September 14, 2026.
+The archive was still starting material for this Codex implementation session;
+do not describe the subsequent work as starting from a blank repository.
+Git timestamps alone do not establish creation dates. Consult
 [the current requirements and rules](../docs/COMPETITION.md) before submission.
 
 Codex substantially assisted implementation, debugging, tests, security and
@@ -55,8 +58,8 @@ captions, voice/configuration hashes and tool inventory accompany the recordings
 No paid voice API or video platform upload was used.
 
 The supplied purple Entrotter mascot is preserved unchanged from the pinned
-website assets. The owner must confirm rights to supplied artwork and starting
-material before final entry. All new project code is MIT licensed; upstream
+website assets. The owner confirmed that this artwork and starting material were
+generated with AI for this event; no independent rights opinion is claimed. All new project code is MIT licensed; upstream
 software retains its own licenses. The videos contain original presentation text,
 actual project UI and no third-party music or stock footage.
 
@@ -64,6 +67,8 @@ Both MP4 files have continuous screen capture, synthesized narration, embedded
 visible English captions and separate VTT/SRT captions. Encoding changes codec
 and normalizes loudness without speeding up execution or cutting failure states.
 Automated full-file decoding, stream/duration checks and representative frame
-inspection pass. Human listening review, founder/team context and final owner
-approval remain pending. These videos are real recorded review deliverables,
+inspection pass. The owner approved the existing review videos on 2026-09-20. A new
+1:46.07 pitch uses the confirmed solo-founder context and meets the authenticated
+form's two-minute limit. The original recordings remain unchanged evidence.
+Supported-host uploads and conditional final submission remain pending. These videos are real recorded review deliverables,
 not proof of founder communication, customer demand or a submitted entry.

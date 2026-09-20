@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-20T02:18:11.039595+00:00",
+  "updated_at": "2026-09-20",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -146,18 +146,24 @@
         "same-task direct Anvil comparison with exact outcome equality and honest workflow distinction",
         "Recorded actual 2:51.44 pitch and 2:54.24 product demo with synthetic narration, captions, exact source/asset hashes and clean complete decoding; owner listening/fact review pending",
         "Actual bounded local risk execution and complete recorded-model equality captured; invalid-report rejection/recovery and local-only browser requests verified",
-        "Submission index, explicit unvalidated pricing/market hypothesis, unsent three-session evaluation protocol and prior-work/AI/media disclosure prepared"
+        "Submission index, explicit unvalidated pricing/market hypothesis, unsent three-session evaluation protocol and prior-work/AI/media disclosure prepared",
+        "Owner approved original videos, confirmed solo participation and eligibility, and reports no funding and no pre-September-14 Entrotter development; user evaluations explicitly deferred, not completed",
+        "Authenticated Entrotter draft project 14185 created; product details and partial founder profile saved",
+        "New 106.0675-second synthetic-narration pitch matches the stricter authenticated form limit and passes full decode"
       ],
       "todo": [
-        "verify joined registration and owner eligibility/funding/prior-work/team facts",
-        "owner listening/fact review of recorded videos and founder/team context",
-        "three genuine user evaluations (zero completed)",
-        "independent review/integration and final exact submission source pins"
+        "Independent review/integration and final exact submission source pins",
+        "Complete required current-school-status field without fabricating a personal answer",
+        "Upload project logo and obtain supported-host URLs for <=120-second pitch and <=180-second demo",
+        "After October 6 submission opening, verify post-submission editing before exercising conditional owner submission authorization"
       ],
       "requires_approval": [
         "outreach",
-        "paid services",
-        "actual competition submission"
+        "paid services"
+      ],
+      "conditional_authorization": "Final submission permitted only if post-submission editing is verified; currently unverified and submission not open",
+      "deferred_by_owner": [
+        "three genuine user evaluations; zero completed, no demand evidence claimed"
       ]
     }
   ],
@@ -269,6 +275,7 @@
     "evidence/worker-build-inputs.json",
     "evidence/first-contribution-paths.json",
     "evidence/host-service/summary.json",
-    "evidence/quick-start/summary.json"
+    "evidence/quick-start/summary.json",
+    "evidence/submission-preparation/summary.json"
   ]
 }

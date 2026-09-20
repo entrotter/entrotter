@@ -762,3 +762,26 @@ No arbitrary user code execution, public engine, paid service, package publicati
 mainnet transaction, customer outreach or competition submission was performed.
 The current per-EVM memory bound is not a complete process sandbox. Preserve these
 limits in the product and release-gates.json. Overall completion remains unproven.
+
+
+## Owner decisions and authenticated submission draft — September 20
+
+The owner approved the existing demo/pitch, confirmed solo participation as
+Doraking, eligibility and no funding, and deferred user evaluations as a current
+submission gate. The owner reports that the initial code and mascot were newly
+AI-generated for this event, with no Entrotter development before September 14.
+Personal education/work details are withheld; do not invent them.
+
+The authenticated Colosseum account now has project 14185 / Entrotter, with product
+answers, source links, contact information and partial founder profile saved.
+Final submission opens October 6 at 11:00 UTC / 20:00 JST. Draft editing is
+confirmed; post-submission editing is not. Submission remains conditional and
+has not occurred. The required school-status Yes/No answer remains blank.
+
+The actual form limits pitch to two minutes and accepts only YouTube/Loom/Vimeo
+video URLs. A new 106.0675-second pitch has been generated with synthetic narration,
+confirmed founder context and explicit limitations; complete decode passes.
+Existing demo and original recording evidence are unchanged. Logo upload was
+rejected by the browser file-chooser transport, and supported video hosting is
+pending. See evidence/submission-preparation/summary.json. Independent GitHub
+review/main integration and newer Pages deployment also remain pending.

@@ -1,6 +1,8 @@
 # Three genuine developer evaluations
 
-**Status: zero completed sessions.** This is a protocol and an unsent invitation,
+**Status: deferred by the owner on 2026-09-20; zero completed sessions.**
+These sessions are not a current submission condition. This remains an optional
+future validation protocol and an unsent invitation,
 not demand evidence. No participant, quote, endorsement or adoption is invented.
 Owner approval is required before outreach. Participants choose whether any notes
 may be retained or quoted; do not collect wallet secrets, private positions or

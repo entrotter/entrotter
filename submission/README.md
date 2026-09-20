@@ -1,9 +1,12 @@
 # Entrotter submission index
 
-**Review package, not a submitted entry.** Recorded videos accompany the code and
-measured evidence. Owner fact-checking, team/registration verification, independent
-code approval and genuine user validation remain open. No entry or outreach has
-been sent. Re-check the live submission form before uploading anything.
+**Saved project draft, not a submitted entry.** The owner approved the existing
+videos and supplied the solo-participant facts on 2026-09-20. User evaluation is
+deferred, with zero completed sessions. The authenticated event account now has
+an [Entrotter draft](https://colosseum.com/arena/projects/entrotter); product details
+are saved. Final submission opens October 6 at 11:00 UTC / 20:00 JST. Formal
+post-submission editing is not yet verified, so the owner's conditional submission
+authorization has not been exercised. No outreach or final entry was sent.
 
 ## Product
 
@@ -23,21 +26,22 @@ a prediction of future markets, or a measurement of profit.
 
 | Material | Artifact | Status |
 | --- | --- | --- |
-| Product demo | [MP4](media/entrotter-demo.mp4), [VTT](media/entrotter-demo.vtt), [SRT](media/entrotter-demo.srt) · 2:54.24 | Recorded actual Chromium interactions and bounded engine calls; review cut |
-| Product pitch | [MP4](media/entrotter-pitch.mp4), [VTT](media/entrotter-pitch.vtt), [SRT](media/entrotter-pitch.srt) · 2:51.44 | Recorded presentation with synthetic narration; owner/team context still required |
+| Product demo | [MP4](media/entrotter-demo.mp4), [VTT](media/entrotter-demo.vtt), [SRT](media/entrotter-demo.srt) · 2:54.24 | Recorded actual Chromium interactions and bounded engine calls; owner approved |
+| Product pitch | [Short MP4](media/entrotter-pitch-short.mp4), [VTT](media/entrotter-pitch-short.vtt) · 1:46.07 | New six-card pitch with confirmed solo-founder context; synthetic narration. The original 2:51.44 review cut is retained but exceeds the current form limit |
 | Video production evidence | [Manifest](../evidence/submission-media/manifest.json) | Source pins, exact scripts/timelines, output hashes, execution and rendering checks |
 | Pitch text and shot list | [Video scripts](VIDEO_SCRIPTS.md) | Exact narration, including hypotheses and limitations |
 | Market/pricing/distribution | [Market hypotheses](MARKET.md) | Unvalidated, no fabricated TAM/customer/revenue claim |
-| Target-user evaluation | [Evaluation protocol](EVALUATIONS.md) | Three genuine sessions required; zero completed records |
-| Development/AI disclosure | [Disclosure](DISCLOSURE.md) | Supplied archive and substantial Codex assistance disclosed; owner dates/rights need confirmation |
-| Rules, deadline and eligibility | [Competition requirements](../docs/COMPETITION.md) | Public requirements rechecked; joined-account state and owner eligibility unverified |
+| Target-user evaluation | [Evaluation protocol](EVALUATIONS.md) | Deferred by owner; zero completed records, no demand claim |
+| Development/AI disclosure | [Disclosure](DISCLOSURE.md) | Supplied archive and substantial Codex assistance disclosed; owner reports event-period AI generation; original archive digest unavailable |
+| Rules, deadline and eligibility | [Competition requirements](../docs/COMPETITION.md) | Public requirements rechecked; authenticated event draft verified; owner confirms eligibility |
 
-Both videos explicitly label synthetic narration and pending owner review. The
+The original recordings label synthetic narration and their historical review
+status; the owner has since approved them. The short pitch retains explicit
+synthetic-narration disclosure and does not impersonate the founder. The
 demo uses actual product UI, a clearly labelled recording console displaying real
 process output, and generated report files. It does not stage successful output,
 claim to be the founder speaking, or present the recording console as a product
-feature. The pitch is an artifact for owner review; it does not establish founder
-communication or market fit. No video platform has received an upload.
+feature. The pitch does not establish founder communication skills or market fit. No video platform has received an upload.
 
 ## Exact review sources
 
@@ -77,16 +81,23 @@ exact replay and a shareable report/inspection workflow. A few Anvil scripts may
 be the right solution for a single bespoke experiment. Actual willingness to adopt
 or pay for the broader workflow is still a hypothesis.
 
-## Owner facts needed before submission
+## Owner decisions and remaining submission requirements
 
-| Required fact | Current state |
-| --- | --- |
-| Team members, locations, backgrounds and founder motivation | Not supplied/confirmed; do not infer from the filesystem or GitHub profile |
-| Every member registered for the joined event; leader/team mapping | Not verified in an authenticated account |
-| Age/location/employment/rights eligibility | Owner must confirm against official rules |
-| Funding history and all relevant prior development | Unverified; archive provenance is disclosed separately |
-| Genuine evaluation records and permission to quote | No completed sessions or quotes |
-| Final video approval, founder introduction and submission consent | Pending |
-| Protected integration, site deployment and exact submitted code pins | Pending independent review; never bypass protections |
+- Doraking is the sole member; eligibility confirmed and no funding reported.
+- The owner reports no Entrotter development before September 14, 2026, and
+  event-period AI generation of the initial code and purple mascot.
+- Education and previous employment are not disclosed. The mandatory current
+  school-status field only offers Yes/No, so it remains unanswered.
+- Existing videos are approved. The form requires a pitch of at most two minutes
+  and a demo of at most three minutes, hosted on YouTube, Loom or Vimeo. The new
+  short pitch passes a full decode/duration check; hosting is still pending.
+- Logo upload was rejected by the browser file-upload transport; no logo was
+  uploaded. The saved project still needs its logo and two supported video URLs.
+- User evaluations are deferred and are not a current owner-required gate.
+- Independent GitHub approval and protected main/Pages integration remain open.
+- Formal submission is authorized only if later editing is verified. The form
+  currently confirms editable drafts before opening, not editing after submission.
+
+See [preparation evidence](../evidence/submission-preparation/summary.json).
 
 The material is not a claim of a win, market validation or complete goal acceptance.
