@@ -215,3 +215,7 @@ The proposed [bounded agent integration](docs/BOUNDED_AGENT_REPLAY.md) reproduce
 all 19 existing EVM reports under the worker quotas, including 12 agent-recording
 replays without model calls. This is verified on an open branch; independent
 approval and dependency-pin integration remain pending.
+
+[Submission review package](submission/README.md) includes recorded pitch/demo
+videos, measured evidence, explicit AI/prior-work disclosure and unvalidated
+market/evaluation plans. Owner review and genuine demand validation remain open.

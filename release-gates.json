@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-19T23:56:39.310584+00:00",
+  "updated_at": "2026-09-20T00:32:18.145348+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -135,14 +135,16 @@
         "honest goal and backlog",
         "competition requirements note",
         "current official event and rules checked; exact PT/UTC/JST deadline recorded",
-        "same-task direct Anvil comparison with exact outcome equality and honest workflow distinction"
+        "same-task direct Anvil comparison with exact outcome equality and honest workflow distinction",
+        "Recorded actual 2:51.44 pitch and 2:54.24 product demo with synthetic narration, captions, exact source/asset hashes and clean complete decoding; owner listening/fact review pending",
+        "Actual bounded local risk execution and complete recorded-model equality captured; invalid-report rejection/recovery and local-only browser requests verified",
+        "Submission index, explicit unvalidated pricing/market hypothesis, unsent three-session evaluation protocol and prior-work/AI/media disclosure prepared"
       ],
       "todo": [
-        "verify joined registration and owner eligibility",
-        "recorded pitch and demo",
-        "three genuine user evaluations",
-        "market hypothesis and interview material",
-        "submission index and owner review"
+        "verify joined registration and owner eligibility/funding/prior-work/team facts",
+        "owner listening/fact review of recorded videos and founder/team context",
+        "three genuine user evaluations (zero completed)",
+        "independent review/integration and final exact submission source pins"
       ],
       "requires_approval": [
         "outreach",
@@ -252,6 +254,7 @@
     "evidence/coordination-quality/summary.json",
     "evidence/scenario-contracts/summary.json",
     "evidence/website-quality/summary.json",
-    "evidence/bounded-agent/summary.json"
+    "evidence/bounded-agent/summary.json",
+    "evidence/submission-media/manifest.json"
   ]
 }
