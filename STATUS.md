@@ -650,6 +650,30 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   `evidence/required-check-coverage/verification.json`. G3 remains partial because
   review/integration and the other recorded resource limits are still open.
 
+## Worker setup archive bounds
+
+- Engine [PR #22](https://github.com/entrotter/engine/pull/22), commit
+  `2c843842dc57387150e3bb080c720bc94ce18bc5`, bounds archive staging to 256 MiB,
+  hashes in at most 1 MiB chunks before extraction, and rejects FIFO/device inputs.
+  A 300-second transfer budget is checked between reads with ten-second HTTP
+  socket timeouts; it is not a hard deadline for DNS, filesystem I/O or builds.
+- The oversized-input regression fails before the fix. All 196 local unit/native
+  tests pass, including seven new regressions. Ruff/mypy and the complete
+  24-finding security policy pass; stale source review correctly rejects first.
+  All eight Linux engine checks pass, including real EVM and Docker enforcement;
+  run 35480730300 exercises the updated network-download build path.
+- A real build from the pinned 121,395,735-byte arm64 archive and an actual Docker
+  fixture pass. Worker source digest remains `fba06f6dd633858f91dd89d4f48a51c8447696f32e9eb3820302d09bcb379f42`,
+  and the complete report equals native execution. No source/runtime/schema change
+  or new model/archive-RPC evaluation occurred. Both local VM profiles are stopped.
+- Bounded reproduction, quality and integration pins now select this proposed
+  engine commit. Frozen native/benchmark variants remain unchanged. The engine PR
+  contains before/after logs, exact source hashes and image/smoke evidence under
+  `evidence/worker-build-inputs/`; see `evidence/worker-build-inputs.json` here
+  for integration checkpoints. Independent approval/merge is still pending.
+- Caller-process limits, image/build-cache/VM storage and SIGKILL staging leftovers
+  remain open. This setup fix does not complete G3 or authorize public hosting.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
