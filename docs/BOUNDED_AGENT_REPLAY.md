@@ -109,8 +109,8 @@ The local example needs no model, archive access or signing key. The 19-report
 comparison additionally requires the existing coordination evidence checkout and
 archive access via `ENTROTTER_RPC_URL`. Iterate the 15 `causal-v1/causal-uniswap-*.json`
 reports, three `agent-local-*.json` reports and `historical-uniswap.json`. For agent
-reports, select the recorded observation steps, use the first observation's
-remaining gas as the initial budget, and pass the unmodified `agent` object; for
+reports, select the recorded observation steps, use the first request's
+`limits.remaining_requested_gas` as the initial budget, and pass the unmodified `agent` object; for
 non-agent reports use `runner.run`. Compare the entire returned object with its
 reference, not only metrics. Input/output file hashes and each case's elapsed
 seconds are recorded in `evidence/bounded-agent/reproduction/summary.json`.

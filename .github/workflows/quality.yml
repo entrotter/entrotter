@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 0d3857839b2187541e573bec2e58042ad5bf0b45
+          ref: abb4662ce960e08b2aa3a2c8a1c10719339edccc
           path: worker-engine
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262

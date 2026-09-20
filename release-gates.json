@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-20T00:32:18.145348+00:00",
+  "updated_at": "2026-09-20T00:45:35.760147+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -43,7 +43,8 @@
         "ten exact risk/model action-record replays on fresh archived-state forks; model matched rule decisions and had greater measured runtime in each case",
         "six interleaved same-task raw Anvil/Entrotter runs with identical complete common outcomes; no speed advantage shown",
         "Proposed bounded-default public clean checkout/venv/image-build/example reproduces exact fixture in 11.682 seconds locally with running Docker and warm caches; not a cold installation measurement",
-        "Engine PR #21 integrates bounded risk/recorded-replay execution and exactly reproduces all 19 original EVM reports (12 agent records) with no new model generation; protected review and frozen-script API/pin migration remain pending"
+        "Engine PR #21 integrates bounded risk/recorded-replay execution and exactly reproduces all 19 original EVM reports (12 agent records) with no new model generation; protected review and frozen-script API/pin migration remain pending",
+        "Fresh five-public-repo bounded agent checkout/venv/image build/exact replay/CLI verify+inspect in 20.403 seconds locally; bounded fixture 18.588 seconds, Docker running and warm caches. Frozen native reproduction remains exact; independent review pending."
       ],
       "todo": [
         "independent approval and merge of engine/schema/coordination agent PRs"
@@ -95,7 +96,8 @@
         "Coordination proposed quality gate covers 19 production sources, including hidden action helper; 26 local tests and six real Lychee regressions pass. Optimized wheel validation failed before and now rejects before installation; 83 explicit guards preserve predicates. Three frozen-provider type diagnostics and 75 full security findings remain author-reviewed and visible; 50 locked Python packages have no reported findings. PR #33 passes all three Linux integration jobs, full quality and links at f05eae7. Downloaded source/type/finding/lock reports and full fixture/Anvil IDs match; normal and optimized export results agree. Public clone/venv/build reproduction: 6.748 seconds with running Docker and warm caches. Independent review/merge pending.",
         "Scenarios PR #8: reproduced nested-result reference failure fixed with offline registry and mandatory dependencies. All schemas/frozen inputs unchanged. All 14 tests pass locally against two engine variants and on Linux Python 3.11/3.12/3.13; 19 existing result envelopes including 12 agent records validate offline. Five Python files pass Ruff/mypy/full Bandit without findings, all 48 quality and six schema packages audited without reported issues/skips. Contracts 35474622711, quality 35474622690 and links 35474622683 pass at 3a78ecc; downloaded hashes/inventories match. Independent approval/merge pending.",
         "Website PR #11: all eight JS sources plus actual browser-library declaration pass lint/format/checkJs; all 14 security rules retain 32 exact source-bound author rationales with negative gate tests. Python source passes Ruff/mypy/full Bandit. All 109 Node lock entries and 42 hashed Python tools audited without known reported findings; strict Python audit skips none. Linux quality/unit/browser and docs checks pass at 6174031 (35476090427/35476090431); downloaded hashes/findings/identities match. Independent approval/merge pending.",
-        "Engine PR #21: integrated agent/protocol included in all 22 production-source quality checks; 189 native/unit and 21 real Docker tests; exact original report compatibility, strict Python/image/signed-native audits and unchanged worker bounds"
+        "Engine PR #21: integrated agent/protocol included in all 22 production-source quality checks; 189 native/unit and 21 real Docker tests; exact original report compatibility, strict Python/image/signed-native audits and unchanged worker bounds",
+        "Latest integrated engine pin passes actual local default CLI-SDK-API/admission/quota/recovery and normal/optimized shared-export checks; source-bound quality retained. CI verification recorded separately in bounded-agent-integration evidence."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
@@ -255,6 +257,7 @@
     "evidence/scenario-contracts/summary.json",
     "evidence/website-quality/summary.json",
     "evidence/bounded-agent/summary.json",
-    "evidence/submission-media/manifest.json"
+    "evidence/submission-media/manifest.json",
+    "evidence/bounded-agent-integration/summary.json"
   ]
 }

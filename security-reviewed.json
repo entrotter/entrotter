@@ -485,72 +485,72 @@
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B607",
-      "line": 49,
-      "code_sha256": "ed3c9bede3c9ffcce17557f8f069d3a4411b5fc744118528f4e6cfca1474965f",
+      "line": 59,
+      "code_sha256": "b4652e1a6101ded0a8ca82819eb58cda31052a874315896c39eee83bc38c6f17",
       "severity": "LOW",
       "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 49,
-      "code_sha256": "ed3c9bede3c9ffcce17557f8f069d3a4411b5fc744118528f4e6cfca1474965f",
+      "line": 59,
+      "code_sha256": "b4652e1a6101ded0a8ca82819eb58cda31052a874315896c39eee83bc38c6f17",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B607",
-      "line": 50,
-      "code_sha256": "5fd894d22ca16380abe4cf56f6c316629134a4284e49b09d15d15986e2159d84",
+      "line": 60,
+      "code_sha256": "b407b4d20db4a19406b630a00b26218a0576d390586becd389361c970be873a3",
       "severity": "LOW",
       "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 50,
-      "code_sha256": "5fd894d22ca16380abe4cf56f6c316629134a4284e49b09d15d15986e2159d84",
+      "line": 60,
+      "code_sha256": "b407b4d20db4a19406b630a00b26218a0576d390586becd389361c970be873a3",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B607",
-      "line": 63,
-      "code_sha256": "335a24eb317c44bba1aa1fc4c1df30752e6b9275e377331a93ccafb65ee61546",
+      "line": 73,
+      "code_sha256": "b5ef77e3574734f9b1c3c07495fe5b6fb97a94dd14681c51b9fba5e3e7f3ba83",
       "severity": "LOW",
       "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 63,
-      "code_sha256": "335a24eb317c44bba1aa1fc4c1df30752e6b9275e377331a93ccafb65ee61546",
+      "line": 73,
+      "code_sha256": "b5ef77e3574734f9b1c3c07495fe5b6fb97a94dd14681c51b9fba5e3e7f3ba83",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 67,
-      "code_sha256": "5104fed341776f7a83b3d86f9bf36463d54239c86e361e507ec80a835c82cc99",
+      "line": 77,
+      "code_sha256": "075f52a089851541a6ee118879e7b4b96b148cb1d211dd3ed42ea1536d9e0615",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 87,
-      "code_sha256": "0e6e0a109864af213196c03c170651141d20348df33619a9e8127fa3a0b0e78b",
+      "line": 97,
+      "code_sha256": "dbd5391836aa8b521fd63041d871776f2eccfb88393310d5d5ad7504d571e6e6",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 138,
-      "code_sha256": "42ad255d3d124e807760dc56035254c90b07704320a3a713111f5cceaf80d753",
+      "line": 165,
+      "code_sha256": "41da5b24e03dce2a36bb1c29af95da6375687bb166764cf4f5ce6819d0d9a9b6",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
     },
@@ -621,7 +621,7 @@
     "scripts/export_reports.py": "8971b8e439fd1f60641afb9fb7260a6d52cde2e076256ee38e228d4e393288f3",
     "scripts/publish.py": "e54c579a177ab5877e5cb9e8d7626a0c0f6fbf1e3f72067495cbf8b58597cfe8",
     "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
-    "scripts/reproduce_clean.py": "e2203976e89d6e917da495e4caded90d095dc5d918b2b31e71bfb42b245c663e",
+    "scripts/reproduce_clean.py": "0e1b9f29bd1dad1bfe9f09f8f75aae4be00b2ecc232be9ec276a04203a7a0576",
     "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333"
   }
 }

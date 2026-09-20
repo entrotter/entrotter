@@ -2,7 +2,7 @@
   "mypy_version": "1.18.2",
   "dependency_commits": {
     "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
-    "worker-engine": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+    "worker-engine": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
     "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
     "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
   },

@@ -602,6 +602,31 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   export used the ordinary shared ledger, which was not reset. Independent review
   of this material, human listening/fact checking and genuine demand remain open.
 
+## Public bounded-agent checkout and cross-repository integration
+
+- The bounded CI/type/dependency pins now select engine `abb4662`, plus the
+  reviewed-in-author-checks scenario/viewer branches. Independent approval is
+  still pending. Frozen benchmark dependency pins, provider source, historical
+  reports and native compatibility jobs are unchanged.
+- `scripts/reproduce_clean.py --bounded-agent` fetches five public dependencies,
+  creates a new stdlib-only venv, builds the bounded worker, replays the original
+  local model recording and runs standalone CLI verify/inspect through the SDK.
+  Complete artifact equality passes in **20.403 seconds** locally. The companion
+  bounded fixture passes in **18.588 seconds**. Docker/VM installation/startup are
+  excluded and build caches may be warm; no cold-machine claim is made.
+- The preserved `--agent` native path still exactly reproduces the same report
+  in 4.420 seconds. No new model or archive call, policy tuning or public report
+  replacement occurred. New `--output` keeps measurements separate from old files.
+- Actual default CLI-SDK-API fixture/Anvil, admission, quota/preservation and
+  overload/recovery checks pass on the new engine, as do ordinary/optimized
+  cross-CLI export checks. Ruff/mypy passes; all 75 security findings remain
+  source-bound and visible, all 50 locked Python packages have no reported
+  findings, and six quality policy tests pass. New flag fails before the change;
+  the stale source-security review also correctly rejects before refresh.
+- See docs/BOUNDED_AGENT_INTEGRATION.md and evidence/bounded-agent-integration/.
+  No product/schema changes or new deployment. Independent review/integration,
+  host caller/image/VM storage limits and human submission gates remain open.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All
