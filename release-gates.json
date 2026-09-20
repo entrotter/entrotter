@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-20T00:45:35.760147+00:00",
+  "updated_at": "2026-09-20T02:18:11.039595+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -44,7 +44,8 @@
         "six interleaved same-task raw Anvil/Entrotter runs with identical complete common outcomes; no speed advantage shown",
         "Proposed bounded-default public clean checkout/venv/image-build/example reproduces exact fixture in 11.682 seconds locally with running Docker and warm caches; not a cold installation measurement",
         "Engine PR #21 integrates bounded risk/recorded-replay execution and exactly reproduces all 19 original EVM reports (12 agent records) with no new model generation; protected review and frozen-script API/pin migration remain pending",
-        "Fresh five-public-repo bounded agent checkout/venv/image build/exact replay/CLI verify+inspect in 20.403 seconds locally; bounded fixture 18.588 seconds, Docker running and warm caches. Frozen native reproduction remains exact; independent review pending."
+        "Fresh five-public-repo bounded agent checkout/venv/image build/exact replay/CLI verify+inspect in 20.403 seconds locally; bounded fixture 18.588 seconds, Docker running and warm caches. Frozen native reproduction remains exact; independent review pending.",
+        "Candidate quick-start shell blocks executed verbatim in a fresh workspace: six immutable public checkouts, venv, real Foundry download/build, complete fixture match and real local Anvil verification in 25.57 seconds. Running Docker and warm caches; candidate review/integration remains pending."
       ],
       "todo": [
         "independent approval and merge of engine/schema/coordination agent PRs"
@@ -267,6 +268,7 @@
     "evidence/required-check-coverage/verification.json",
     "evidence/worker-build-inputs.json",
     "evidence/first-contribution-paths.json",
-    "evidence/host-service/summary.json"
+    "evidence/host-service/summary.json",
+    "evidence/quick-start/summary.json"
   ]
 }
