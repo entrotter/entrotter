@@ -80,7 +80,9 @@ jobs:
           .venv/bin/python scripts/check_dependencies.py
           .venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-quality.txt --progress-spinner off -f json -o .quality/dependencies.json
       - name: Prove optimized verification and policy failures are rejected
-        run: .venv/bin/python -m unittest discover -s tests -p 'test_quality*.py' -v
+        run: |
+          .venv/bin/python -m unittest discover -s tests -p 'test_quality*.py' -v
+          .venv/bin/python -m unittest discover -s tests -p 'test_host_envelope.py' -v
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
