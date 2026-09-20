@@ -3,7 +3,12 @@
 All code, issues, documentation, and reviews are in English. Small, focused
 pull requests are welcome. Choose a scoped task from the
 [first-contribution directory](docs/FIRST_CONTRIBUTION.md). You do not need cloud
-accounts or paid API keys for the offline tests. See [README.md](README.md) for this repository's test command.
+accounts or paid API keys for the offline tests. The
+[integration workflow](.github/workflows/ci.yml) specifies each test job's pinned
+sibling checkouts, environment and commands. Some tests deliberately exercise
+frozen native versions, so a bare unittest run or the candidate workspace alone
+is not equivalent to every CI job. The [quick start](docs/QUICK_START.md) covers
+the candidate's Docker prerequisites and full local report reproduction.
 
 1. Fork this public repository and branch from `main`.
 2. Check existing issues; describe substantial API changes before implementing.

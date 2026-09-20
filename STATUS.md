@@ -714,6 +714,23 @@ required historical state. Archive failure is explicit, never a synthetic fallba
   Ordinary host callers, hypervisor/log/cache overhead, whole-build deadlines,
   protected integration and human submission gates remain open.
 
+## Candidate onboarding reproduced from the published commands
+
+- README now links a complete pinned quick start instead of calling setup
+  dependency-free and cloning moving main branches. The guide fetches coordination
+  `98f11012934e92fadbbf0ae1ab8552c19d069ce7` and its five compatible public pins,
+  prepares the worker, and retains a verified report for inspection.
+- All four shell blocks were extracted verbatim and executed in a new temporary
+  workspace. Six checkouts, a fresh venv without pip, the actual Foundry download,
+  worker build, fixture and real local-Anvil checks passed in 25.57 seconds.
+  The full fixture equals the pinned public sample. This used a running Docker
+  daemon and warm base/build caches; installation/VM startup are excluded.
+- `evidence/quick-start/` contains the commands, output, image manifest, both
+  reports and hashes. No model or archive-RPC call was needed. Worker cleanup
+  left no owned containers; the dedicated VM was stopped after verification.
+- Candidate review/main integration remains pending. This repairs the onboarding
+  path; it is not a package release, website deployment or new user evaluation.
+
 ## Open gates and next actions
 
 1. The earlier EVM/viewer changes are merged and live; new agent PRs above are open. All

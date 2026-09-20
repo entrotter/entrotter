@@ -37,34 +37,32 @@ Keep the six checkouts as sibling directories. Schema and API version 0.1.0
 is the contract between them. Do not split further until there is an independent
 contribution boundary that justifies another repository.
 
-## Quick start without dependencies or an API key
+<a id="quick-start-without-dependencies-or-an-api-key"></a>
 
-Clone the public repositories as siblings first:
+## Quick start: reproduce the tested candidate locally
 
-```bash
-mkdir entrotter-workspace && cd entrotter-workspace
-for repo in entrotter engine sdk-python cli scenarios entrotter.github.io; do
-  git clone https://github.com/entrotter/$repo.git "$repo"
-done
-```
+Follow the [pinned quick start](docs/QUICK_START.md) to fetch compatible public
+source revisions, build the Docker worker and produce a verified offline report.
+You need Python 3.11+, Git and a running local Linux Docker daemon with cgroup v2.
+Setup downloads public build inputs; running the fixture afterward needs no
+network, wallet or paid API key. There are no third-party Python runtime packages.
 
-From that workspace folder:
-
-```bash
-export PYTHONPATH="$PWD/engine/src:$PWD/sdk-python/src:$PWD/cli/src"
-python3 -m entrotter_cli doctor
-python3 -m entrotter_cli run scenarios/fixtures/liquidity-shock.json --local -o report.json
-python3 -m entrotter_cli verify report.json
-python3 -m entrotter_cli inspect report.json
-python3 entrotter/scripts/verify.py
-```
+The guide selects tested candidate commits that still await independent review
+and integration. Cloning all repositories at `main` currently selects an older
+native runtime; it does not reproduce the candidate's bounded default.
 
 For normal editable package installation, run `bash entrotter/scripts/bootstrap.sh`.
 Do not install these names from a public package registry: they are not published.
 The bootstrap installs the sibling source checkouts with `--no-deps` to avoid
-accidentally resolving an unrelated package with the same name.
+accidentally resolving an unrelated package with the same name. Run it only after
+the pinned checkout steps; it does not select candidate revisions, install Docker
+or build/configure the worker. Build-time package tooling may require network access.
 
 ## Local API and SDK
+
+After completing the quick start, keep its environment variables in both terminals.
+For additional Linux API-process limits, use the optional
+[bounded host service](docs/BOUNDED_HOST_SERVICE.md).
 
 ```bash
 # Keep this port local. Optionally set ENTROTTER_API_TOKEN on both client and server.
@@ -88,7 +86,8 @@ print(result.artifact_id, result.report["comparison"])
   returns and maximum drawdown. Not historical market evidence.
 - `evm-local`: real transactions in two private Anvil processes. Uses fake local
   funding, explicit transaction slots, target allowlists and receipt collection.
-  Install Foundry first. No mainnet RPC or wallet key is needed.
+  The quick-start worker includes pinned Foundry. No host Foundry installation,
+  mainnet RPC or wallet key is needed for this mode.
 - `evm-fork`: clones an explicit historical block via the operator-supplied
   `ENTROTTER_RPC_URL`, checks its source chain/hash and runs supplied actions on
   local Anvil. Requires archive state. Does not replay later canonical blocks,
@@ -192,8 +191,8 @@ CI. These proposed changes still await review and deployment.
 
 [Bounded default execution](docs/BOUNDED_DEFAULT.md) records the proposed change
 from opt-in workers to normal CLI/API execution with kernel limits. Its separate
-source pins and migration instructions require a local Docker daemon; the frozen
-native examples above remain tied to their existing revisions until review/merge.
+source pins and migration instructions require a local Docker daemon. The quick
+start uses this candidate; frozen native benchmarks retain their original pins.
 
 [Shared daemon worker admission](docs/DAEMON_WORKER_ADMISSION.md) records the
 proposed one-worker default across independent CLI/API processes, ownership-safe
