@@ -1,0 +1,28 @@
+{
+  "preserved": [
+    {
+      "destination": ".worktrees/engine-tokyo/tokyo/compare.py",
+      "sha256": "2b8f6812ffa50832792483e821e4e09554b3ccfb052826a6773de1f5f90c1646"
+    },
+    {
+      "destination": ".worktrees/engine-tokyo/tokyo/evidence/example.json",
+      "sha256": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67"
+    },
+    {
+      "destination": ".worktrees/viewer-tokyo/tokyo2026/example.json",
+      "sha256": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67"
+    },
+    {
+      "destination": ".worktrees/coordination-tokyo/submission/tokyo2026/media/tokyo-walkthrough-silent.mp4",
+      "sha256": "7167eade77d74ab963e8b5ef9d813a8eeae13ca11fad6d40cc5a721298bf41bf"
+    }
+  ],
+  "sourceHistory": [
+    "43d438db763ca86c3df91eafa67a21008dff1785 2026-09-26T23:25:17+09:00 docs: prepare Continuity submission with measured evidence and disclosure",
+    "50a73e7b19930ff336e920620097be4ec04c4616 2026-09-26T22:59:16+09:00 fix: pin setup timestamps for reproducible transaction receipts",
+    "5b336c37f9e44fc3d008d77ae72a1d93d01c4f7f 2026-09-26T22:42:55+09:00 fix: verify observed fork state and record Continuity authorization",
+    "4f447dd16ae3ce7cbd123c63b806e381690ba380 2026-09-26T22:24:21+09:00 feat: execute four Uniswap alternatives from an identical archived state",
+    "126b30b9855b7313f07a9c8b241e38d6c625e456 2026-09-26T22:04:48+09:00 docs: establish Tokyo provenance and independent implementation boundaries"
+  ],
+  "userRequest": "Delete temporary GitHub entrotter/tokyo2026 and local tokyo2026 after migrating work into existing repositories."
+}

@@ -1,0 +1,13 @@
+test_amounts (test_compare.Validation.test_amounts) ... ok
+test_missing_block (test_compare.Validation.test_missing_block) ... ok
+test_policy (test_compare.Validation.test_policy) ... ok
+test_recorded_receipts (test_compare.Validation.test_recorded_receipts) ... ok
+test_rpc_failure_redacts_endpoint (test_compare.Validation.test_rpc_failure_redacts_endpoint) ... ok
+test_writes_never_reach_upstream (test_compare.Validation.test_writes_never_reach_upstream) ... ok
+test_wrong_chain (test_compare.Validation.test_wrong_chain) ... ok
+test_wrong_hash (test_compare.Validation.test_wrong_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+OK

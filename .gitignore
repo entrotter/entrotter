@@ -14,3 +14,6 @@ artifacts/
 node_modules/
 playwright-report/
 test-results/
+
+submission/tokyo2026/media/*.mp4
+submission/tokyo2026/media/*.webm

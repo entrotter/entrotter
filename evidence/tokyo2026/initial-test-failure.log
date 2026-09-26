@@ -1,0 +1,99 @@
+TAP version 13
+# Subtest: measured report passes hash and semantic validation
+ok 1 - measured report passes hash and semantic validation
+  ---
+  duration_ms: 19.637875
+  ...
+# Subtest: rejects changed hash
+ok 2 - rejects changed hash
+  ---
+  duration_ms: 8.435625
+  ...
+# Subtest: rejects receipt gas mismatch
+ok 3 - rejects receipt gas mismatch
+  ---
+  duration_ms: 4.314375
+  ...
+# Subtest: rejects different starting root
+not ok 4 - rejects different starting root
+  ---
+  duration_ms: 16.453125
+  location: '/Users/hatanakatomoya/Developer/App/Entrotter/tokyo2026/tests/report.test.mjs:23:4'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'rejects'
+  stack: |-
+    async Test.run (node:internal/test_runner/test:797:9)
+    async Test.processPendingSubtests (node:internal/test_runner/test:527:7)
+  ...
+# Subtest: rejects inconsistent delta
+ok 5 - rejects inconsistent delta
+  ---
+  duration_ms: 7.411041
+  ...
+# Subtest: rejects fake hold fee
+ok 6 - rejects fake hold fee
+  ---
+  duration_ms: 3.354167
+  ...
+# Subtest: rejects wrong chain
+ok 7 - rejects wrong chain
+  ---
+  duration_ms: 2.893917
+  ...
+# Subtest: rejects invalid decimals
+ok 8 - rejects invalid decimals
+  ---
+  duration_ms: 2.857375
+  ...
+# Subtest: rejects forged policy
+ok 9 - rejects forged policy
+  ---
+  duration_ms: 2.013166
+  ...
+# Subtest: rejects wrong input
+ok 10 - rejects wrong input
+  ---
+  duration_ms: 3.183
+  ...
+# Subtest: rejects missing receipt
+ok 11 - rejects missing receipt
+  ---
+  duration_ms: 4.122208
+  ...
+# Subtest: rejects missing cleanup
+ok 12 - rejects missing cleanup
+  ---
+  duration_ms: 4.065875
+  ...
+# Subtest: rejects unsupported format
+ok 13 - rejects unsupported format
+  ---
+  duration_ms: 1.66575
+  ...
+# Subtest: rejects invalid amount type
+ok 14 - rejects invalid amount type
+  ---
+  duration_ms: 12.295792
+  ...
+# Subtest: rejects malformed envelope
+ok 15 - rejects malformed envelope
+  ---
+  duration_ms: 0.543875
+  ...
+# Subtest: exact decimals avoid floating point
+ok 16 - exact decimals avoid floating point
+  ---
+  duration_ms: 4.332542
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 15
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 333.638167

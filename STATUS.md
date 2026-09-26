@@ -79,3 +79,28 @@ No arbitrary user code execution, public engine, paid service, package publicati
 mainnet transaction, customer outreach or competition submission was performed.
 The current per-EVM memory bound is not a complete process sandbox. Preserve these
 limits in the product and release-gates.json. Overall completion remains unproven.
+
+
+## ETHGlobal Tokyo Continuity preparation — September 26–27
+
+Owner directed Tokyo work into the existing repositories and requested removal of the temporary separate repository. Runtime changes are scoped to engine `tokyo/`; UI to website `tokyo2026/`; submission documents and evidence are in `submission/tokyo2026/` and `evidence/tokyo2026/`. These changes use separate review branches based on main and do not merge or alter Colosseum PR #47 or its related candidates. See the Tokyo checklist for current tests, deployment limits and owner actions; earlier test results above remain historical. Independent approval is still required for protected-main integration.
+
+### Tokyo Continuity migration verification
+
+- Existing engine PR #25 (`42204e0c8091143e08f9f6525cbfebde741fb74a`) and website PR #13 (`6623671193dbaf5990078c1d2292e97730fc0c4c`) are public. Coordination PR #49 contains the submission packet. Existing Colosseum PR #47 and related branches remain preserved.
+- Migration verification: 5 real archive/lifecycle checks passed, 80 existing engine tests passed, 10 Python and 13 Node existing website tests passed. Evidence: `evidence/tokyo2026/migrated-integration.json` and `existing-*-tests.log`. New 8 Python + 16 JS tests passed.
+- Current engine CI matrix/EVM, website check and coordination integration passed. Website deployment is not performed on PRs and awaits independent main approval.
+- Newly recorded 149-second silent captioned video published in the existing coordination repo: https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo . Supplemental partner-prize demo; not a compliant spoken Finalist video.
+- Local temporary `tokyo2026` folder deleted after migration. Remote deletion failed because CLI token lacks `delete_repo`; do not claim remote deletion or use that repository as submission source.
+- ETHGlobal final submission and Uniswap form completion remain unverified. Prepared files and clicked send buttons are not proof of acceptance.
+
+### Tokyo submission form handoff
+Uniswap required feedback displayed its thank-you confirmation. ETHGlobal details, three existing repos, images, AI disclosure, Continuity and Uniswap partner-only selection are saved. The optional official video field is skipped; the published silent recording remains a supplemental demo link. The final form still demands a no-pre-event-work declaration; automatic approval review rejected the final Submit action with it unchecked. Final submission has NOT occurred. See `evidence/tokyo2026/submission-progress.json`; owner/organizer clarification is required. No repository history or approvals were bypassed.
+
+### Tokyo submission completed — September 27, 2026, 01:13 JST
+
+After the owner explicitly confirmed the explained final declaration and instructed submission, the normal ETHGlobal final checkbox and Submit action succeeded. The live page displayed **You did it!**, **Thanks for submitting your project**, and **Partner Judging only**. The public showcase loads at https://ethglobal.com/showcase/entrotter-tokyo-4b9vf .
+
+The entry preserves Continuity, existing-repository source links, prior-work and AI disclosures, and the supplemental silent recording link. The official optional video field is skipped. Required Uniswap feedback is confirmed submitted. Eligibility/prize acceptance remains subject to organizers; no prize or stake-return claim is made. The earlier blocked state above is historical and superseded by this confirmed submission.
+
+Remaining repository operations: website PR deployment awaits independent approval; remote temporary repository deletion remains blocked by CLI delete_repo scope. Local temporary folder is deleted. Source code and all former PRs/history remain preserved.

@@ -1,0 +1,42 @@
+{
+  "track": "Continuity",
+  "judging": "partner-only",
+  "unitTests": {
+    "passed": 24,
+    "failed": 0,
+    "skipped": 0
+  },
+  "realIntegration": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "../../evidence/tokyo2026/migrated-integration.json"
+  },
+  "source": {
+    "engine": "42204e0c8091143e08f9f6525cbfebde741fb74a",
+    "viewer": "6623671193dbaf5990078c1d2292e97730fc0c4c"
+  },
+  "publication": {
+    "source": "public review branches",
+    "existingSite": "pending independent review",
+    "temporaryRepositoryDeletion": "blocked: GitHub token lacks delete_repo; local folder deleted"
+  },
+  "recording": {
+    "status": "published supplemental silent recording",
+    "url": "https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo"
+  },
+  "feedbackForm": "SUBMITTED: visible thank-you confirmation",
+  "submission": {
+    "status": "SUBMITTED",
+    "showcaseUrl": "https://ethglobal.com/showcase/entrotter-tokyo-4b9vf",
+    "evidence": "../../evidence/tokyo2026/submission-progress.json",
+    "observedUTC": "2026-09-26T16:13:24Z"
+  },
+  "eligibility": "organizer decision; AI and prior work disclosed",
+  "existingEngineTests": {
+    "passed": 80,
+    "failed": 0,
+    "evidence": "../../evidence/tokyo2026/existing-engine-tests.log"
+  },
+  "images": "UPLOADED: existing logo disclosed; new cover and three screenshots"
+}

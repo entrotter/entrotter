@@ -1,0 +1,28 @@
+{
+  "checks": [
+    {
+      "name": "fresh archive reproduction; exact receipts, calldata, snapshots and deltas",
+      "status": "PASS",
+      "runtimeSeconds": 14.04
+    },
+    {
+      "name": "Anvil cleanup after successful execution",
+      "status": "PASS"
+    },
+    {
+      "name": "real upstream wrong-hash rejection without report",
+      "status": "PASS"
+    },
+    {
+      "name": "real Anvil cleanup after injected exception",
+      "status": "PASS"
+    },
+    {
+      "name": "SIGTERM cleans owned Anvil; no partial report",
+      "status": "PASS"
+    }
+  ],
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0
+}
