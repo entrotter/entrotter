@@ -1,0 +1,28 @@
+{
+  "observedBeforeUTC": "2026-09-26T15:35:49Z",
+  "feedback": {
+    "url": "https://developers.uniswap.org/hackathon-feedback",
+    "status": "SUBMITTED",
+    "confirmation": "Thanks for sharing your feedback. Your feedback helps us improve the developer experience for everyone building on Uniswap.",
+    "note": "First send response was lost when its tab closed; a repeat explicitly disclosed possible duplication and displayed success."
+  },
+  "ethglobal": {
+    "status": "NOT SUBMITTED",
+    "saved": [
+      "project details",
+      "three existing GitHub repositories",
+      "tech stack",
+      "AI disclosure"
+    ],
+    "blocking": [
+      "Logo, cover and at least three screenshots are required before prize, future and final forms can be saved.",
+      "File chooser upload failed with Not allowed; browser extension file URL access requires user setup."
+    ],
+    "track": "Continuity (selected in current form)"
+  },
+  "schedule": {
+    "url": "https://ethglobal.com/events/tokyo2026",
+    "hackingBeginsJST": "2026-09-25T21:00:00+09:00",
+    "deadlineJST": "2026-09-27T09:00:00+09:00"
+  }
+}

@@ -18,9 +18,9 @@ Status is evidence-backed, not an assertion of eligibility or a prize.
 | New screen recording | PASS | 149-second 1440×1080 captioned silent recording verified and published in existing coordination repo release tokyo-continuity-demo |
 | Finalist compliant narration | NOT APPLICABLE | Partner-only path selected; silent walkthrough is supplemental |
 | Uniswap FEEDBACK.md | PASS | FEEDBACK.md published on docs/tokyo-continuity |
-| Uniswap feedback form | BLOCKED | Draft exists, submission not yet confirmed |
+| Uniswap feedback form | PASS | Visible thank-you confirmation; evidence: ../../evidence/tokyo2026/submission-progress.json |
 | English submission text | PASS | SUBMISSION.md reflects actual new evidence and provenance |
-| Exact hacking start | BLOCKED | Schedule still needs verification |
+| Exact hacking start | PASS | Official schedule: September 25, 2026, 21:00 JST |
 | Final entry submission | BLOCKED | Form completion and final readback pending |
 | Organizer eligibility acceptance | BLOCKED | No organizer approval claimed; disclosure retained |
 
@@ -34,3 +34,5 @@ varied across clean runs; explicit timestamps fixed exact receipt reproduction. 
 could not construct Buffer inline; a local malformed JSON file verified the same rejection path.
 
 Existing engine regression tests: 80 passed after migration. Viewer regression tests: 10 Python and 13 Node passed. New tests: 8 Python and 16 Node passed. GitHub engine EVM/unit matrix, website check and coordination integration checks passed; website build/deploy correctly skipped on the PR.
+
+ETHGlobal project details, the three existing repository selections, tech stack and AI disclosure are saved. Final submission remains blocked by required image upload; browser extension file access returned Not allowed. No final submission success is claimed.

@@ -35,7 +35,7 @@ claimed as Tokyo tests. No existing branch, PR, evidence, media or protection wa
 - https://ethglobal.com/events/tokyo2026/prizes/uniswap-foundation
 
 Deadline: September 27, 2026, 09:00 JST (00:00 UTC). Internal handoff target: 08:00 JST.
-Exact hacking start: pending schedule verification. Classic excludes pre-existing project-specific
+Exact hacking start: September 25, 2026, 21:00 JST, verified in the official event schedule. Classic excludes pre-existing project-specific
 code, designs and assets. A new repository/date does not establish eligibility.
 Detailed rules require meaningful human contribution and disclosure of AI-assisted files and prompts.
 They require 2–4 minute video, at least 720p, and prohibit synthetic/AI voiceover.

@@ -25,8 +25,8 @@
     "status": "published supplemental silent recording",
     "url": "https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo"
   },
-  "feedbackForm": "PENDING",
-  "submission": "NOT SUBMITTED",
+  "feedbackForm": "SUBMITTED: visible thank-you confirmation",
+  "submission": "NOT SUBMITTED: required image upload blocked by browser extension file-access setting",
   "eligibility": "organizer decision; AI and prior work disclosed",
   "existingEngineTests": {
     "passed": 80,
