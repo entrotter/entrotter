@@ -26,11 +26,12 @@
     "url": "https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo"
   },
   "feedbackForm": "SUBMITTED: visible thank-you confirmation",
-  "submission": "NOT SUBMITTED: required image upload blocked by browser extension file-access setting",
+  "submission": "NOT SUBMITTED: final declaration conflicts with Continuity prior-work disclosure; automatic approval review rejected final send",
   "eligibility": "organizer decision; AI and prior work disclosed",
   "existingEngineTests": {
     "passed": 80,
     "failed": 0,
     "evidence": "../../evidence/tokyo2026/existing-engine-tests.log"
-  }
+  },
+  "images": "UPLOADED: existing logo disclosed; new cover and three screenshots"
 }

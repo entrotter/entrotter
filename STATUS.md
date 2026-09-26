@@ -93,3 +93,6 @@ Owner directed Tokyo work into the existing repositories and requested removal o
 - Newly recorded 149-second silent captioned video published in the existing coordination repo: https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo . Supplemental partner-prize demo; not a compliant spoken Finalist video.
 - Local temporary `tokyo2026` folder deleted after migration. Remote deletion failed because CLI token lacks `delete_repo`; do not claim remote deletion or use that repository as submission source.
 - ETHGlobal final submission and Uniswap form completion remain unverified. Prepared files and clicked send buttons are not proof of acceptance.
+
+### Tokyo submission form handoff
+Uniswap required feedback displayed its thank-you confirmation. ETHGlobal details, three existing repos, images, AI disclosure, Continuity and Uniswap partner-only selection are saved. The optional official video field is skipped; the published silent recording remains a supplemental demo link. The final form still demands a no-pre-event-work declaration; automatic approval review rejected the final Submit action with it unchecked. Final submission has NOT occurred. See `evidence/tokyo2026/submission-progress.json`; owner/organizer clarification is required. No repository history or approvals were bypassed.

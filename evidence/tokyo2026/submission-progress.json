@@ -11,14 +11,26 @@
     "saved": [
       "project details",
       "three existing GitHub repositories",
-      "tech stack",
-      "AI disclosure"
+      "logo and cover",
+      "three new demo screenshots",
+      "tech stack and AI disclosure",
+      "Continuity Track",
+      "Partner Prizes only: Uniswap Foundation",
+      "optional video skipped; verified supplemental recording linked",
+      "future opportunities: none requested"
     ],
     "blocking": [
-      "Logo, cover and at least three screenshots are required before prize, future and final forms can be saved.",
-      "File chooser upload failed with Not allowed; browser extension file URL access requires user setup."
+      "Final checkbox states all submitted work was built entirely during this hackathon and no work completed before the event. This conflicts with disclosed Continuity prior work, including reused branding.",
+      "Automatic approval review rejected normal Submit project action with this checkbox unchecked. No alternative submission route attempted."
     ],
-    "track": "Continuity (selected in current form)"
+    "repositoryWarnings": [
+      "engine: too few commits (3), first commit before hacking (7 days)",
+      "website: too few commits (3), first commit before hacking (7 days)",
+      "coordination: too few commits (2), first commit before hacking (7 days)"
+    ],
+    "warningNote": "The UI explicitly says flagged repositories may still be submitted and manually reviewed. Counts are the UI checker output, not a claim that it checked the submitted review branches.",
+    "requiredUserAction": "Ask the ETHGlobal help desk how the final declaration applies to Continuity; complete the final acknowledgment/submit manually after clarification.",
+    "projectUrl": "https://ethglobal.com/events/tokyo2026/project"
   },
   "schedule": {
     "url": "https://ethglobal.com/events/tokyo2026",
