@@ -1,0 +1,88 @@
+{
+  "verified_at": "2026-09-26T18:13:53.379634+00:00",
+  "base_commit": "5401d56fdda7a33633e650439c2b33346a5ba835",
+  "environment": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.0",
+  "results": {
+    "social_unit_tests": {
+      "passed": 45,
+      "command": "python3 -m unittest discover -s tests -p test_social_publish.py -v",
+      "log": "unit-tests.log"
+    },
+    "optimized_python_tests": {
+      "passed": 45,
+      "command": "python3 -O -m unittest discover -s tests -p test_social_publish.py",
+      "log": "optimized-tests.log"
+    },
+    "existing_workspace_tests": {
+      "passed": 6,
+      "command": "python3 -m unittest discover -s tests -p test_workspace.py -v",
+      "source_pins": "unchanged .github/workflows/ci.yml",
+      "scope": "isolated temporary sibling workspace with git-archived dependency pins",
+      "log": "workspace-tests.log",
+      "initial_failure": "sandbox blocked loopback bind; rerun with permission passed all six"
+    },
+    "ruff": "lint and formatting pass for new Python sources",
+    "mypy": "check_untyped_defs passes publisher",
+    "bandit": "full scan, no suppressions, zero findings; bandit.json",
+    "yaml": "PyYAML parses both workflows and issue form",
+    "actionlint": {
+      "version": "1.7.12",
+      "result": "passes both new workflows; shellcheck disabled (only fixed Python commands)",
+      "archive_sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f"
+    },
+    "secrets": "manual diff and token-pattern inspection; no credentials present",
+    "x_access": "source inspection: only api.typefully.com and api.github.com; no direct X API/browser automation",
+    "quota": "0-9 capacity permits; >=10 blocks; threads/multiplatform/cross-month history counted; 12 serial attempts yield exactly 10 accepted writes with mocked Typefully",
+    "idempotency": "reservation and every tested success/failure/crash path prevent reattempt; unresolved reservation halts globally",
+    "dry_run": "shared transport rejects all mutation methods before network; missing setup makes zero calls",
+    "documentation_links": "Lychee 0.24.2: all four guide links pass, including public Typefully/GitHub and local evidence links",
+    "diff_review": "Full source, tests, workflow and staged diff reviewed; git diff --cached --check passes"
+  },
+  "infrastructure": {
+    "labels": [
+      "social:candidate",
+      "social:approved",
+      "social:scheduled",
+      "social:published",
+      "social:p0",
+      "social:p1",
+      "social:p2"
+    ],
+    "journal_issue": "https://github.com/entrotter/entrotter/issues/50",
+    "journal_locked": true,
+    "repository_secret_names_observed": [],
+    "main_required_checks": [
+      "integration",
+      "bounded-default",
+      "docs-links",
+      "host-bounds",
+      "quality"
+    ],
+    "branch_policy": "fresh branch from current remote main; protected main unchanged; four required workflows are absent from current main and remain in prior review branches"
+  },
+  "source_sha256": {
+    "scripts/social_publish.py": "5a6ffedf24257eafb19ca03f37782116adaaf72b1e312262bc2ec2b90f0c6c44",
+    "tests/test_social_publish.py": "695b9e5d6111039f7acbd487b65b4b0c26e637f6db91e4f5a7c04e1ef8b1cf64",
+    ".github/workflows/social-publish.yml": "345a84812162624f5a1bb024e57346c939c249808805f30f5a6841f02285fc23",
+    ".github/workflows/social-tests.yml": "13666a61863db34b87672928b7923553504c6d1fba31318bd3b5eab466085d84",
+    ".github/ISSUE_TEMPLATE/social-post.yml": "9406ca35356aaa86488c4f7072e8429e44146448f14cc36b424c76fbc52194d0"
+  },
+  "real_typefully_api_calls": 0,
+  "real_typefully_write_calls": 0,
+  "real_x_posts": 0,
+  "real_publishing_slots_consumed": 0,
+  "remaining": [
+    "connect @entrotterxyz to Typefully",
+    "add TYPEFULLY_API_KEY",
+    "add TYPEFULLY_SOCIAL_SET_ID",
+    "configure the Typefully posting queue (exclusive writer, no Auto-Plug/Auto-Retweet, UTC, TYPEFULLY_QUEUE_READY=true)",
+    "approve the first social:candidate"
+  ],
+  "limits": [
+    "No credentialed Typefully contract/entitlement/queue test or live X publication performed.",
+    "Ceiling relies on exclusive queue ownership and preservation of journal history; APIs offer no atomic account-wide scheduling lock.",
+    "scheduled is terminal for v1; published reconciliation and uncertain-outcome maintenance are separate reviewed tasks.",
+    "Existing main protection and independent approval remain in force; missing required baseline workflow integration is not bypassed."
+  ]
+}

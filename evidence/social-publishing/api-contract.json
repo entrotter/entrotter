@@ -1,0 +1,201 @@
+{
+  "source": "https://typefully.com/docs/api",
+  "retrieved_at": "2026-09-26T18:13:53.377846+00:00",
+  "api_version": "2.0.0",
+  "schema_sha256": "6450ec36f475db881bf9eef257eda8fa94fbf8b229ff33e7b4275c19d6613032",
+  "endpoints": {
+    "/v2/social-sets/{social_set_id}/": {
+      "get": {
+        "summary": "Get social set details",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "social_set_id",
+            "schema": {
+              "title": "Social Set Id",
+              "type": "integer"
+            },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/v2/social-sets/{social_set_id}/drafts": {
+      "get": {
+        "summary": "List drafts",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "social_set_id",
+            "schema": {
+              "title": "Social Set Id",
+              "type": "integer"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "draft",
+                    "published",
+                    "scheduled",
+                    "planned",
+                    "error",
+                    "publishing"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by draft status. 'draft' = saved but not scheduled. 'scheduled' = queued to auto-publish at its scheduled_date. 'planned' = dated but inert: it has a scheduled_date but will NOT auto-publish until confirmed (by setting publish_at). A planned draft whose scheduled_date has passed is NOT overdue and NOT a failure - it simply hasn't been confirmed; replan it or confirm it. 'publishing' = a publish is in flight (transient). 'published' = successfully posted. 'error' = publishing failed.",
+              "title": "Status"
+            },
+            "required": false,
+            "description": "Filter by draft status. 'draft' = saved but not scheduled. 'scheduled' = queued to auto-publish at its scheduled_date. 'planned' = dated but inert: it has a scheduled_date but will NOT auto-publish until confirmed (by setting publish_at). A planned draft whose scheduled_date has passed is NOT overdue and NOT a failure - it simply hasn't been confirmed; replan it or confirm it. 'publishing' = a publish is in flight (transient). 'published' = successfully posted. 'error' = publishing failed."
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Tag"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "schema": {
+              "allOf": [
+                {
+                  "description": "Allowed order_by fields for draft listing - prevents SQL injection",
+                  "enum": [
+                    "created_at",
+                    "-created_at",
+                    "updated_at",
+                    "-updated_at",
+                    "scheduled_date",
+                    "-scheduled_date",
+                    "published_at",
+                    "-published_at"
+                  ],
+                  "title": "DraftOrderBy",
+                  "type": "string"
+                }
+              ],
+              "default": "-updated_at"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "anyOf": [
+                {
+                  "maximum": 50,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": 10,
+              "description": "Maximum number of items to return per page",
+              "title": "Limit"
+            },
+            "required": false,
+            "description": "Maximum number of items to return per page"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "default": 0,
+              "description": "Number of items to skip from the beginning",
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Number of items to skip from the beginning"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create draft",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "social_set_id",
+            "schema": {
+              "title": "Social Set Id",
+              "type": "integer"
+            },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/v2/social-sets/{social_set_id}/drafts/{draft_id}": {
+      "get": {
+        "summary": "Get draft",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "social_set_id",
+            "schema": {
+              "title": "Social Set Id",
+              "type": "integer"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "draft_id",
+            "schema": {
+              "title": "Draft Id",
+              "type": "integer"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "exclude_comment_markers",
+            "schema": {
+              "default": false,
+              "description": "When true, render `posts[*].text` as plain user-visible text without `<typ:comment-thread>` markers, and render X Article `content_markdown` without comment markers. Use only for read-only flows (LLM context windows, exports). The default (false) emits markers so a round-trip back to PATCH preserves comment anchors.",
+              "title": "Exclude Comment Markers",
+              "type": "boolean"
+            },
+            "required": false,
+            "description": "When true, render `posts[*].text` as plain user-visible text without `<typ:comment-thread>` markers, and render X Article `content_markdown` without comment markers. Use only for read-only flows (LLM context windows, exports). The default (false) emits markers so a round-trip back to PATCH preserves comment anchors."
+          }
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Create response HTTP 201; list results/count/limit/offset/next pagination.",
+    "Create automatically applies Auto-Retweet, Auto-Plug and Natural Posting Time settings.",
+    "XPostResponse can include empty media_ids and null quote_post_url; response validation accepts these defaults.",
+    "No documented draft-creation idempotency key; durable pre-write journal is required."
+  ]
+}

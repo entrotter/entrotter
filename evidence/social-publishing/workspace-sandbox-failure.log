@@ -1,0 +1,31 @@
+test_all_exported_reports_reproduce_exactly (test_workspace.WorkspaceTests.test_all_exported_reports_reproduce_exactly) ... ok
+test_cli_local_verify_inspect (test_workspace.WorkspaceTests.test_cli_local_verify_inspect) ... ok
+test_copied_fixture_contract (test_workspace.WorkspaceTests.test_copied_fixture_contract) ... ok
+test_no_cname (test_workspace.WorkspaceTests.test_no_cname) ... ok
+test_public_manifest_boundaries (test_workspace.WorkspaceTests.test_public_manifest_boundaries) ... ok
+test_sdk_api_roundtrip (test_workspace.WorkspaceTests.test_sdk_api_roundtrip) ... ERROR
+
+======================================================================
+ERROR: test_sdk_api_roundtrip (test_workspace.WorkspaceTests.test_sdk_api_roundtrip)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/wg/yck688tn1pn8cvxftb4_x19r0000gn/T/entrotter-social-check-0om3iy7c/entrotter/tests/test_workspace.py", line 29, in test_sdk_api_roundtrip
+    s=EngineServer(0,output=d);t=threading.Thread(target=s.serve_forever,daemon=True);t.start()
+  File "/var/folders/wg/yck688tn1pn8cvxftb4_x19r0000gn/T/entrotter-social-check-0om3iy7c/engine/src/entrotter_engine/api.py", line 23, in __init__
+    super().__init__(("127.0.0.1", port), Handler)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.009s
+
+FAILED (errors=1)

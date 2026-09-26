@@ -79,3 +79,41 @@ No arbitrary user code execution, public engine, paid service, package publicati
 mainnet transaction, customer outreach or competition submission was performed.
 The current per-EVM memory bound is not a complete process sandbox. Preserve these
 limits in the product and release-gates.json. Overall completion remains unproven.
+
+## Selective Typefully publishing — September 27, 2026
+
+- A focused branch from remote main `5401d56` adds an explicit Issues editorial
+  queue for @entrotterxyz, Typefully Public API v2 single-X scheduling, daily/manual
+  workflows, a candidate form, tests and `docs/social-publishing.md`. No engine or
+  v0.1 scenario/result contracts change. No post is generated from commits.
+- Forty-five mocked publication tests pass under normal and optimized Python.
+  They cover monthly 0–9/10+ boundaries, cross-month/thread counts, 48-hour cooldown,
+  priority/approval order, invalid copy, pagination, dry-run transport isolation,
+  rate limits and crash-safe duplicate prevention. Twelve simulated runs schedule
+  exactly ten posts even when Typefully history disappears. No real slot was used.
+- Six existing coordination tests pass with the unchanged CI dependency pins,
+  including a real temporary loopback SDK/API roundtrip. The first sandboxed socket
+  bind failed; the authorized rerun passed. Ruff, mypy and full unsuppressed Bandit
+  pass; both workflow files pass checksum-verified actionlint 1.7.12 and all three
+  new YAML files parse. See `evidence/social-publishing/verification.json` and logs.
+- Seven editorial labels and locked durable journal issue #50 were created and
+  read back. A reservation precedes the only Typefully POST; an uncertain response
+  freezes further attempts, while candidate completion labels wait for validated
+  success. Successful journal records remain terminal even if candidate updates
+  fail. `social:scheduled` does not claim X publication.
+- Fresh secret-name inspection found neither required secret. No credentialed
+  Typefully calls, live post, main merge or deployment occurred. Exclusive queue
+  ownership, disabled Auto-Plug/Auto-Retweet and UTC calendar settings must be
+  confirmed via `TYPEFULLY_QUEUE_READY=true`; another writer cannot be controlled
+  atomically by these APIs. Setup/recovery limits are explicit in the guide.
+- Protected main still requires independent approval plus integration,
+  bounded-default, docs-links, host-bounds and quality. Four of those workflows are
+  absent from current main and live on earlier review branches; this scoped PR
+  does not bypass or weaken their integration requirement.
+
+HUMAN_BLOCKED:
+- connect @entrotterxyz to Typefully
+- add TYPEFULLY_API_KEY
+- add TYPEFULLY_SOCIAL_SET_ID
+- configure the Typefully posting queue
+- approve the first social:candidate
