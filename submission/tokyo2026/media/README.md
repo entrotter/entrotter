@@ -10,4 +10,4 @@ Verified recording: 149.000 seconds, 1440×1080, 25 fps, H.264 MP4, 4,359,102 by
 Public release: https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo
 The recording shows the new UI before its unchanged implementation was moved into the existing website repository.
 Local ignored files retain both the MP4 and original WebM; no video binary is committed.
-No old Entrotter/Colosseum footage or artwork is reused.
+No old Entrotter/Colosseum footage or artwork is reused in the walkthrough. The separate submission-logo field reuses the existing project icon, explicitly disclosed as pre-event branding in PROVENANCE.md.

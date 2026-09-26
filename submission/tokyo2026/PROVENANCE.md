@@ -53,3 +53,6 @@ The prior Entrotter concept/product is disclosed above. This Tokyo prototype add
 
 ## Owner-directed migration into existing repositories
 After authorizing Continuity, the owner explicitly required updating existing repositories and deleting the temporary `entrotter/tokyo2026` repository and local folder. The new code is retained in `engine/tokyo/`, UI in `entrotter.github.io/tokyo2026/`, and documentation/evidence in this existing coordination repository. New branches start from existing protected main; PR #47 and all related candidates are untouched. The temporary repository is not a submission source. Its in-session commits are recorded as provenance only, not pre-event work. No history is rewritten.
+
+## Submission branding
+The submission logo reuses the pre-event `entrotter.github.io/assets/icon.png` as existing project branding under Continuity. It is not Tokyo-created artwork. The comparison UI, screenshots, execution results and walkthrough are new; the recorded video does not reuse pre-event footage. This disclosure supersedes earlier broad statements that no old artwork was reused in any submission field.
