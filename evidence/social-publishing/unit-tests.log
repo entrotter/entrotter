@@ -1,0 +1,50 @@
+test_edited_after_approval_and_untrusted_approval_ignored (test_social_publish.CandidateTests.test_edited_after_approval_and_untrusted_approval_ignored) ... ok
+test_empty_overlength_unicode_and_short_url (test_social_publish.CandidateTests.test_empty_overlength_unicode_and_short_url) ... ok
+test_exact_copy_extraction (test_social_publish.CandidateTests.test_exact_copy_extraction) ... ok
+test_journal_and_candidate_comment_prevent_reselection (test_social_publish.CandidateTests.test_journal_and_candidate_comment_prevent_reselection) ... ok
+test_missing_duplicate_headings_and_evidence_invalid (test_social_publish.CandidateTests.test_missing_duplicate_headings_and_evidence_invalid) ... ok
+test_priority_and_oldest_approval_not_creation (test_social_publish.CandidateTests.test_priority_and_oldest_approval_not_creation) ... ok
+test_unapproved_scheduled_published_closed_pr_ignored (test_social_publish.CandidateTests.test_unapproved_scheduled_published_closed_pr_ignored) ... ok
+test_48_hour_boundary (test_social_publish.Guards.test_48_hour_boundary) ... ok
+test_ambiguous_states_block (test_social_publish.Guards.test_ambiguous_states_block) ... ok
+test_boundary_window (test_social_publish.Guards.test_boundary_window) ... ok
+test_counts_zero_through_nine_allow (test_social_publish.Guards.test_counts_zero_through_nine_allow) ... ok
+test_duplicate_candidate_title_or_journal_blocks (test_social_publish.Guards.test_duplicate_candidate_title_or_journal_blocks) ... ok
+test_future_month_full_blocks_next_free_slot (test_social_publish.Guards.test_future_month_full_blocks_next_free_slot) ... ok
+test_ledger_retains_deleted_drafts_and_deduplicates_observed (test_social_publish.Guards.test_ledger_retains_deleted_drafts_and_deduplicates_observed) ... ok
+test_overdue_scheduled_and_missing_date_block (test_social_publish.Guards.test_overdue_scheduled_and_missing_date_block) ... ok
+test_previous_month_quota_expires (test_social_publish.Guards.test_previous_month_quota_expires) ... ok
+test_recent_scheduling_and_future_timestamp_block (test_social_publish.Guards.test_recent_scheduling_and_future_timestamp_block) ... ok
+test_scheduled_and_actual_month_both_counted (test_social_publish.Guards.test_scheduled_and_actual_month_both_counted) ... ok
+test_ten_and_above_block (test_social_publish.Guards.test_ten_and_above_block) ... ok
+test_thread_and_multiplatform_are_counted_conservatively (test_social_publish.Guards.test_thread_and_multiplatform_are_counted_conservatively) ... ok
+test_changed_snapshot_or_approval_never_writes (test_social_publish.RunTests.test_changed_snapshot_or_approval_never_writes) ... ok
+test_crash_after_success_before_candidate_update_cannot_duplicate (test_social_publish.RunTests.test_crash_after_success_before_candidate_update_cannot_duplicate) ... ok
+test_crash_before_acceptance_journal_globally_halts (test_social_publish.RunTests.test_crash_before_acceptance_journal_globally_halts) ... ok
+test_dry_run_has_zero_writes (test_social_publish.RunTests.test_dry_run_has_zero_writes) ... ok
+test_failures_leave_candidate_unmodified_and_reservation_blocks_retry (test_social_publish.RunTests.test_failures_leave_candidate_unmodified_and_reservation_blocks_retry) ... ok
+test_malformed_success_does_not_complete (test_social_publish.RunTests.test_malformed_success_does_not_complete) ... ok
+test_no_candidate_never_fills_quota (test_social_publish.RunTests.test_no_candidate_never_fills_quota) ... ok
+test_reservation_write_failure_never_calls_typefully (test_social_publish.RunTests.test_reservation_write_failure_never_calls_typefully) ... ok
+test_standard_post_response_defaults_accepted (test_social_publish.RunTests.test_standard_post_response_defaults_accepted) ... ok
+test_success_next_execution_no_duplicate_even_after_labels_removed (test_social_publish.RunTests.test_success_next_execution_no_duplicate_even_after_labels_removed) ... ok
+test_success_only_then_mutates_candidate_and_one_per_run (test_social_publish.RunTests.test_success_only_then_mutates_candidate_and_one_per_run) ... ok
+test_bad_pagination_and_wrong_account_fail_closed (test_social_publish.TransportTests.test_bad_pagination_and_wrong_account_fail_closed) ... ok
+test_errors_timeout_malformed_rate_limit_are_sanitized (test_social_publish.TransportTests.test_errors_timeout_malformed_rate_limit_are_sanitized) ... ok
+test_journal_malformed_forged_or_unresolved_halts (test_social_publish.TransportTests.test_journal_malformed_forged_or_unresolved_halts) ... ok
+test_journal_requires_lock_and_complete_comment_inventory (test_social_publish.TransportTests.test_journal_requires_lock_and_complete_comment_inventory) ... ok
+test_live_ref_and_repository_guard_no_network (test_social_publish.TransportTests.test_live_ref_and_repository_guard_no_network) ... ok
+test_missing_credentials_no_network_and_human_blocked_summary (test_social_publish.TransportTests.test_missing_credentials_no_network_and_human_blocked_summary) ... ok
+test_missing_queue_confirmation_never_reaches_network (test_social_publish.TransportTests.test_missing_queue_confirmation_never_reaches_network) ... ok
+test_pagination_all_pages_and_untrusted_next_url_not_followed (test_social_publish.TransportTests.test_pagination_all_pages_and_untrusted_next_url_not_followed) ... ok
+test_payload_is_single_x_post_and_next_free_slot (test_social_publish.TransportTests.test_payload_is_single_x_post_and_next_free_slot) ... ok
+test_redirect_is_never_followed (test_social_publish.TransportTests.test_redirect_is_never_followed) ... ok
+test_secret_in_candidate_never_reaches_any_write (test_social_publish.TransportTests.test_secret_in_candidate_never_reaches_any_write) ... ok
+test_transport_blocks_every_dry_run_write_before_io (test_social_publish.TransportTests.test_transport_blocks_every_dry_run_write_before_io) ... ok
+test_twelve_serial_attempts_only_schedule_ten_even_if_drafts_disappear (test_social_publish.TransportTests.test_twelve_serial_attempts_only_schedule_ten_even_if_drafts_disappear) ... ok
+test_unexpected_failure_never_logs_exception_or_response_secrets (test_social_publish.TransportTests.test_unexpected_failure_never_logs_exception_or_response_secrets) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 0.104s
+
+OK
