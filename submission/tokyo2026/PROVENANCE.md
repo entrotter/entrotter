@@ -5,7 +5,7 @@ Initial selection: Start from Scratch. The owner subsequently explicitly request
 
 The owner already developed the Entrotter concept and a separate Colosseum product before Tokyo.
 The assistant has seen that product's documentation and goal; this is **not a certified clean-room process**.
-This repository is a newly authored, narrower implementation. No prior engine, SDK, CLI, schemas,
+The Tokyo addition is a newly authored, narrower implementation within existing repositories. No prior engine, SDK, CLI, schemas,
 reports, frontend, mascot, video or detailed source implementation is imported.
 Anvil/Cast, Python, browser tooling and FFmpeg are general-purpose tools, not project artifacts.
 Public protocol addresses and ABI definitions come from Uniswap primary documentation.
@@ -49,7 +49,7 @@ and what evidence of my own substantive contribution do you require? I will not 
 explicit approval and will disclose both prior work and AI assistance.
 
 ## Current Continuity disclosure
-The prior Entrotter concept/product is disclosed above. This Tokyo prototype adds a newly authored, single-repository four-action Uniswap comparison with explicit user spending/gas constraints, a dedicated UI and new execution evidence. No old result or media is claimed as new work. The owner authorized Continuity after initial implementation began. AI-use and meaningful human contribution requirements still apply.
+The prior Entrotter concept/product is disclosed above. This Tokyo prototype adds a newly authored, four-action Uniswap comparison with explicit user spending/gas constraints, a dedicated UI and new execution evidence. No old result or media is claimed as new work. The owner authorized Continuity after initial implementation began. AI-use and meaningful human contribution requirements still apply.
 
 ## Owner-directed migration into existing repositories
 After authorizing Continuity, the owner explicitly required updating existing repositories and deleting the temporary `entrotter/tokyo2026` repository and local folder. The new code is retained in `engine/tokyo/`, UI in `entrotter.github.io/tokyo2026/`, and documentation/evidence in this existing coordination repository. New branches start from existing protected main; PR #47 and all related candidates are untouched. The temporary repository is not a submission source. Its in-session commits are recorded as provenance only, not pre-event work. No history is rewritten.

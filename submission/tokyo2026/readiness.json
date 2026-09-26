@@ -10,12 +10,27 @@
     "passed": 5,
     "failed": 0,
     "skipped": 0,
-    "evidence": "evidence/integration.json"
+    "evidence": "../../evidence/tokyo2026/migrated-integration.json"
   },
-  "source": "50a73e7",
-  "publication": "PENDING",
-  "recording": "PENDING",
+  "source": {
+    "engine": "42204e0c8091143e08f9f6525cbfebde741fb74a",
+    "viewer": "6623671193dbaf5990078c1d2292e97730fc0c4c"
+  },
+  "publication": {
+    "source": "public review branches",
+    "existingSite": "pending independent review",
+    "temporaryRepositoryDeletion": "blocked: GitHub token lacks delete_repo; local folder deleted"
+  },
+  "recording": {
+    "status": "published supplemental silent recording",
+    "url": "https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo"
+  },
   "feedbackForm": "PENDING",
-  "submission": "PENDING",
-  "eligibility": "organizer decision; AI and prior work disclosed"
+  "submission": "NOT SUBMITTED",
+  "eligibility": "organizer decision; AI and prior work disclosed",
+  "existingEngineTests": {
+    "passed": 80,
+    "failed": 0,
+    "evidence": "../../evidence/tokyo2026/existing-engine-tests.log"
+  }
 }

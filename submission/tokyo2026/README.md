@@ -5,7 +5,7 @@ helps a developer inspect four alternatives from the same pinned Ethereum state 
 an onchain action. It runs transactions only on an owned local Anvil fork and displays receipts,
 exact token changes, gas and deterministic explanations against explicit user constraints.
 
-[Report viewer](https://entrotter.github.io/tokyo2026/) · [Submission](SUBMISSION.md) ·
+[Recorded demo](https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo) · [Submission](SUBMISSION.md) ·
 [Provenance](PROVENANCE.md) · [AI usage](AI_USAGE.md) · [Readiness](CHECKLIST.md) ·
 [Uniswap feedback](FEEDBACK.md)
 
@@ -44,8 +44,8 @@ python3 compare.py --block 23000000 \
 # python3 -m http.server 8766 --bind 127.0.0.1 --directory tokyo2026
 ```
 
-Open `http://127.0.0.1:8766` and import `report.json`. The public viewer is static and also imports
-reports entirely in-browser. Its example is a **stored recording**, not a fresh remote run.
+Open `http://127.0.0.1:8766` and import `report.json`. The viewer is static and imports
+reports entirely in-browser. Existing-site publication awaits independent review of website PR #13. Its example is a **stored recording**, not a fresh remote run.
 `TOKYO_RPC_URL` optionally selects an HTTPS archive endpoint; do not commit it. On macOS, if your
 Python installation cannot find system certificates, use `SSL_CERT_FILE=/etc/ssl/cert.pem`.
 Do not disable TLS verification. Failed archive access is an error, with no synthetic fallback.
@@ -63,15 +63,17 @@ Anvil, passing five checks: exact fresh-run reproduction, successful cleanup, wr
 injected-exception cleanup and SIGTERM cleanup. It must be invoked separately: CI does not claim
 archive coverage. [Integration evidence](../../evidence/tokyo2026/integration.json), [unit log](../../evidence/tokyo2026/unit-tests.log),
 [report validation log](../../evidence/tokyo2026/report-tests.log), [measured report](../../evidence/tokyo2026/verified-run.json).
-The fresh reproduction extracted source commit `50a73e7` into an independent temporary directory.
+The initial fresh reproduction extracted temporary source commit `50a73e7`. After migration,
+engine commit `42204e0c8091143e08f9f6525cbfebde741fb74a` passed the same five real checks
+([migration execution evidence](../../evidence/tokyo2026/migrated-integration.json)).
 Browser evidence and recording status are tracked in [CHECKLIST.md](CHECKLIST.md).
 
 ## Architecture and exact Uniswap integration
 
 `compare.py`: amount validation → source pin → allowlisted read proxy → owned Anvil → deposit/approve →
 snapshot → four serial alternatives → receipts/balances → deterministic decision → hashed JSON.
-`site/report.mjs` independently checks digest, initial observations, receipt gas, calldata amounts,
-balance arithmetic and verdict consistency. `site/app.mjs` renders safely with text nodes.
+`tokyo2026/report.mjs` independently checks digest, initial observations, receipt gas, calldata amounts,
+balance arithmetic and verdict consistency. `tokyo2026/app.mjs` renders safely with text nodes.
 
 The integration calls the actual Ethereum Uniswap v3 **SwapRouter**, not a mocked swap contract.
 - Router: `0xE592427A0AEce92De3Edee1F18E0157C05861564`
@@ -95,8 +97,8 @@ There is no LLM policy, market model, arbitrary code execution or claim of produ
 Anvil has CPU/time/file-descriptor/file-size bounds and cleanup; RSS is not kernel-capped on macOS.
 
 The Entrotter concept and broader Colosseum product predate Tokyo. This event-period implementation,
-viewer, evidence and recording were authored during this session. None of the six existing repositories
-or PRs was merged or changed. [PROVENANCE.md](PROVENANCE.md) and [AI_USAGE.md](AI_USAGE.md) disclose
+viewer, evidence and recording were authored during this session. The new work is on review branches in the existing engine, website and coordination repositories.
+The pre-existing branches and PRs, including Colosseum PR #47, remain unchanged and unmerged. [PROVENANCE.md](PROVENANCE.md) and [AI_USAGE.md](AI_USAGE.md) disclose
 prior work, the owner-authorized track change, AI authorship and unresolved eligibility limits.
 
 MIT for new code. Public dependencies/tools retain their own licenses; see [THIRD_PARTY.md](THIRD_PARTY.md).

@@ -84,3 +84,12 @@ limits in the product and release-gates.json. Overall completion remains unprove
 ## ETHGlobal Tokyo Continuity preparation — September 26–27
 
 Owner directed Tokyo work into the existing repositories and requested removal of the temporary separate repository. Runtime changes are scoped to engine `tokyo/`; UI to website `tokyo2026/`; submission documents and evidence are in `submission/tokyo2026/` and `evidence/tokyo2026/`. These changes use separate review branches based on main and do not merge or alter Colosseum PR #47 or its related candidates. See the Tokyo checklist for current tests, deployment limits and owner actions; earlier test results above remain historical. Independent approval is still required for protected-main integration.
+
+### Tokyo Continuity migration verification
+
+- Existing engine PR #25 (`42204e0c8091143e08f9f6525cbfebde741fb74a`) and website PR #13 (`6623671193dbaf5990078c1d2292e97730fc0c4c`) are public. Coordination PR #49 contains the submission packet. Existing Colosseum PR #47 and related branches remain preserved.
+- Migration verification: 5 real archive/lifecycle checks passed, 80 existing engine tests passed, 10 Python and 13 Node existing website tests passed. Evidence: `evidence/tokyo2026/migrated-integration.json` and `existing-*-tests.log`. New 8 Python + 16 JS tests passed.
+- Current engine CI matrix/EVM, website check and coordination integration passed. Website deployment is not performed on PRs and awaits independent main approval.
+- Newly recorded 149-second silent captioned video published in the existing coordination repo: https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo . Supplemental partner-prize demo; not a compliant spoken Finalist video.
+- Local temporary `tokyo2026` folder deleted after migration. Remote deletion failed because CLI token lacks `delete_repo`; do not claim remote deletion or use that repository as submission source.
+- ETHGlobal final submission and Uniswap form completion remain unverified. Prepared files and clicked send buttons are not proof of acceptance.

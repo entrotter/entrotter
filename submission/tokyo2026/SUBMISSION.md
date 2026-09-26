@@ -23,7 +23,7 @@ raw balance accounting, assumptions and a client-only report import. It does not
 run transactions on the public site.
 
 This is a Continuity Track submission. The Entrotter concept and broader Colosseum implementation
-existed before Tokyo. The separate CLI, comparison UI, tests and execution evidence submitted here
+existed before Tokyo. The new CLI module, comparison UI, tests and execution evidence in the existing repositories
 were newly authored during Tokyo; pre-event code, reports, artwork and video are not claimed as new.
 Codex authored/assisted the implementation and documents under the owner's product specification,
 scope, constraints and decisions. Full attribution and limits are in AI_USAGE.md and PROVENANCE.md.
@@ -60,7 +60,8 @@ apply to the Continuity-specific Uniswap Stack Contribution prize, not the Class
 
 ## Links
 - Source: https://github.com/entrotter/engine/tree/feat/tokyo-continuity/tokyo
-- Viewer: https://entrotter.github.io/tokyo2026/
+- Recorded demo: https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo
+- Viewer source (existing-site deployment pending review): https://github.com/entrotter/entrotter.github.io/tree/feat/tokyo-continuity/tokyo2026
 - Evidence: https://github.com/entrotter/entrotter/tree/docs/tokyo-continuity/evidence/tokyo2026
 - Feedback: https://github.com/entrotter/entrotter/blob/docs/tokyo-continuity/submission/tokyo2026/FEEDBACK.md
 - Video: see media/README.md; silent screen recording is supplemental, not a Finalist submission video.
