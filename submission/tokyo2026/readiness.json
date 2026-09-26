@@ -26,7 +26,12 @@
     "url": "https://github.com/entrotter/entrotter/releases/tag/tokyo-continuity-demo"
   },
   "feedbackForm": "SUBMITTED: visible thank-you confirmation",
-  "submission": "NOT SUBMITTED: final declaration conflicts with Continuity prior-work disclosure; automatic approval review rejected final send",
+  "submission": {
+    "status": "SUBMITTED",
+    "showcaseUrl": "https://ethglobal.com/showcase/entrotter-tokyo-4b9vf",
+    "evidence": "../../evidence/tokyo2026/submission-progress.json",
+    "observedUTC": "2026-09-26T16:13:24Z"
+  },
   "eligibility": "organizer decision; AI and prior work disclosed",
   "existingEngineTests": {
     "passed": 80,

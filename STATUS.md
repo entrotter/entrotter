@@ -96,3 +96,11 @@ Owner directed Tokyo work into the existing repositories and requested removal o
 
 ### Tokyo submission form handoff
 Uniswap required feedback displayed its thank-you confirmation. ETHGlobal details, three existing repos, images, AI disclosure, Continuity and Uniswap partner-only selection are saved. The optional official video field is skipped; the published silent recording remains a supplemental demo link. The final form still demands a no-pre-event-work declaration; automatic approval review rejected the final Submit action with it unchecked. Final submission has NOT occurred. See `evidence/tokyo2026/submission-progress.json`; owner/organizer clarification is required. No repository history or approvals were bypassed.
+
+### Tokyo submission completed — September 27, 2026, 01:13 JST
+
+After the owner explicitly confirmed the explained final declaration and instructed submission, the normal ETHGlobal final checkbox and Submit action succeeded. The live page displayed **You did it!**, **Thanks for submitting your project**, and **Partner Judging only**. The public showcase loads at https://ethglobal.com/showcase/entrotter-tokyo-4b9vf .
+
+The entry preserves Continuity, existing-repository source links, prior-work and AI disclosures, and the supplemental silent recording link. The official optional video field is skipped. Required Uniswap feedback is confirmed submitted. Eligibility/prize acceptance remains subject to organizers; no prize or stake-return claim is made. The earlier blocked state above is historical and superseded by this confirmed submission.
+
+Remaining repository operations: website PR deployment awaits independent approval; remote temporary repository deletion remains blocked by CLI delete_repo scope. Local temporary folder is deleted. Source code and all former PRs/history remain preserved.

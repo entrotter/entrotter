@@ -21,7 +21,7 @@ Status is evidence-backed, not an assertion of eligibility or a prize.
 | Uniswap feedback form | PASS | Visible thank-you confirmation; evidence: ../../evidence/tokyo2026/submission-progress.json |
 | English submission text | PASS | SUBMISSION.md reflects actual new evidence and provenance |
 | Exact hacking start | PASS | Official schedule: September 25, 2026, 21:00 JST |
-| Final entry submission | BLOCKED | Form completion and final readback pending |
+| Final entry submission | PASS | Confirmed You did it / Thanks for submitting; public showcase: https://ethglobal.com/showcase/entrotter-tokyo-4b9vf |
 | Organizer eligibility acceptance | BLOCKED | No organizer approval claimed; disclosure retained |
 
 Deadline from current official pages: September 27, 2026, 09:00 JST / 00:00 UTC.
@@ -35,6 +35,6 @@ could not construct Buffer inline; a local malformed JSON file verified the same
 
 Existing engine regression tests: 80 passed after migration. Viewer regression tests: 10 Python and 13 Node passed. New tests: 8 Python and 16 Node passed. GitHub engine EVM/unit matrix, website check and coordination integration checks passed; website build/deploy correctly skipped on the PR.
 
-ETHGlobal project details, the three existing repository selections, tech stack and AI disclosure are saved. The owner enabled browser file access; required images are now uploaded. Continuity and Uniswap partner-only selection are saved. The optional official video field is skipped because its audio requirement is not met by the supplemental silent recording. Final submission remains blocked by a contradictory pre-event-work declaration and automatic approval rejection. No final submission success is claimed.
+ETHGlobal project details, the three existing repository selections, tech stack and AI disclosure are saved. The owner enabled browser file access; required images are uploaded. Continuity and Uniswap partner-only selection are saved. The optional official video field is skipped because its audio requirement is not met by the supplemental silent recording. Final submission succeeded after the owner explicitly confirmed the explained final declaration and instructed submission.
 
-Final form: the generic declaration says all work was built entirely during the hackathon and no work predates it. That conflicts with Continuity disclosures. The native Submit action with that declaration unchecked was rejected by automatic approval review. No bypass was attempted. Ask the organizer for the applicable Continuity declaration before completing the final step. The repository-history warnings expressly allow submission and manual review; history is preserved.
+Earlier final-form blocker (resolved by owner confirmation): the generic declaration says all work was built entirely during the hackathon and no work predates it. That conflicts with Continuity disclosures. The native Submit action with that declaration unchecked was rejected by automatic approval review. No bypass was attempted. The owner subsequently confirmed and instructed submission; normal UI submission succeeded. Organizer eligibility remains their decision. The repository-history warnings expressly allow submission and manual review; history is preserved.

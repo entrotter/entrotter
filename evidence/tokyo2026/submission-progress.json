@@ -7,7 +7,7 @@
     "note": "First send response was lost when its tab closed; a repeat explicitly disclosed possible duplication and displayed success."
   },
   "ethglobal": {
-    "status": "NOT SUBMITTED",
+    "status": "SUBMITTED",
     "saved": [
       "project details",
       "three existing GitHub repositories",
@@ -19,22 +19,30 @@
       "optional video skipped; verified supplemental recording linked",
       "future opportunities: none requested"
     ],
-    "blocking": [
-      "Final checkbox states all submitted work was built entirely during this hackathon and no work completed before the event. This conflicts with disclosed Continuity prior work, including reused branding.",
-      "Automatic approval review rejected normal Submit project action with this checkbox unchecked. No alternative submission route attempted."
-    ],
     "repositoryWarnings": [
       "engine: too few commits (3), first commit before hacking (7 days)",
       "website: too few commits (3), first commit before hacking (7 days)",
       "coordination: too few commits (2), first commit before hacking (7 days)"
     ],
     "warningNote": "The UI explicitly says flagged repositories may still be submitted and manually reviewed. Counts are the UI checker output, not a claim that it checked the submitted review branches.",
-    "requiredUserAction": "Ask the ETHGlobal help desk how the final declaration applies to Continuity; complete the final acknowledgment/submit manually after clarification.",
-    "projectUrl": "https://ethglobal.com/events/tokyo2026/project"
+    "requiredUserAction": "None for the completed submission. Organizer review is pending.",
+    "projectUrl": "https://ethglobal.com/events/tokyo2026/project",
+    "confirmation": [
+      "You did it!",
+      "Thanks for submitting your project",
+      "You have selected the Partner Judging only track."
+    ],
+    "showcaseUrl": "https://ethglobal.com/showcase/entrotter-tokyo-4b9vf",
+    "earlierBlocking": [
+      "Final checkbox states all submitted work was built entirely during this hackathon and no work completed before the event. This conflicts with disclosed Continuity prior work, including reused branding.",
+      "Automatic approval review rejected normal Submit project action with this checkbox unchecked. No alternative submission route attempted."
+    ],
+    "resolution": "After the exact declaration conflict and earlier approval rejection were explained, the owner explicitly confirmed there was no problem and instructed final submission. The normal UI checkbox and Submit action then succeeded. Prior-work and AI disclosures remain in the submitted text. Organizer eligibility approval is not claimed."
   },
   "schedule": {
     "url": "https://ethglobal.com/events/tokyo2026",
     "hackingBeginsJST": "2026-09-25T21:00:00+09:00",
     "deadlineJST": "2026-09-27T09:00:00+09:00"
-  }
+  },
+  "submittedAtObservedUTC": "2026-09-26T16:13:24Z"
 }
