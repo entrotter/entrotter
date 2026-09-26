@@ -79,3 +79,8 @@ No arbitrary user code execution, public engine, paid service, package publicati
 mainnet transaction, customer outreach or competition submission was performed.
 The current per-EVM memory bound is not a complete process sandbox. Preserve these
 limits in the product and release-gates.json. Overall completion remains unproven.
+
+
+## ETHGlobal Tokyo Continuity preparation — September 26–27
+
+Owner directed Tokyo work into the existing repositories and requested removal of the temporary separate repository. Runtime changes are scoped to engine `tokyo/`; UI to website `tokyo2026/`; submission documents and evidence are in `submission/tokyo2026/` and `evidence/tokyo2026/`. These changes use separate review branches based on main and do not merge or alter Colosseum PR #47 or its related candidates. See the Tokyo checklist for current tests, deployment limits and owner actions; earlier test results above remain historical. Independent approval is still required for protected-main integration.

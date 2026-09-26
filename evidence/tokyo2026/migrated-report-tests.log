@@ -1,0 +1,90 @@
+TAP version 13
+# Subtest: measured report passes hash and semantic validation
+ok 1 - measured report passes hash and semantic validation
+  ---
+  duration_ms: 12.17525
+  ...
+# Subtest: rejects changed hash
+ok 2 - rejects changed hash
+  ---
+  duration_ms: 2.206916
+  ...
+# Subtest: rejects receipt gas mismatch
+ok 3 - rejects receipt gas mismatch
+  ---
+  duration_ms: 6.074916
+  ...
+# Subtest: rejects different starting root
+ok 4 - rejects different starting root
+  ---
+  duration_ms: 1.51425
+  ...
+# Subtest: rejects inconsistent delta
+ok 5 - rejects inconsistent delta
+  ---
+  duration_ms: 2.835167
+  ...
+# Subtest: rejects fake hold fee
+ok 6 - rejects fake hold fee
+  ---
+  duration_ms: 2.189583
+  ...
+# Subtest: rejects wrong chain
+ok 7 - rejects wrong chain
+  ---
+  duration_ms: 1.593
+  ...
+# Subtest: rejects invalid decimals
+ok 8 - rejects invalid decimals
+  ---
+  duration_ms: 1.109583
+  ...
+# Subtest: rejects forged policy
+ok 9 - rejects forged policy
+  ---
+  duration_ms: 1.97175
+  ...
+# Subtest: rejects wrong input
+ok 10 - rejects wrong input
+  ---
+  duration_ms: 2.266833
+  ...
+# Subtest: rejects missing receipt
+ok 11 - rejects missing receipt
+  ---
+  duration_ms: 2.052625
+  ...
+# Subtest: rejects missing cleanup
+ok 12 - rejects missing cleanup
+  ---
+  duration_ms: 1.348542
+  ...
+# Subtest: rejects unsupported format
+ok 13 - rejects unsupported format
+  ---
+  duration_ms: 1.033083
+  ...
+# Subtest: rejects invalid amount type
+ok 14 - rejects invalid amount type
+  ---
+  duration_ms: 1.37575
+  ...
+# Subtest: rejects malformed envelope
+ok 15 - rejects malformed envelope
+  ---
+  duration_ms: 0.191917
+  ...
+# Subtest: exact decimals avoid floating point
+ok 16 - exact decimals avoid floating point
+  ---
+  duration_ms: 0.302417
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 146.496625

@@ -1,0 +1,21 @@
+{
+  "track": "Continuity",
+  "judging": "partner-only",
+  "unitTests": {
+    "passed": 24,
+    "failed": 0,
+    "skipped": 0
+  },
+  "realIntegration": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "evidence/integration.json"
+  },
+  "source": "50a73e7",
+  "publication": "PENDING",
+  "recording": "PENDING",
+  "feedbackForm": "PENDING",
+  "submission": "PENDING",
+  "eligibility": "organizer decision; AI and prior work disclosed"
+}
