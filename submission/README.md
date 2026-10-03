@@ -28,6 +28,7 @@ a prediction of future markets, or a measurement of profit.
 
 | Material | Artifact | Status |
 | --- | --- | --- |
+| Updated account-impact demo | [MP4](media/entrotter-demo-account.mp4), [VTT](media/entrotter-demo-account.vtt), [SRT](media/entrotter-demo-account.srt) · 2:36.80 | Additional current-viewer cut: two fresh bounded local calls, recorded account 13/card/receipt inspection, lossless bad-ID rejection and recovery; original owner-approved cut retained |
 | Product demo | [MP4](media/entrotter-demo.mp4), [VTT](media/entrotter-demo.vtt), [SRT](media/entrotter-demo.srt) · 2:54.24 | Recorded actual Chromium interactions and bounded engine calls; owner approved |
 | Product pitch | [Short MP4](media/entrotter-pitch-short.mp4), [VTT](media/entrotter-pitch-short.vtt) · 1:46.07 | New six-card pitch with confirmed solo-founder context; synthetic narration. The original 2:51.44 review cut is retained but exceeds the current form limit |
 | Video production evidence | [Manifest](../evidence/submission-media/manifest.json) | Source pins, exact scripts/timelines, output hashes, execution and rendering checks |
@@ -36,6 +37,8 @@ a prediction of future markets, or a measurement of profit.
 | Target-user evaluation | [Evaluation protocol](EVALUATIONS.md) | Deferred by owner; zero completed records, no demand claim |
 | Development/AI disclosure | [Disclosure](DISCLOSURE.md) | Supplied archive and substantial Codex assistance disclosed; owner reports event-period AI generation; original archive digest unavailable |
 | Rules, deadline and eligibility | [Competition requirements](../docs/COMPETITION.md) | Public requirements rechecked; authenticated event draft verified; owner confirms eligibility |
+
+The [new account-impact recording evidence](../evidence/submission-account-demo/README.md) binds viewer 8aa0/Engine 88c6 and the exact generated local report. This new cut is additional material; human auditory review and supported-host delivery remain pending. The [15 current narration cues](../evidence/submission-account-demo/timeline.json) preserve the exact new script.
 
 The original recordings label synthetic narration and their historical review
 status; the owner has since approved them. The short pitch retains explicit
@@ -47,25 +50,80 @@ feature. The pitch does not establish founder communication skills or market fit
 
 ## Latest candidate sources
 
-These are the October 1 tested candidates, still awaiting independent approval
+The [parent-read cache composition](../evidence/trace-parent-cache-integration/README.md)
+selects engine198139f/PR34, retaining safe private RPC diagnostics. All8 component
+checks and independent complete raw-artifact review pass. Actual native005 keeps
+the same original32 signed inputs, skip12 and150-second shared budget; both
+branches complete and all32 baseline receipt projections equal originals.
+The producer feed update occurs only in baseline. This is a32-of181 producer
+prefix, not dependent-consumer/profit/full-block/provider-authenticity or historical
+speed evidence. Previous failures remain preserved. The404e8db/198 composition passed all5 combined checks and full artifact review;
+recordings keep their original source versions. The current
+[receipt comparison composition](../evidence/trace-comparison-integration/README.md)
+adopts viewerb1cfb00 with all4 component checks and independent Linux artifact
+review. Four offline reader steps pass, including the unchanged native00532-input
+report. Candidate receipt grouping preserves exact field differences and shows
+12 matches/1 omission/19 position-cumulative-gas-only/0 execution-field changes.
+Receipt matches do not establish unchanged contract state, consumer behavior or
+profit. New combined CI and protected-main/Pages approval remain separate.
+
+These are the October 2 candidate sources, still awaiting independent approval
 and protected integration. Follow the [current pinned quick start](../docs/QUICK_START.md)
 instead of rebuilding from moving main branches. The recordings below retain
 their original source versions.
 
-The execution snapshot below contains the optional bounded Linux CLI launcher and
-selects the bounded-diagnostic builder. Its [fresh measured walkthrough](../evidence/latest-candidate/summary.json)
-checks all six public revisions and complete fixture/local-Anvil results. Guide
-and evidence updates occur in later documentation commits with the same production
-tools; this snapshot is proposed code, not an independently approved release.
+The execution snapshot below contains the optional bounded Linux CLI launcher,
+the canonical contract identity fix and original signed transaction-prefix replay.
+The [prior four-prefix receipt evidence](../evidence/canonical-mine-integration/summary.json)
+binds its original engine817/schema sources, receipt match and exact inputs.
+The prefix is a separate technical case. The new
+[funding composition](../evidence/trace-funding-integration/README.md) verifies
+native synthetic same-block funding and an adverse omission without state repair.
+The [oracle/provider composition](../evidence/trace-oracle-integration/README.md)
+adds native signed update/consumer causal proof and actual read-only fault/control
+coverage, including an integrity-valid unverified storage-failure report. Archived
+funding/dependent oracle-consumer, provider authenticity and full-block/end-state remain open. The
+[recorded-agent viewer evidence](../evidence/agent-viewer-integration/summary.json)
+adds original decision/provenance inspection and preserves original reports. Prior combined checks and reproduction measurements retain their source pins;
+current candidate verification is recorded in
+[candidate PR55](https://github.com/entrotter/entrotter/pull/55). Prior walkthroughs
+retain their actual older pins. Guide and evidence updates occur in later
+documentation commits with the same production tools; this snapshot is proposed
+code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [dcef3ee](https://github.com/entrotter/entrotter/tree/dcef3ee06af060b17b52e0f3d59c060a9ab17fd6) | Current composition builds on [#53](https://github.com/entrotter/entrotter/pull/53) |
-| Bounded agent engine, build lifetime and diagnostics | [fa37380](https://github.com/entrotter/engine/tree/fa3738078079ffa8f8350a26dca60b560d8aa32f) | [#26](https://github.com/entrotter/engine/pull/26) |
-| Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
-| CLI | [a63a390](https://github.com/entrotter/cli/tree/a63a39000e03d151e80b5a9c47dd4df449281b93) | [#9](https://github.com/entrotter/cli/pull/9) |
-| Schema contracts | [3a78ecc](https://github.com/entrotter/scenarios/tree/3a78ecca24334ae87119a5a0b64c84ba6dd71de1) | [#8](https://github.com/entrotter/scenarios/pull/8) |
-| Current console, accessibility and quality | [8671ab2](https://github.com/entrotter/entrotter.github.io/tree/8671ab2ee481a894784afe2a2cc216fb6931b02c) | [#11](https://github.com/entrotter/entrotter.github.io/pull/11) |
+| Last independently audited coordinator execution snapshot | [2e0504b](https://github.com/entrotter/entrotter/tree/2e0504b8800081beb50b4f733a20d20401ddfd9d) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Bounded agent engine and default-worker historical Aave price/account observations | [88c6cd0](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1) | [#35](https://github.com/entrotter/engine/pull/35) |
+| Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
+| CLI with bounded agent replay, local price/account execution and offline inspection | [696511c](https://github.com/entrotter/cli/tree/696511c5cb46482c96cf6f609c83877fcf16e922) | [#10](https://github.com/entrotter/cli/pull/10) |
+| Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
+| Console, recorded agent and signed-prefix and Aave account inspection, accessibility and quality | [8aa0e58](https://github.com/entrotter/entrotter.github.io/tree/8aa0e582dfa56ec795cf0adc83303ac1eb952528) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+
+The [signed-prefix reader composition](../evidence/trace-reader-integration/README.md)
+adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
+and viewer all4checks pass; root artifact verification confirms33Linux browser
+groups/25raw axe scans without reported violations. Checksums and internal
+relationships do not authenticate source state or prove economic/EVM truth.
+The previous8029/a253 funding composition passed all five combined checks and55
+document hashes, with complete API/CLI/export and both offline reader proofs. The
+new oracle/provider composition requires its own exact-head CI. No new
+video/model/holdout result is implied.
+
+The earlier diagnostic successor [engineaac525c](https://github.com/entrotter/engine/tree/aac525c8279005a3a8468fe3928e691c3ce80148)
+has seven successful checks but a failed four-prefix candidate gate: all original
+receipts match, while one changed-branch transaction lacks a receipt. A later
+diagnostic succeeds and does not establish the first failure's cause. The
+[partial proof](../evidence/trace-oracle-integration/diagnostic-ci-partial.json)
+keeps those outcomes separate. The prior selected engine99fd passes all eight checks
+on its first attempt, including normal default1/4 and image/native advisory gates.
+[Independent full proof](../evidence/trace-oracle-integration/root-engine-full-CI.json)
+binds those raw reports and audits. Its conditional observation diagnostic was
+skipped, so the original failure cause remains unknown. These99fd/e46 and older
+8029/a253/935 records are historical. The table now selects530ebc2/65c, with new
+combined CI pending. The previously tested public158fbc0/99fd composition passes
+all five checks and complete artifact review; see the latest evidence above.
+
 
 ## Recorded review sources
 
@@ -129,3 +187,108 @@ See the [October 1 authenticated draft readback](../evidence/submission-preparat
 and [original preparation evidence](../evidence/submission-preparation/summary.json).
 
 The material is not a claim of a win, market validation or complete goal acceptance.
+
+
+The historical [Aave price observation composition](../evidence/consumer-price-integration/README.md)
+selected enginebd5527f and retained all other pins and recordings. Its actual
+native006 original32/skip12 replay verifies full projected baseline receipts and
+4 owned consumer view phases: baseline257082415000→256292441874, candidate
+keeps257082415000. All8 component checks/complete raw artifacts and all5 local
+SDK/Node22 reader steps pass. Subsequent9b49fe2 combined CI passed all5 original
+mandatory checks and full raw review; that verified composition is historical.
+Protected-main approval and live candidate Pages remain separate gates. These read-only observations
+are distinct from signed consumer transactions, strategy/profit, full-block/root
+or provider authenticity. Standard trace-run has no extra-view option at this
+selected head; supported CLI work is separate. No new submission is claimed.
+
+
+The [direct price-wrapper composition](../evidence/direct-observed-wrapper-integration/README.md)
+selects engine40bea57/PR35 and viewera19d3b1/PR16. The engine's all8 and viewer's
+all4 original mandatory checks and full raw independent reviews pass. The viewer
+now accepts the original sealed wrapper directly, displaying four price phases
+beside all32 receipt comparisons. The sixth mandatory integration case compares
+its complete nested report, classification and raw price/address/unit/head/code
+records with the engine validator; all6 exact local scripts pass, and prior5
+complete outcomes remain unchanged except the viewer pin.
+
+The prior coordinator213 composition passed all5 original checks and full raw
+review. Its subsequent direct-wrapper composition d90f4a9 also passed all5
+original checks and full independent raw review (workspace37049503304,
+quality37049503150, docs37049503339). These are historical verified compositions;
+the current SDKeb candidate's combined CI is recorded separately below. The
+coordination execution snapshot row retains older verified source. Protected-main
+human approval and Pages remain separate. Videos/model/holdouts and the
+application draft are unchanged; no formal submission is claimed. Read-only prices establish no signed consumer
+strategy, profit, provider authenticity or full-block/root/opcode result.
+
+
+The [standalone SDK wrapper composition](../evidence/sdk-observed-integration/README.md)
+selects SDKeb9921f, whose all5 original mandatory checks and complete raw review
+pass. Python developers can inspect the supported original wrapper directly,
+without importing the engine or creating an intermediate trace export. The sixth
+mandatory reader compares the complete SDK snapshot, typed classification and
+four full typed price/feed/address/unit/head/code/error records with engine40 and
+viewera19. Its subsequent coordinator4b037fe passed all5 original required
+checks and full independent raw review (workspace37096639467,
+quality37096639463, docs37096639482; reviewSHA3d13d25613e0b6cee85ea8e305f65b78ccd7a79ded03b4fc708d8aa3cf7632ea).
+That historical verified source selects CLI22; the newer CLI composition below
+has a separate current-head CI gate. Human protected-main approval remains separate. Frozen recordings, model/holdouts and
+submission draft remain unchanged; no new chain/model/browser or submission claim.
+
+
+The [terminal price-wrapper composition](../evidence/cli-observed-integration/README.md)
+selects CLI1ee3d3a, whose all6 original required checks and full raw independent
+review pass. Developers can run observed-verify/observed-inspect without custom
+Python or engine conversion. The sixth exact workflow reader runs both commands
+and compares complete JSON classification, trace IDs/count and all four typed
+records with the reviewed SDK/engine/viewer facts. First5 exact scripts and full
+outcomes stay unchanged except the selected CLI pin. New combined candidate CI,
+protected-main approval and Pages remain separate; no new chain/model/browser
+execution or submission is claimed.
+
+
+The [CLI execution composition](../evidence/cli-observed-run-integration/README.md)
+selects d437ad1 after all six original mandatory checks and full raw independent
+review pass. The guide now runs the fixed observation through the CLI, with
+admitted-plan binding, quota export and cancellation. All seven unchanged offline
+reader scripts preserve their complete outcome facts; only selected CLI and its
+exact source hash change. The coordinator table identifies the last audited
+execution snapshot, not this new selector update's combined CI. New combined CI,
+human main approval, Pages and formal submission remain separate. Frozen media,
+model/holdouts, timed walkthroughs and the unsubmitted draft are unchanged.
+
+
+The historical [account inspection composition](../evidence/account-impact-integration/README.md)
+at root670e selected Engine88c6, SDKba4 and CLI6965 after each component's full
+required CI/raw review. All five root670e checks and full raw review SHA6753979f
+subsequently passed. At that checkpoint the selected viewera19 did not support
+account wrappers; the new viewer composition below adds that display coupling.
+The recorded13-input case retains all4 views and exact deltas, not profit or a
+signed strategy. The prior CLI c04d baseline-unverified failure remains documented
+with unknown cause; later passing CI does not establish that cause. Human main
+approval, Pages and formal submission remain separate. Frozen model, holdout and
+media sources stay unchanged.
+
+
+The proposed [account viewer composition](../evidence/viewer-position-integration/README.md)
+selects viewer4c6e after all four original mandatory checks and full raw independent
+review pass. The ninth offline reader compares the original13 wrapper and nine
+explicit synthetic controls with full SDK/Node classification, four typed/raw
+phases, plan, three seals and nested trace facts. The earlier eight readers retain
+all executable assertions; only the eighth's now-stale display-limit sentence is
+updated. Historical facts remain unchanged except the selected viewer pin and
+that scope text. Component browser verification remains separate from new combined
+CI, human protected-main approval and live Pages. No new chain/model/user run.
+
+
+The subsequent root2e05 SDK-to-browser composition passed all5 original checks
+and full independent raw review6868f253. The next
+[account summary composition](../evidence/account-summary-integration/README.md)
+selects viewer8aa0 after all4 current mandatory checks and full original raw
+reviewd54be9be. Its two exact changes precede the address and wide table, with
+accessible mobile stacking and explicit null/no-debt/sign handling. Existing
+nine reader bodies, complete recorded outputs and frozen sources remain exact
+apart from the selected viewer pin. New combined rootCI and human protected-main
+approval remain separate from component CI. Existing approved recordings retain
+their original source versions; this new UI is not yet in those recordings.
+No fresh chain/model/user evaluation, deployment or formal submission is claimed.
